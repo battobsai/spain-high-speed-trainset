@@ -1,1 +1,0 @@
- copy .\iryo-sp*.grf C:\Users\alex\Documents\OpenTTD\newgrf
