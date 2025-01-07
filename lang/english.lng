@@ -1,0 +1,12 @@
+##grflangid 0x01
+#English language file
+
+STR_GRF_NAME                 : {ORANGE}Iryo High speed train for Spain: Train
+STR_GRF_DESC                 :{ORANGE}Iryo High speed train for Spain: Train{}{BLACK}This NewGRF is intended to provide  Iryo (Italian Frecciarossa) High speed trains in Spain
+STR_IRYO_NAME                : S109 Iryo 
+
+STR_IRYO_ADDITIONAL_TEXT       :Choose between 3- and 4-part EMU via refit{}Stated values are for the 3-part variant, the 4-part version has 33% more capacity and 50% more power and running cost.
+STR_IRYO_SUBTYPE_3_PART        : (3 parts)
+STR_IRYO_SUBTYPE_4_PART        : (4 parts)
+STR_IRYO_CANNOT_START          :... train too long (max. 4 coupled EMUs).
+STR_IRYO_CANNOT_ATTACH_OTHER   :... ICM may not be attached to other types of trains.
