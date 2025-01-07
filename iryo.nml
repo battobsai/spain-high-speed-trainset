@@ -3,7 +3,7 @@ grf {
     name : string(STR_GRF_NAME);
     desc : string(STR_GRF_DESC ) ;
     version : 5;
-    min_compatible_version : 3;
+    min_compatible_version : 1;
 }
 
 railtypetable {
@@ -47,13 +47,14 @@ template tmpl_vehicle_single(num, xsize, ysize, xrel, yrel) {
 /* ------------------ IRYO EMU Train Example ------------------ */
 
 /* Define the spritesets, these allow referring to these sprites later on */
-spriteset (set_iryo_front_lighted, "gfx/iryo.png") { tmpl_vehicle_8_views(0, 0) }
-spriteset (set_iryo_rear_lighted,  "gfx/iryo.png") { tmpl_vehicle_8_views(1, 1) }
-spriteset (set_iryo_front,         "gfx/iryo.png") { tmpl_vehicle_8_views(2, 0) }
-spriteset (set_iryo_rear,          "gfx/iryo.png") { tmpl_vehicle_8_views(3, 1) }
-spriteset (set_iryo_middle,        "gfx/iryo.png") { tmpl_vehicle_4_views(4)    }
-spriteset (set_iryo_purchase,      "gfx/iryo.png") { tmpl_vehicle_single(5, 64, 14, -25, -10) }
-spriteset (set_iryo_invisible,     "gfx/iryo.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+spriteset (set_iryo_front_lighted, "gfx/iryo.png")        { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_iryo_rear_lighted,  "gfx/iryo.png")        { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_iryo_front,         "gfx/iryo.png")        { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_iryo_rear,          "gfx/iryo.png")        { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_iryo_middle,        "gfx/iryo.png")        { tmpl_vehicle_4_views(4)    }
+spriteset (set_iryo_purchase,      "gfx/iryo.png")        { tmpl_vehicle_single(5, 64, 14, -25, -10) }
+spriteset (set_iryo_invisible,     "gfx/iryo.png")        { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+spriteset (set_hsgeneral_wagon,    "gfx/iryo_wagon.png")  { tmpl_vehicle_4_views (4)}
 
 /* --- Graphics callback  --- */
 
@@ -105,10 +106,10 @@ switch(FEAT_TRAINS, SELF, sw_iryo_articulated_part, extra_callback_info1) {
 }
 
 /* --- Wagon attach callback  --- */
-switch(FEAT_TRAINS, SELF, sw_iryo_can_attach_wagon, vehicle_type_id) {
+switch(FEAT_TRAINS, sw_iryo_can_attach_wagon, vehicle_type_id) {
     /* SELF refers to the wagon here, check that it's an IRYO */
-    item_iryo: return CB_RESULT_ATTACH_ALLOW;
-    return string(STR_IRYO_CANNOT_ATTACH_OTHER);
+    item_hsgeneral_wagon: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_IRYO_WAGON_TYPE);
 }
 
 /* --- Vehicle length callback  --- */
@@ -187,6 +188,46 @@ item(FEAT_TRAINS, item_iryo) {
         extra_weight_per_wagon:       0 ton;
         bitmask_vehicle_info:         0;
     }
+}
+    /* Wagon */
+    item(FEAT_TRAINS, item_hsgeneral_wagon)
+     property {
+        name:                         string(STR_HS_WAGON);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL)
+        introduction_date:            date(1992,1,1)
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 40;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        // refitting is done via cargo classes only, no cargo types need explicit enabling/disabling
+        // It's an intercity train, loading is relatively slow:
+        loading_speed:                8; 
+        cost_factor:                  45;
+        running_cost_factor:          20; // Changed by callback
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        360 km/h; // actually 360, but there are rounding errors
+        misc_flags:                   bitmask( VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE);
+        refit_cost:                   0; //refit costs don't apply to subcargo display 
+        // callback flags are not set manually
+        track_type:                   ELRL; // from rail type table
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               40; // per part, changed by callback
+        weight:                       40 ton; // Total, changed by callback
+        ai_engine_rank:               0; // not intended to be used by the ai
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        // 4/12 of weight on driving wheels, with a default friction coefficient of 0.3:
+        tractive_effort_coefficient:  0.3 / 3; // changed by callback
+        air_drag_coefficient:         0.009;
+        //shorten_vehicle:              SHORTEN_TO_8_8;
+        // Overridden by callback to disable for non-powered wagons:
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+
 
     /* Define graphics and callbacks
      * Setting all callbacks is not needed, only define what is used */
@@ -202,10 +243,10 @@ item(FEAT_TRAINS, item_iryo) {
         running_cost_factor: (cargo_subtype == 1) ? 150 : 100;
         purchase_running_cost_factor: return 100;
         /* Capacity is per part */
-        cargo_capacity: return 36 * (cargo_subtype + 3) / 4;
+        cargo_capacity: return 40
         /* In the purchase menu, we want to show the capacity for the three-part version,
          * i.e. divide the capacity of three cars across four */
-        purchase_cargo_capacity: return 36 * 3 / 4;
+        purchase_cargo_capacity: return 40;
         /* Only the front vehicle has a visual effect */
         visual_effect_and_powered: return (position_in_consist % 4 == 0) ?
                                         visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER) :
