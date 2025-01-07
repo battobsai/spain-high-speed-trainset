@@ -22,5 +22,5 @@
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode
 
-exporte-test.bat
+# Ignore local export
 export-test.bat
