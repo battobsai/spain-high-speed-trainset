@@ -1,12 +1,15 @@
 ##grflangid 0x01
 #English language file
 
-STR_GRF_NAME                 : {ORANGE}Iryo High speed train for Spain: Train
-STR_GRF_DESC                 :{ORANGE}Iryo High speed train for Spain: Train{}{BLACK}This NewGRF is intended to provide  Iryo (Italian Frecciarossa) High speed trains in Spain
+STR_GRF_NAME                 : {ORANGE}High speed trains for Spain
+STR_GRF_DESC                 :{ORANGE}Iryo High speed train for Spain{}{BLACK}This NewGRF is intended to provide Spanish High-speed trains. For now only the Class 109 Iryo and the Class 108 Oiugo are available.
 STR_IRYO_NAME                : S109 Iryo 
+STR_OUIGO_NAME               : S108 Ouigo
+STR_AVLOAVRIL_NAME           : S106 "Avril" (Avlo)
 
-STR_IRYO_ADDITIONAL_TEXT       :Choose between 3- and 4-part EMU via refit{}Stated values are for the 3-part variant, the 4-part version has 33% more capacity and 50% more power and running cost.
-STR_IRYO_SUBTYPE_3_PART        : (3 parts)
-STR_IRYO_SUBTYPE_4_PART        : (4 parts)
-STR_IRYO_CANNOT_START          :... train too long (max. 4 coupled EMUs).
-STR_IRYO_CANNOT_ATTACH_OTHER   :... ICM may not be attached to other types of trains.
+STR_IRYO_CANNOT_START             :... train too long (max. 16 wagons).
+STR_IRYO_CANNOT_ATTACH_OTHER      :... Iryo may not be attached to other types of trains.
+STR_OUIGO_CANNOT_START            :...train too lomg (max. 20 wagons).
+STR_OUIGO_CANNOT_ATTACH_OTHER     :...Ouigo may not be attached to other types of trains.
+STR_AVLOAVRIL_CANNOT_START        :...train too long (max. 28 wagons)
+STR_AVLOAVRIL_CANNOT_ATTACH_OTHER :...the Avril may not be attached to other types of trains.

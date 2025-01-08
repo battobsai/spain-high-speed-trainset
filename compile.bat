@@ -1,1 +1,1 @@
-nmlc -c --grf iryo-sp-2.grf iryo.nml
+nmlc -c --grf iryo-sp-3.grf iryo.nml

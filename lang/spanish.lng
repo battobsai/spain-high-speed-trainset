@@ -1,13 +1,15 @@
 ##grflangid 04
 #Archivo Lang del Español
 
-STR_GRF_NAME             : {ORANGE} Tren  Iryo de alta velocidad para España 
-STR_GRF_DESC             : {ORANGE} Tren  Iryo de alta velocidad para España {}{BLACK}Este NewGRF está diseñado para conseguir los trenes Iryo (Modelo Frecciarossa 1000/ETR 400 de Italia), trenes de alta velocidad que circulan desde el 2022.
+STR_GRF_NAME             : {ORANGE} Trenes de alta velocidad para España 
+STR_GRF_DESC             : {ORANGE} Trenes de alta velocidad para España {}{BLACK}Este NewGRF está diseñado para conseguir trenes de alta velocidad de España. Por ahora están incluidos los trenes 109 Iryo y 108 Ouigo.
+STR_IRYO_NAME            : S109 Iryo 
+STR_OUIGO_NAME           : S108 Ouigo
+STR_AVLOAVRIL_NAME       : S106 "Avril" (Avlo)
 
-STR_IRYO_NAME                : S109 Iryo 
-
-STR_IRYO_ADDITIONAL_TEXT      : Seleccione entre 3 y 4 carros{}Stated values are for the 3-part variant, the 4-part version has 33% more capacity and 50% more power and running cost.
-STR_IRYO_SUBTYPE_3_PART       : (3 partes)
-STR_IRYO_SUBTYPE_4_PART       : (4 partes)
-STR_IRYO_CANNOT_START         :... tren muy largo (max. 4 carros).
-STR_IRYO_CANNOT_ATTACH_OTHER  :... El Iryo no se puede adjuntar a otros trenes
+STR_IRYO_CANNOT_START             :... tren muy largo (max. 16 carros).
+STR_IRYO_CANNOT_ATTACH_OTHER      :... El Iryo no se puede adjuntar a otros trenes.
+STR_OUIGO_CANNOT_START            :...tren muy largo (max. 20 carros).
+STR_OUIGO_CANNOT_ATTACH_OTHER     : El Ouigo no se puede adjuntar a otros trenes.
+STR_AVLOAVRIL_CANNOT_START        :...tren muy largo (max. 28 carros).
+STR_AVLOAVRIL_CANNOT_ATTACH_OTHER :...El Avril no se puede adjuntar a otros trenes.
