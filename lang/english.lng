@@ -1,8 +1,8 @@
 ##grflangid 0x01
 #English language file
 
-STR_GRF_NAME                 : {ORANGE}High speed trains for Spain
-STR_GRF_DESC                 :{ORANGE}Iryo High speed train for Spain{}{BLACK}This NewGRF is intended to provide Spanish High-speed trains. For now only the Class 109 Iryo and the Class 108 Oiugo are available.
+STR_GRF_NAME                 :{ORANGE}High speed trains for Spain
+STR_GRF_DESC                 :{ORANGE}High speed train for Spain{}{BLACK}This NewGRF is intended to provide Spanish High-speed trains. For now only the Class 109 Iryo and the Class 108 Oiugo are available.
 STR_IRYO_NAME                : S109 Iryo 
 STR_OUIGO_NAME               : S108 Ouigo
 STR_AVLOAVRIL_NAME           : S106 "Avril" (Avlo)
