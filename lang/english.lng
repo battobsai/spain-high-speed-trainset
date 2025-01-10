@@ -7,6 +7,7 @@ STR_IRYO_NAME                : Class 109 Iryo
 STR_OUIGO_NAME               : Class 108 Ouigo
 STR_AVLOAVRIL_NAME           : Class 106 "Avril" (Avlo)
 STR_AVECIEN_NAME             : Class 100 AVE
+STR_AVEPATO_NAME             : Class 102 "Duck"
 
 STR_IRYO_CANNOT_START             :... train too long (max. 16 wagons).
 STR_IRYO_CANNOT_ATTACH_OTHER      :... Iryo may not be attached to other types of trains.
@@ -16,3 +17,5 @@ STR_AVLOAVRIL_CANNOT_START        :...train too long (max. 28 wagons)
 STR_AVLOAVRIL_CANNOT_ATTACH_OTHER :...the Avril may not be attached to other types of trains.
 STR_AVECIEN_CANNOT_START          :...train too long (max. 20 wagons)
 STR_AVECIEN_CANNOT_ATTACH_OTHER   :...the AVE Class 100 may not be attached to other types of trains.
+STR_AVEPATO_CANNOT_START          :...train too long (max. 28 wagons)
+STR_AVEPATO_CANNOT_ATTACH_OTHER   :...the AVE Class 102 may not be attached to other types of trains.

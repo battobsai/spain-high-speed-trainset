@@ -7,6 +7,7 @@ STR_IRYO_NAME            : S109 Iryo
 STR_OUIGO_NAME           : S108 Ouigo
 STR_AVLOAVRIL_NAME       : S106 "Avril" (Avlo)
 STR_AVECIEN_NAME         : S100 AVE
+STR_AVEPATO_NAME         : S102 "Pato"
 
 STR_IRYO_CANNOT_START             :... tren muy largo (max. 16 carros).
 STR_IRYO_CANNOT_ATTACH_OTHER      :... El Iryo no se puede adjuntar a otros trenes.
@@ -16,3 +17,5 @@ STR_AVLOAVRIL_CANNOT_START        :...tren muy largo (max. 28 carros).
 STR_AVLOAVRIL_CANNOT_ATTACH_OTHER :...El Avril no se puede adjuntar a otros trenes.
 STR_AVECIEN_CANNOT_START          :...tren muy largo (max. 20 carros)
 STR_AVECIEN_CANNOT_ATTACH_OTHER   :...el AVE Serie 100 no se puede adjuntar a otros trenes
+STR_AVECIEN_CANNOT_START          :...tren muy largo (max. 28 carros).
+STR_AVECIEN_CANNOT_ATTACH_OTHER   :...el AVE 102 "Pato" no se puede adjuntar a otros trenes.
