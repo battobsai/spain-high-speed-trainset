@@ -1,9 +1,9 @@
 grf {
-    grfid : "SPA2" ;
+    grfid : "SPA3" ;
     name : string(STR_GRF_NAME);
     desc : string(STR_GRF_DESC ) ;
-    version : 2;
-    min_compatible_version : 1;
+    version : 3;
+    min_compatible_version : 3;
 }
 
 railtypetable {
@@ -224,8 +224,8 @@ item(FEAT_TRAINS, item_avloavril) {
         power:                        8600 kW;
         running_cost_base:            RUNNING_COST_ELECTRIC;
         dual_headed:                  0;
-        cargo_capacity:               49;
-        /*Cargo Capacity per wagon, up to a total of 584*/
+        cargo_capacity:               42;
+        /*Cargo Capacity per wagon, up to a total of 588*/
         weight:                       260 ton;
         ai_engine_rank:               0;
         engine_class:                 ENGINE_CLASS_ELECTRIC;
