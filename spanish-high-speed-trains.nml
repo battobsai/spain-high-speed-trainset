@@ -2,8 +2,8 @@ grf {
     grfid : "SPA3" ;
     name : string(STR_GRF_NAME);
     desc : string(STR_GRF_DESC ) ;
-    version : 3;
-    min_compatible_version : 3;
+    version : 6;
+    min_compatible_version : 1;
 }
 
 railtypetable {
@@ -69,9 +69,9 @@ item(FEAT_TRAINS, item_iryo) {
         reliability_decay:            20;
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
-        loading_speed:                6; 
-        cost_factor:                  45;
-        running_cost_factor:          100;
+        loading_speed:                10; 
+        cost_factor:                  110;
+        running_cost_factor:          210;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        360 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -83,7 +83,7 @@ item(FEAT_TRAINS, item_iryo) {
         dual_headed:                  0;
         cargo_capacity:               57;
         /*Cargo Capacity per wagon, up to a total of 416*/
-        weight:                       260 ton;
+        weight:                       500 ton;
         ai_engine_rank:               0;
         engine_class:                 ENGINE_CLASS_ELECTRIC;
         extra_power_per_wagon:        0 kW;
@@ -140,9 +140,9 @@ item(FEAT_TRAINS, item_ouigo) {
         reliability_decay:            20;
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
-        loading_speed:                6; 
-        cost_factor:                  45;
-        running_cost_factor:          100;
+        loading_speed:                8; 
+        cost_factor:                  80;
+        running_cost_factor:          180;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        320 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -154,7 +154,7 @@ item(FEAT_TRAINS, item_ouigo) {
         dual_headed:                  0;
         cargo_capacity:               51;
         /*Cargo Capacity per wagon, up to a total of 510*/
-        weight:                       260 ton;
+        weight:                       380 ton;
         ai_engine_rank:               0;
         engine_class:                 ENGINE_CLASS_ELECTRIC;
         extra_power_per_wagon:        0 kW;
@@ -212,9 +212,9 @@ item(FEAT_TRAINS, item_avloavril) {
         reliability_decay:            30;
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
-        loading_speed:                6; 
-        cost_factor:                  45;
-        running_cost_factor:          100;
+        loading_speed:                12; 
+        cost_factor:                  90;
+        running_cost_factor:          190;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        330 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -226,7 +226,7 @@ item(FEAT_TRAINS, item_avloavril) {
         dual_headed:                  0;
         cargo_capacity:               42;
         /*Cargo Capacity per wagon, up to a total of 588*/
-        weight:                       260 ton;
+        weight:                       330 ton;
         ai_engine_rank:               0;
         engine_class:                 ENGINE_CLASS_ELECTRIC;
         extra_power_per_wagon:        0 kW;
@@ -242,5 +242,77 @@ item(FEAT_TRAINS, item_avloavril) {
         start_stop:                   sw_avloavril_start_stop;
         articulated_part:             sw_avloavril_articulated_part;
         can_attach_wagon:             sw_avloavril_can_attach_wagon;
+    }
+}
+/*S100: Ave S100 Train */
+spriteset (set_avecien_front_lighted, "gfx/avecien.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_avecien_rear_lighted,  "gfx/avecien.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_avecien_front,         "gfx/avecien.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_avecien_rear,          "gfx/avecien.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_avecien_middle,        "gfx/avecien.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_avecien_purchase,      "gfx/avecien.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_avecien_invisible,     "gfx/avecien.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+
+switch(FEAT_TRAINS, SELF, sw_avecien_graphics, position_in_consist % 10) {
+    0:      set_avecien_front_lighted;
+    9:      set_avecien_rear_lighted;
+    set_avecien_middle;
+}
+
+switch(FEAT_TRAINS, SELF, sw_avecien_articulated_part, extra_callback_info1) {
+    1 .. 9: return item_avecien;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch(FEAT_TRAINS, SELF, sw_avecien_start_stop, num_vehs_in_consist) {
+    1 .. 20: return CB_RESULT_NO_TEXT;
+    return string(STR_AVECIEN_CANNOT_START);
+}
+
+switch(FEAT_TRAINS, SELF, sw_avecien_can_attach_wagon, vehicle_type_id) {
+    item_avecien: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_AVECIEN_CANNOT_ATTACH_OTHER);
+}
+
+item(FEAT_TRAINS, item_avecien) {
+    property {
+        name:                         string(STR_AVECIEN_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1992, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 40;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                6; 
+        cost_factor:                  50;
+        running_cost_factor:          150;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        300 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   ELRL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        8800 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               35;
+        /*Cargo Capacity per wagon, up to a total of 350*/
+        weight:                       390 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.3 / 3;
+        air_drag_coefficient:         0.06;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      sw_avecien_graphics;
+        purchase:                     set_avecien_purchase;
+        start_stop:                   sw_avecien_start_stop;
+        articulated_part:             sw_avecien_articulated_part;
+        can_attach_wagon:             sw_avecien_can_attach_wagon;
     }
 }

@@ -6,6 +6,7 @@ STR_GRF_DESC             : {ORANGE} Trenes de alta velocidad para España {}{BLA
 STR_IRYO_NAME            : S109 Iryo 
 STR_OUIGO_NAME           : S108 Ouigo
 STR_AVLOAVRIL_NAME       : S106 "Avril" (Avlo)
+STR_AVECIEN_NAME         : S100 AVE
 
 STR_IRYO_CANNOT_START             :... tren muy largo (max. 16 carros).
 STR_IRYO_CANNOT_ATTACH_OTHER      :... El Iryo no se puede adjuntar a otros trenes.
@@ -13,3 +14,5 @@ STR_OUIGO_CANNOT_START            :...tren muy largo (max. 20 carros).
 STR_OUIGO_CANNOT_ATTACH_OTHER     : El Ouigo no se puede adjuntar a otros trenes.
 STR_AVLOAVRIL_CANNOT_START        :...tren muy largo (max. 28 carros).
 STR_AVLOAVRIL_CANNOT_ATTACH_OTHER :...El Avril no se puede adjuntar a otros trenes.
+STR_AVECIEN_CANNOT_START          :...tren muy largo (max. 20 carros)
+STR_AVECIEN_CANNOT_ATTACH_OTHER   :...el AVE Serie 100 no se puede adjuntar a otros trenes
