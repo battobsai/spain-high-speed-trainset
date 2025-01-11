@@ -25,3 +25,9 @@ STR_VELARO_CANNOT_START           :...tren muy largo (max. 16 carros)
 STR_VELARO_CANNOT_ATTACH_OTHER    :...el AVE 103 "Velaro" no se puede adjuntar a otros trenes.
 STR_EUROMED_CANNOT_START          :...tren muy largo (max. 20 carros)
 STR_EUROMED_CANNOT_ATTACH_OTHER   :...el EUROMED Serie 101 no se puede adjuntar a otros trenes.
+
+STR_HS_RAIL                       : Línea de Alta Velocidad (1435 mm)
+STR_BUILD_CAPTION                 : Nuevos trenes de Alta Velocidad (1435 mm)
+STR_NEW_TRAIN                     : alta velocidad
+
+STR_HIGH_SPEED_RAIL               : Línea de Alta Velocidad (1435 mm)

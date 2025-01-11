@@ -25,3 +25,9 @@ STR_VELARO_CANNOT_START           :...train too long (max. 16 wagons)
 STR_VELARO_CANNOT_ATTACH_OTHER    :...the AVE Class 103 may not be attached to other types of trains.
 STR_EUROMED_CANNOT_START          :...train too long (max. 20 wagons)
 STR_EUROMED_CANNOT_ATTACH_OTHER   :...the EUROMED Class 101 may not be attached to other types of trains.
+
+STR_HS_RAIL                       : High Speed Line (1435 mm)
+STR_BUILD_CAPTION                 : New Highspeed (1435 mm) trains
+STR_NEW_TRAIN                     : highspeed
+
+STR_HIGH_SPEED_RAIL               : High Speed Rail
