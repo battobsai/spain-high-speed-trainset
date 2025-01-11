@@ -26,4 +26,3 @@
 # Ignore local export
 export-test.bat
 *grf
-name  :                     string (STR_HS_RAIL)

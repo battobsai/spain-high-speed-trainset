@@ -29,5 +29,6 @@ STR_EUROMED_CANNOT_ATTACH_OTHER   :...the EUROMED Class 101 may not be attached 
 STR_HS_RAIL                       : High Speed Line (1435 mm)
 STR_BUILD_CAPTION                 : New Highspeed (1435 mm) trains
 STR_NEW_TRAIN                     : highspeed
-
-STR_HIGH_SPEED_RAIL               : High Speed Rail
+STR_HSRAIL_NAME                   : Construction of Highspeed Line 
+STR_HSRAIL_TOOLBAR                : Highspeed Line Construction
+STR_HSRAIL_DEPOT                  : New Highspeed trains

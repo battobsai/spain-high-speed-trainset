@@ -29,5 +29,6 @@ STR_EUROMED_CANNOT_ATTACH_OTHER   :...el EUROMED Serie 101 no se puede adjuntar 
 STR_HS_RAIL                       : Línea de Alta Velocidad (1435 mm)
 STR_BUILD_CAPTION                 : Nuevos trenes de Alta Velocidad (1435 mm)
 STR_NEW_TRAIN                     : alta velocidad
-
-STR_HIGH_SPEED_RAIL               : Línea de Alta Velocidad (1435 mm)
+STR_HSRAIL_NAME                   : Construcción de Línea de Alta Velocidad
+STR_HSRAIL_TOOLBAR                : Construcción Línea de Alta Velocidad
+STR_HSRAIL_DEPOT                  : Nuevos trenes de Alta Velocidad

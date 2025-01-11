@@ -2,7 +2,7 @@ grf {
     grfid : "SPA3" ;
     name : string(STR_GRF_NAME);
     desc : string(STR_GRF_DESC ) ;
-    version : 12;
+    version : 14;
     min_compatible_version : 1;
 }
 /*
@@ -318,15 +318,18 @@ spriteset(gui_electric, "gfx/gui_erail.png") {
  **********************************************
 
 /* Define the electric rails */
-item(FEAT_RAILTYPES, elrail) {
+item(FEAT_RAILTYPES, hsrail) {
     /* Set only the most essential properties,
      * Lots of compatible railtypes are defined to allow compatibility with
      * various other sets out there */
     property {
         label: "HSRL"; // Let this railtype replace the default electric rails
-        name: string(STR_HIGH_SPEED_RAIL);
-        compatible_railtype_list: ["RAIL", "ELRL", "_040", "_080", "RLOW", "RMED", "RHIG", "E040", "E080", "ELOW", "EMED", "EHIG", "HSTR", "DBNN", "DBNE", "DBHN", "DBHE"];
-        powered_railtype_list: ["ELRL", "E040", "E080", "ELOW", "EMED", "EHIG", "HSTR", "DBNE", "DBHE"];
+        name : string (STR_HSRAIL_NAME);
+        menu_text: string (STR_HSRAIL_NAME);
+        build_window_caption: string (STR_HSRAIL_DEPOT);
+        toolbar_caption: string (STR_HSRAIL_TOOLBAR);
+        compatible_railtype_list: ["EHIG", "HSTR", "DBHE"] ;
+        powered_railtype_list: ["E040", "E080", "ELOW", "EMED", "EHIG", "HSTR", "DBNE", "DBHE"];
     }
 
     /* Associate graphics with this railtype */
