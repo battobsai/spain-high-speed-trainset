@@ -2,7 +2,7 @@ grf {
     grfid : "SPA3" ;
     name : string(STR_GRF_NAME);
     desc : string(STR_GRF_DESC ) ;
-    version : 8;
+    version : 12;
     min_compatible_version : 1;
 }
 
@@ -29,6 +29,7 @@ template tmpl_vehicle_8_views(num, reversed) {
 template tmpl_vehicle_single(num, xsize, ysize, xoff, yoff) {
     [1, 1 + 32 * num, xsize, ysize, xoff, yoff]
 }
+/*Standard Gauge Highspeed Trains*/
 /*S109: Iryo Train */
 spriteset (set_iryo_front_lighted, "gfx/iryo.png") { tmpl_vehicle_8_views(0, 0) }
 spriteset (set_iryo_rear_lighted,  "gfx/iryo.png") { tmpl_vehicle_8_views(1, 1) }
@@ -83,7 +84,7 @@ item(FEAT_TRAINS, item_iryo) {
         dual_headed:                  0;
         cargo_capacity:               57;
         /*Cargo Capacity per wagon, up to a total of 416*/
-        weight:                       500 ton;
+        weight:                       400 ton;
         ai_engine_rank:               0;
         engine_class:                 ENGINE_CLASS_ELECTRIC;
         extra_power_per_wagon:        0 kW;
@@ -154,7 +155,7 @@ item(FEAT_TRAINS, item_ouigo) {
         dual_headed:                  0;
         cargo_capacity:               51;
         /*Cargo Capacity per wagon, up to a total of 510*/
-        weight:                       380 ton;
+        weight:                       280 ton;
         ai_engine_rank:               0;
         engine_class:                 ENGINE_CLASS_ELECTRIC;
         extra_power_per_wagon:        0 kW;
@@ -226,7 +227,7 @@ item(FEAT_TRAINS, item_avloavril) {
         dual_headed:                  0;
         cargo_capacity:               42;
         /*Cargo Capacity per wagon, up to a total of 588*/
-        weight:                       330 ton;
+        weight:                       230 ton;
         ai_engine_rank:               0;
         engine_class:                 ENGINE_CLASS_ELECTRIC;
         extra_power_per_wagon:        0 kW;
@@ -298,7 +299,7 @@ item(FEAT_TRAINS, item_avecien) {
         dual_headed:                  0;
         cargo_capacity:               35;
         /*Cargo Capacity per wagon, up to a total of 350*/
-        weight:                       390 ton;
+        weight:                       290 ton;
         ai_engine_rank:               0;
         engine_class:                 ENGINE_CLASS_ELECTRIC;
         extra_power_per_wagon:        0 kW;
@@ -369,8 +370,8 @@ item(FEAT_TRAINS, item_avepato) {
         running_cost_base:            RUNNING_COST_ELECTRIC;
         dual_headed:                  0;
         cargo_capacity:               23;
-        /*Cargo Capacity per wagon, up to a total of 312*/
-        weight:                       320 ton;
+        /*Cargo Capacity per wagon, up to a total of 322*/
+        weight:                       220 ton;
         ai_engine_rank:               0;
         engine_class:                 ENGINE_CLASS_ELECTRIC;
         extra_power_per_wagon:        0 kW;
@@ -386,5 +387,152 @@ item(FEAT_TRAINS, item_avepato) {
         start_stop:                   sw_avepato_start_stop;
         articulated_part:             sw_avepato_articulated_part;
         can_attach_wagon:             sw_avepato_can_attach_wagon;
+    }
+}
+
+/*S103: Velaro Train */
+spriteset (set_velaro_front_lighted, "gfx/velaro.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_velaro_rear_lighted,  "gfx/velaro.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_velaro_front,         "gfx/velaro.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_velaro_rear,          "gfx/velaro.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_velaro_middle,        "gfx/velaro.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_velaro_purchase,      "gfx/velaro.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_velaro_invisible,     "gfx/velaro.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+
+switch(FEAT_TRAINS, SELF, sw_velaro_graphics, position_in_consist % 8) {
+    0:      set_velaro_front_lighted;
+    7:      set_velaro_rear_lighted;
+    set_velaro_middle;
+}
+
+switch(FEAT_TRAINS, SELF, sw_velaro_articulated_part, extra_callback_info1) {
+    1 .. 7: return item_velaro;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch(FEAT_TRAINS, SELF, sw_velaro_start_stop, num_vehs_in_consist) {
+    1 .. 16: return CB_RESULT_NO_TEXT;
+    return string(STR_VELARO_CANNOT_START);
+}
+
+switch(FEAT_TRAINS, SELF, sw_velaro_can_attach_wagon, vehicle_type_id) {
+    item_velaro: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_VELARO_CANNOT_ATTACH_OTHER);
+}
+
+item(FEAT_TRAINS, item_velaro) {
+    property {
+        name:                         string(STR_VELARO_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(2007, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 30;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                10; 
+        cost_factor:                  100;
+        running_cost_factor:          200;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        350 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   ELRL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        8800 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               51;
+        /*Cargo Capacity per wagon, up to a total of 408*/
+        weight:                       345 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.3 / 3;
+        air_drag_coefficient:         0.06;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      sw_velaro_graphics;
+        purchase:                     set_velaro_purchase;
+        start_stop:                   sw_velaro_start_stop;
+        articulated_part:             sw_velaro_articulated_part;
+        can_attach_wagon:             sw_velaro_can_attach_wagon;
+    }
+}
+/*Iberian Gauge Highspeed Trains*/
+
+/*S101: Euromed S101 Train */
+spriteset (set_euromed_front_lighted, "gfx/euromed.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_euromed_rear_lighted,  "gfx/euromed.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_euromed_front,         "gfx/euromed.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_euromed_rear,          "gfx/euromed.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_euromed_middle,        "gfx/euromed.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_euromed_purchase,      "gfx/euromed.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_euromed_invisible,     "gfx/euromed.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+
+switch(FEAT_TRAINS, SELF, sw_euromed_graphics, position_in_consist % 10) {
+    0:      set_euromed_front_lighted;
+    9:      set_euromed_rear_lighted;
+    set_euromed_middle;
+}
+
+switch(FEAT_TRAINS, SELF, sw_euromed_articulated_part, extra_callback_info1) {
+    1 .. 9: return item_euromed;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch(FEAT_TRAINS, SELF, sw_euromed_start_stop, num_vehs_in_consist) {
+    1 .. 20: return CB_RESULT_NO_TEXT;
+    return string(STR_EUROMED_CANNOT_START);
+}
+
+switch(FEAT_TRAINS, SELF, sw_euromed_can_attach_wagon, vehicle_type_id) {
+    item_euromed: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_EUROMED_CANNOT_ATTACH_OTHER);
+}
+
+item(FEAT_TRAINS, item_euromed) {
+    property {
+        name:                         string(STR_EUROMED_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1996, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 20;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                8; 
+        cost_factor:                  50;
+        running_cost_factor:          150;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        220 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   ELRL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        5600 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               32;
+        /*Cargo Capacity per wagon, up to a total of 320*/
+        weight:                       290 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.3 / 3;
+        air_drag_coefficient:         0.06;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      sw_euromed_graphics;
+        purchase:                     set_euromed_purchase;
+        start_stop:                   sw_euromed_start_stop;
+        articulated_part:             sw_euromed_articulated_part;
+        can_attach_wagon:             sw_euromed_can_attach_wagon;
     }
 }
