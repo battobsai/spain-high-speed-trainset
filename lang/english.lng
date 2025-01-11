@@ -2,7 +2,7 @@
 #English language file
 
 STR_GRF_NAME                 :{ORANGE}High speed trains for Spain
-STR_GRF_DESC                 :{ORANGE}High speed train for Spain{}{BLACK}This NewGRF is intended to provide Spanish High-speed trains. Trains included: Class 109 Iryo, Class 108 Ouigo, Class 106 "AVRIL", Class 100, Class 101 "Euromed", Class 102 "Duck" and Class 103 "Velaro".
+STR_GRF_DESC                 :{ORANGE}High speed train for Spain{}{BLACK}This NewGRF is intended to provide Spanish High-speed trains. Trains included: Class 109 Iryo, Class 108 Ouigo, Class 106 "AVRIL", Class 100, Class 101 "Euromed", Class 102 "Duck", Class 103 "Velaro", Class 114 "AVANT" and Class 130 "Little Duck".
 STR_IRYO_NAME                : Class 109 Iryo 
 STR_OUIGO_NAME               : Class 108 Ouigo
 STR_AVLOAVRIL_NAME           : Class 106 "Avril" (Avlo)
@@ -10,6 +10,8 @@ STR_AVECIEN_NAME             : Class 100 AVE
 STR_AVEPATO_NAME             : Class 102 "Duck"
 STR_VELARO_NAME              : Class 103 "Velaro"
 STR_EUROMED_NAME             : Class 101 "Euromed"
+STR_AVANT_NAME               : Class 114 "Avant"
+STR_PATITO_NAME              : Class 130 "Little Duck"
 
 STR_IRYO_CANNOT_START             :... train too long (max. 16 wagons).
 STR_IRYO_CANNOT_ATTACH_OTHER      :... Iryo may not be attached to other types of trains.
@@ -25,6 +27,10 @@ STR_VELARO_CANNOT_START           :...train too long (max. 16 wagons)
 STR_VELARO_CANNOT_ATTACH_OTHER    :...the AVE Class 103 may not be attached to other types of trains.
 STR_EUROMED_CANNOT_START          :...train too long (max. 20 wagons)
 STR_EUROMED_CANNOT_ATTACH_OTHER   :...the EUROMED Class 101 may not be attached to other types of trains.
+STR_AVANT_CANNOT_START            :...train too long (max. 16 wagons)
+STR_AVANT_CANNOT_ATTACH_OTHER     :...the AVANT Class 114 may not be attached to other types of trains.
+STR_PATITO_CANNOT_START           :...train too long (max. 24 wagons)
+STR_PATITO_CANNOT_ATTACH_OTHER    :...the ALVIA Class 130 may not be attached to other types of trains.
 
 STR_HS_RAIL                       : High Speed Line (1435 mm)
 STR_BUILD_CAPTION                 : New Highspeed (1435 mm) trains
