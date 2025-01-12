@@ -16,7 +16,10 @@ STR_AVEAVRIL_NAME        : S106 "Avril" (AVE)
 STR_PINGUINO_NAME        : S433 (ex. 300) "Pingüino"
 STR_TAF_NAME             : S595 "Tren Automotor Fiat/TAF"
 STR_120_NAME             : 1-2-0
-STR_WOODENWAGON_NAME     : Vagon de Madera
+STR_BOURBONNAIS_NAME     : 0-3-0 "Bourbonnais"
+STR_COMPOUND_NAME        : 2-3-0 "Compound"
+STR_WOODENWAGON_NAME     : Vagon de pasajeros de Madera
+STR_WOODMAIL_NAME        : Vagon de Correo de Madera
 
 STR_IRYO_CANNOT_START             :... tren muy largo (max. 16 carros).
 STR_IRYO_CANNOT_ATTACH_OTHER      :... El Iryo no se puede adjuntar a otros trenes.
