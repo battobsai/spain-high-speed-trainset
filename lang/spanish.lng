@@ -1,8 +1,8 @@
 ##grflangid 04
 #Archivo Lang del Español
 
-STR_GRF_NAME             : {ORANGE} Trenes de alta velocidad para España 
-STR_GRF_DESC             : {ORANGE} Trenes de alta velocidad para España {}{BLACK}Este NewGRF está diseñado para conseguir trenes de alta velocidad de España. Están incluidos: S109 "Iryo", S108 "Ouigo", S106 "Avril", S100 AVE, S102 "Pato", S103 "Velaro", S114 "Avant" y S130 "Patitos".
+STR_GRF_NAME             : {ORANGE} Set de Trenes Españoles para OpenTTD
+STR_GRF_DESC             : {ORANGE} Trenes Españoles {}{BLACK}Este NewGRF está diseñado para conseguir trenes de España. Aún está en desarrollo. Están incluidos varios trenes de alta velocidad y unidades múltiples. 
 STR_IRYO_NAME            : S109 Iryo 
 STR_OUIGO_NAME           : S108 Ouigo
 STR_AVLOAVRIL_NAME       : S106 "Avril" (Avlo)
@@ -12,6 +12,9 @@ STR_VELARO_NAME          : S103 "Velaro"
 STR_EUROMED_NAME         : S101 "Euromed"
 STR_AVANT_NAME           : S114 "Avant"
 STR_PATITO_NAME          : S130 "Patito"
+STR_AVEAVRIL_NAME        : S106 "Avril" (AVE)
+STR_PINGUINO_NAME        : S433 (ex. 300) "Pingüino"
+STR_TAF_NAME             : S595 "Tren Automotor Fiat/TAF"
 
 STR_IRYO_CANNOT_START             :... tren muy largo (max. 16 carros).
 STR_IRYO_CANNOT_ATTACH_OTHER      :... El Iryo no se puede adjuntar a otros trenes.
@@ -31,6 +34,12 @@ STR_AVANT_CANNOT_START            :...tren muy largo (max. 16 carros)
 STR_AVANT_CANNOT_ATTACH_OTHER     :...el AVANT Serie 114 no se puede adjuntar a otros trenes.
 STR_PATITO_CANNOT_START           :...tren muy largo (max. 24 carros)
 STR_PATITO_CANNOT_ATTACH_OTHER    :...la Serie 130 "Patito" no se puede adjuntar a otros trenes.
+STR_AVEAVRIL_CANNOT_START         :...tren muy largo (max. 28 carros)
+STR_AVEAVRIL_CANNOT_ATTACH_OTHER  :...El AVRIL no se puede adjuntar a otros trenes.
+STR_PINGUINO_CANNOT_START         :...tren muy largo (max. 6 carros)
+STR_PINGUINO_CANNOT_ATTACH_OTHER  :...la Serie 433 ("pingüinos") no se puede adjuntar a otros trenes.
+STR_TAF_CANNOT_START              :...tren muy largo (max. 6 carros)
+STR_TAF_CANNOT_ATTACH_OTHER       :...la Serie 595 (TAF) no se puede adjuntar a otros trenes.
 
 STR_HS_RAIL                       : Línea de Alta Velocidad (1435 mm)
 STR_BUILD_CAPTION                 : Nuevos trenes de Alta Velocidad (1435 mm)
