@@ -15,6 +15,8 @@ STR_PATITO_NAME              : Class 130 "Little Duck"
 STR_AVEAVRIL_NAME            : Class 106 "AVRIL" (AVE)
 STR_PINGUINO_NAME            : Class 433 (ex. 300) "Penguin"
 STR_TAF_NAME                 : Class 595 "TAF"
+STR_120_NAME                 : 1-2-0
+STR_WOODENWAGON_NAME         : Wooden Wagon
 
 STR_IRYO_CANNOT_START             :... train too long (max. 16 wagons).
 STR_IRYO_CANNOT_ATTACH_OTHER      :... Iryo may not be attached to other types of trains.
@@ -39,7 +41,7 @@ STR_AVEAVRIL_CANNOT_ATTACH_OTHER  :...the AVRIL may not be attached to other typ
 STR_PINGUINO_CANNOT_START         :...train too long (max. 6 wagons)
 STR_PINGUINO_CANNOT_ATTACH_OTHER  :...the Class 433 EMU may not be attached to other types of trains.
 STR_TAF_CANNOT_START              :...train too long (max. 6 wagons)
-STR_TAF_CANNOT_ATTACH_OTHER       :...the Class 595 DMU may not be attached to other types of trains.
+STR_TAF_CANNOT_ATTACH_OTHER       :...the Class 595 DMU may not be attached to other types of trains.     
 
 
 STR_HS_RAIL                       : High Speed Line (1435 mm)
