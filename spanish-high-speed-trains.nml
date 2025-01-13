@@ -1241,6 +1241,63 @@ item(FEAT_TRAINS, item_compound) {
         
     }
 }
+/*1-4-0 (400 NORTE)*/
+spriteset (set_400norte_front_lighted, "gfx/400norte.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_400norte_rear_lighted,  "gfx/400norte.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_400norte_front,         "gfx/400norte.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_400norte_rear,          "gfx/400norte.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_400norte_middle,        "gfx/400norte.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_400norte_purchase,      "gfx/400norte.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_400norte_invisible,     "gfx/400norte.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+
+switch(FEAT_TRAINS, SELF, sw_400norte_graphics, position_in_consist % 1) {
+    0:      set_400norte_front_lighted;
+}
+
+switch(FEAT_TRAINS, SELF, sw_400norte_articulated_part, extra_callback_info1) {
+    1 .. 3: return item_400norte;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item(FEAT_TRAINS, item_400norte) {
+    property {
+        name:                         string(STR_CUATROCIENTAS_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1909, 1, 1);
+        model_life:                   50;
+        vehicle_life:                 35;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask();
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                0; 
+        cost_factor:                  40;
+        running_cost_factor:          140;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        80 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   RAIL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        1010 kW;
+        running_cost_base:            RUNNING_COST_STEAM;
+        dual_headed:                  0;
+        cargo_capacity:               0;
+        weight:                       87 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_STEAM;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.3 / 3;
+        air_drag_coefficient:         0.06;
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      set_400norte_front_lighted;
+        purchase:                     set_400norte_purchase;
+        
+    }
+}
+
 /*Wooden Passenger Wagon*/
 spriteset (set_woodenwagon_front_lighted, "gfx/woodenwagon.png") { tmpl_vehicle_8_views(0, 0) }
 spriteset (set_woodenwagon_rear_lighted,  "gfx/woodenwagon.png") { tmpl_vehicle_8_views(1, 1) }

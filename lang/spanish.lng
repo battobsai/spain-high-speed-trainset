@@ -18,6 +18,7 @@ STR_TAF_NAME             : S595 "Tren Automotor Fiat/TAF"
 STR_120_NAME             : 1-2-0
 STR_BOURBONNAIS_NAME     : 0-3-0 "Bourbonnais"
 STR_COMPOUND_NAME        : 2-3-0 "Compound"
+STR_CUATROCIENTAS_NAME   : 1-4-0 (400 de Norte)
 STR_WOODENWAGON_NAME     : Vagon de pasajeros de Madera
 STR_WOODMAIL_NAME        : Vagon de Correo de Madera
 

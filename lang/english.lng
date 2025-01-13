@@ -18,6 +18,7 @@ STR_TAF_NAME                 : Class 595 "TAF"
 STR_120_NAME                 : 1-2-0
 STR_BOURBONNAIS_NAME         : 0-3-0 "Bourbonnais"
 STR_COMPOUND_NAME            : 2-3-0 "Compound"
+STR_CUATROCIENTAS_NAME       : 1-4-0 (North 400's)
 STR_WOODENWAGON_NAME         : Wooden Passenger Wagon
 STR_WOODMAIL_NAME            : Wooden Mail Wagon
 
