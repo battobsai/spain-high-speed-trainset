@@ -23,9 +23,11 @@ STR_MASTODONTE_NAME      : 2-4-0 "Mastodonte"
 STR_MIKADO_NAME          : 1-4-1 "Mikado"
 STR_MONTANA_NAME         : 2-4-1 "Montaña"
 STR_ATOMICA_NAME         : 2-4-1 "Atómica"
+STR_SANTAFE_NAME         : 1-5-1 "Santa Fé"
 STR_WOODENWAGON_NAME     : Vagon de pasajeros de Madera
 STR_FPW_NAME             : Vagon de Pasajeros de 1ra Generación
 STR_WOODMAIL_NAME        : Vagon de Correo de Madera
+STR_FMW_NAME             : Vagón de Correo de 1ra Generación
 
 STR_IRYO_CANNOT_START             :... tren muy largo (max. 16 carros).
 STR_IRYO_CANNOT_ATTACH_OTHER      :... El Iryo no se puede adjuntar a otros trenes.

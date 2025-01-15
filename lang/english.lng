@@ -23,9 +23,11 @@ STR_MASTODONTE_NAME          : 2-4-0 "Mastodon"
 STR_MIKADO_NAME              : 1-4-1 "Mikado"
 STR_MONTANA_NAME             : 2-4-1 "Mountain"
 STR_ATOMICA_NAME             : 2-4-1 "Atomic"
+STR_SANTAFE_NAME             : 1-5-1 "Santa Fé"
 STR_WOODENWAGON_NAME         : Wooden Passenger Wagon
 STR_FPW_NAME                 : 1st Gen Passenger carriage
 STR_WOODMAIL_NAME            : Wooden Mail Wagon
+STR_FMW_NAME                 : 1st Gen Mail Wagon
 
 STR_IRYO_CANNOT_START             :... train too long (max. 16 wagons).
 STR_IRYO_CANNOT_ATTACH_OTHER      :... Iryo may not be attached to other types of trains.
