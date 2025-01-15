@@ -20,6 +20,9 @@ STR_BOURBONNAIS_NAME         : 0-3-0 "Bourbonnais"
 STR_COMPOUND_NAME            : 2-3-0 "Compound"
 STR_CUATROCIENTAS_NAME       : 1-4-0 (North 400's)
 STR_MASTODONTE_NAME          : 2-4-0 "Mastodon"
+STR_MIKADO_NAME              : 1-4-1 "Mikado"
+STR_MONTANA_NAME             : 2-4-1 "Mountain"
+STR_ATOMICA_NAME             : 2-4-1 "Atomic"
 STR_WOODENWAGON_NAME         : Wooden Passenger Wagon
 STR_FPW_NAME                 : 1st Gen Passenger carriage
 STR_WOODMAIL_NAME            : Wooden Mail Wagon
