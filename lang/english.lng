@@ -25,6 +25,8 @@ STR_MONTANA_NAME             : 2-4-1 "Mountain"
 STR_ATOMICA_NAME             : 2-4-1 "Atomic"
 STR_SANTAFE_NAME             : 1-5-1 "Santa Fé"
 STR_TALGOII_NAME             : Class 350 "Talgo II"
+STR_RENAULT_NAME             : Class 590 (ex. 9300's) "Renault"
+STR_CONFE_NAME               : 2-4-2 "Confederacy"
 STR_WOODENWAGON_NAME         : Wooden Passenger Wagon
 STR_FPW_NAME                 : 1st Gen Passenger carriage
 STR_TALGOPAS_NAME            : Talgo wagon
@@ -55,7 +57,9 @@ STR_AVEAVRIL_CANNOT_ATTACH_OTHER  :...the AVRIL may not be attached to other typ
 STR_PINGUINO_CANNOT_START         :...train too long (max. 6 wagons)
 STR_PINGUINO_CANNOT_ATTACH_OTHER  :...the Class 433 EMU may not be attached to other types of trains.
 STR_TAF_CANNOT_START              :...train too long (max. 6 wagons)
-STR_TAF_CANNOT_ATTACH_OTHER       :...the Class 595 DMU may not be attached to other types of trains.     
+STR_TAF_CANNOT_ATTACH_OTHER       :...the Class 595 DMU may not be attached to other types of trains.  
+STR_RENAULT_CANNOT_START          :...train too long (max. 4 wagons)
+STR_RENAULT_CANNOT_ATTACH_OTHER   :...the Class 590 DMU may not be attached to other types of trains.   
 
 
 STR_HS_RAIL                       : High Speed Line (1435 mm)
