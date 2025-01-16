@@ -2,7 +2,7 @@
 #Archivo Lang del Español
 
 STR_GRF_NAME             : {ORANGE} Set de Trenes Españoles para OpenTTD
-STR_GRF_DESC             : {ORANGE} Trenes Españoles {}{BLACK}Este NewGRF está diseñado para conseguir trenes de España. Aún está en desarrollo. Están incluidos varios trenes de alta velocidad y unidades múltiples. 
+STR_GRF_DESC             : {ORANGE} Trenes Españoles {}{BLACK}Este NewGRF está diseñado para conseguir trenes de España. Aún está en desarrollo. 
 STR_IRYO_NAME            : S109 Iryo 
 STR_OUIGO_NAME           : S108 Ouigo
 STR_AVLOAVRIL_NAME       : S106 "Avril" (Avlo)
@@ -27,6 +27,7 @@ STR_SANTAFE_NAME         : 1-5-1 "Santa Fé"
 STR_TALGOII_NAME         : S350 "Talgo II"
 STR_RENAULT_NAME         : S590 (ex 9300)"Renault"
 STR_CONFE_NAME           : 2-4-2 "Confederación"
+STR_2000T_NAME           : S352 "Talgo III" (ex. 2000T)
 STR_WOODENWAGON_NAME     : Vagon de pasajeros de Madera
 STR_FPW_NAME             : Vagon de Pasajeros de 1ra Generación
 STR_TALGOPAS_NAME        : Vagon Talgo

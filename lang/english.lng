@@ -2,7 +2,7 @@
 #English language file
 
 STR_GRF_NAME                 :{ORANGE}New Spanish Trainset
-STR_GRF_DESC                 :{ORANGE}New Spanish Trainset{}{BLACK}This NewGRF is intended to provide Spanish trains. Work in progress, for now we have High-Speed trains and some EMU. 
+STR_GRF_DESC                 :{ORANGE}New Spanish Trainset{}{BLACK}This NewGRF is intended to provide Spanish trains. 
 STR_IRYO_NAME                : Class 109 Iryo 
 STR_OUIGO_NAME               : Class 108 Ouigo
 STR_AVLOAVRIL_NAME           : Class 106 "Avril" (Avlo)
@@ -27,6 +27,7 @@ STR_SANTAFE_NAME             : 1-5-1 "Santa Fé"
 STR_TALGOII_NAME             : Class 350 "Talgo II"
 STR_RENAULT_NAME             : Class 590 (ex. 9300's) "Renault"
 STR_CONFE_NAME               : 2-4-2 "Confederacy"
+STR_2000T_NAME               : Class 352 "Talgo III" (ex. 2000T's)
 STR_WOODENWAGON_NAME         : Wooden Passenger Wagon
 STR_FPW_NAME                 : 1st Gen Passenger carriage
 STR_TALGOPAS_NAME            : Talgo wagon
