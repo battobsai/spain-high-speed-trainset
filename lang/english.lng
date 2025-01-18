@@ -28,6 +28,10 @@ STR_TALGOII_NAME             : Class 350 "Talgo II"
 STR_RENAULT_NAME             : Class 590 (ex. 9300's) "Renault"
 STR_CONFE_NAME               : 2-4-2 "Confederacy"
 STR_2000T_NAME               : Class 352 "Talgo III" (ex. 2000T's)
+STR_3000T_NAME               : Class 353 "Talgo III" (ex. 3000T's)
+STR_SUIZAS_NAME              : Class 436 "Swiss"
+STR_HUEVO_NAME               : Class 340 "Eggs" 
+STR_JAPONESA_NAME            : Class 269 "Japanese"
 STR_WOODENWAGON_NAME         : Wooden Passenger Wagon
 STR_FPW_NAME                 : 1st Gen Passenger carriage
 STR_TALGOPAS_NAME            : Talgo wagon
@@ -60,7 +64,9 @@ STR_PINGUINO_CANNOT_ATTACH_OTHER  :...the Class 433 EMU may not be attached to o
 STR_TAF_CANNOT_START              :...train too long (max. 6 wagons)
 STR_TAF_CANNOT_ATTACH_OTHER       :...the Class 595 DMU may not be attached to other types of trains.  
 STR_RENAULT_CANNOT_START          :...train too long (max. 4 wagons)
-STR_RENAULT_CANNOT_ATTACH_OTHER   :...the Class 590 DMU may not be attached to other types of trains.   
+STR_RENAULT_CANNOT_ATTACH_OTHER   :...the Class 590 DMU may not be attached to other types of trains.  
+STR_SUIZAS_CANNOT_START           :...train too long (max. 9 wagons)
+STR_SUIZAS_CANNOT_ATTACH_OTHER    :...the Class 436 EMU may not be attached to other types of trains. 
 
 
 STR_HS_RAIL                       : High Speed Line (1435 mm)

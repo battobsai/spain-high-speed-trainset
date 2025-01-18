@@ -28,6 +28,10 @@ STR_TALGOII_NAME         : S350 "Talgo II"
 STR_RENAULT_NAME         : S590 (ex 9300)"Renault"
 STR_CONFE_NAME           : 2-4-2 "Confederación"
 STR_2000T_NAME           : S352 "Talgo III" (ex. 2000T)
+STR_3000T_NAME           : S353 "Talgo III" (ex. 3000T)
+STR_SUIZAS_NAME          : S436 "Suizas"
+STR_HUEVO_NAME           : S340 "Huevos"
+STR_JAPONESA_NAME        : S269 "Japonesas"
 STR_WOODENWAGON_NAME     : Vagon de pasajeros de Madera
 STR_FPW_NAME             : Vagon de Pasajeros de 1ra Generación
 STR_TALGOPAS_NAME        : Vagon Talgo
@@ -61,6 +65,8 @@ STR_TAF_CANNOT_START              :...tren muy largo (max. 6 carros)
 STR_TAF_CANNOT_ATTACH_OTHER       :...la Serie 595 (TAF) no se puede adjuntar a otros trenes.
 STR_RENAULT_CANNOT_START          :...tren muy largo (max. 4 carros)
 STR_RENAULT_CANNOT_ATTACH_OTHER   :...la Serie 590 "Renault" no se puede adjuntar a otros trenes.
+STR_SUIZAS_CANNOT_START           :...tren muy largo (max. 9 carros)
+STR_SUIZAS_CANNOT_ATTACH_OTHER    :...la Serie 436 "Suizas" no se puede adjuntar a otros trenes.
 
 STR_HS_RAIL                       : Línea de Alta Velocidad (1435 mm)
 STR_BUILD_CAPTION                 : Nuevos trenes de Alta Velocidad (1435 mm)
