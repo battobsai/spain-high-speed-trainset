@@ -2,7 +2,7 @@ grf {
     grfid : "SPA3" ;
     name : string(STR_GRF_NAME);
     desc : string(STR_GRF_DESC ) ;
-    version : 56;
+    version : 57;
     min_compatible_version : 33;
 }
 
@@ -1953,6 +1953,62 @@ item(FEAT_TRAINS, item_talgomw) {
     }
 }
 /*2XX Trains: Electric Locomotives*/
+/*251: Japonesa y media"*/
+spriteset (set_japoymedia_front_lighted, "gfx/japoymedia.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_japoymedia_rear_lighted,  "gfx/japoymedia.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_japoymedia_front,         "gfx/japoymedia.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_japoymedia_rear,          "gfx/japoymedia.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_japoymedia_middle,        "gfx/japoymedia.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_japoymedia_purchase,      "gfx/japoymedia.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_japoymedia_invisible,     "gfx/japoymedia.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+
+switch(FEAT_TRAINS, SELF, sw_japoymedia_graphics, position_in_consist % 1) {
+    0:      set_japoymedia_front_lighted;
+}
+
+switch(FEAT_TRAINS, SELF, sw_japoymedia_articulated_part, extra_callback_info1) {
+    1 .. 3: return item_japoymedia;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item(FEAT_TRAINS, item_japoymedia) {
+    property {
+        name:                         string(STR_JAPOYMEDIA_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1981, 1, 1);
+        model_life:                   50;
+        vehicle_life:                 40;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask();
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                0; 
+        cost_factor:                  80;
+        running_cost_factor:          160;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        160 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   ELRL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        4650 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               0;
+        weight:                       138 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.8 / 3;
+        air_drag_coefficient:         0.06;
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      set_japoymedia_front_lighted;
+        purchase:                     set_japoymedia_purchase;
+        
+    }
+}
 /*269: Japonesa"*/
 spriteset (set_japonesa_front_lighted, "gfx/japonesa.png") { tmpl_vehicle_8_views(0, 0) }
 spriteset (set_japonesa_rear_lighted,  "gfx/japonesa.png") { tmpl_vehicle_8_views(1, 1) }

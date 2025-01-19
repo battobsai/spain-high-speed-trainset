@@ -35,6 +35,7 @@ STR_JAPONESA_NAME        : S269 "Japonesas"
 STR_OBISPO_NAME          : S432 "Obispos"
 STR_TER_NAME             : S597 "Tren Español Rápido (TER)"
 STR_440_NAME             : S440 "Caperucitas"
+STR_JAPOYMEDIA_NAME      : S251 "Japonesa y Media"
 STR_WOODENWAGON_NAME     : Vagon de pasajeros de Madera
 STR_FPW_NAME             : Vagon de Pasajeros de 1ra Generación
 STR_TALGOPAS_NAME        : Vagon Talgo

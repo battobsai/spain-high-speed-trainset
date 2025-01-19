@@ -35,6 +35,7 @@ STR_JAPONESA_NAME            : Class 269 "Japanese"
 STR_OBISPO_NAME              : Class 432 "Bishops"
 STR_TER_NAME                 : Class 597 "TER"
 STR_440_NAME                 : Class 440 "Little Red Riding Hood"
+STR_JAPOYMEDIA_NAME          : Class 251 "Japanese & Half"
 STR_WOODENWAGON_NAME         : Wooden Passenger Wagon
 STR_FPW_NAME                 : 1st Gen Passenger carriage
 STR_TALGOPAS_NAME            : Talgo wagon
