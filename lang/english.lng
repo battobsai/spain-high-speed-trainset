@@ -32,6 +32,9 @@ STR_3000T_NAME               : Class 353 "Talgo III" (ex. 3000T's)
 STR_SUIZAS_NAME              : Class 436 "Swiss"
 STR_HUEVO_NAME               : Class 340 "Eggs" 
 STR_JAPONESA_NAME            : Class 269 "Japanese"
+STR_OBISPO_NAME              : Class 432 "Bishops"
+STR_TER_NAME                 : Class 597 "TER"
+STR_440_NAME                 : Class 440 "Little Red Riding Hood"
 STR_WOODENWAGON_NAME         : Wooden Passenger Wagon
 STR_FPW_NAME                 : 1st Gen Passenger carriage
 STR_TALGOPAS_NAME            : Talgo wagon
@@ -67,6 +70,12 @@ STR_RENAULT_CANNOT_START          :...train too long (max. 4 wagons)
 STR_RENAULT_CANNOT_ATTACH_OTHER   :...the Class 590 DMU may not be attached to other types of trains.  
 STR_SUIZAS_CANNOT_START           :...train too long (max. 9 wagons)
 STR_SUIZAS_CANNOT_ATTACH_OTHER    :...the Class 436 EMU may not be attached to other types of trains. 
+STR_OBISPO_CANNOT_START           :...train too long (max. 9 wagons)
+STR_OBISPO_CANNOT_ATTACH_OTHER    :...the Class 432 EMU may not be attached to other types of trains.
+STR_TER_CANNOT_START              :...train too long (max. 12 wagons)
+STR_TER_CANNOT_ATTACH_OTHER       :...the Class 597 DMU may not be attached to other types of trains.
+STR_440_CANNOT_START              :...train too long (max. 9 wagons)
+STR_440_CANNOT_ATTACH_OTHER       :...the Class 440 EMU may not be attached to other types of trains.
 
 
 STR_HS_RAIL                       : High Speed Line (1435 mm)

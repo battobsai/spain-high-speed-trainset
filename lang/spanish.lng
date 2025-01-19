@@ -32,6 +32,9 @@ STR_3000T_NAME           : S353 "Talgo III" (ex. 3000T)
 STR_SUIZAS_NAME          : S436 "Suizas"
 STR_HUEVO_NAME           : S340 "Huevos"
 STR_JAPONESA_NAME        : S269 "Japonesas"
+STR_OBISPO_NAME          : S432 "Obispos"
+STR_TER_NAME             : S597 "Tren Español Rápido (TER)"
+STR_440_NAME             : S440 "Caperucitas"
 STR_WOODENWAGON_NAME     : Vagon de pasajeros de Madera
 STR_FPW_NAME             : Vagon de Pasajeros de 1ra Generación
 STR_TALGOPAS_NAME        : Vagon Talgo
@@ -67,6 +70,12 @@ STR_RENAULT_CANNOT_START          :...tren muy largo (max. 4 carros)
 STR_RENAULT_CANNOT_ATTACH_OTHER   :...la Serie 590 "Renault" no se puede adjuntar a otros trenes.
 STR_SUIZAS_CANNOT_START           :...tren muy largo (max. 9 carros)
 STR_SUIZAS_CANNOT_ATTACH_OTHER    :...la Serie 436 "Suizas" no se puede adjuntar a otros trenes.
+STR_OBISPO_CANNOT_START           :...tren muy largo (max. 9 carros)
+STR_OBISPO_CANNOT_ATTACH_OTHER    :...la Serie 432 "Obispos" no se puede adjuntar a otros trenes.
+STR_TER_CANNOT_START              :...tren muy largo (max. 12 carros)
+STR_TER_CANNOT_ATTACH_OTHER       :...la Serie 597 (TER) no se puede adjuntar a otros trenes.
+STR_440_CANNOT_START              :...tren muy largo (max. 9 carros)
+STR_440_CANNOT_ATTACH_OTHER       :...la Serie 440 no se puede adjuntar a otros trenes.
 
 STR_HS_RAIL                       : Línea de Alta Velocidad (1435 mm)
 STR_BUILD_CAPTION                 : Nuevos trenes de Alta Velocidad (1435 mm)
