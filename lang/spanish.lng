@@ -36,12 +36,17 @@ STR_OBISPO_NAME          : S432 "Obispos"
 STR_TER_NAME             : S597 "Tren Español Rápido (TER)"
 STR_440_NAME             : S440 "Caperucitas"
 STR_JAPOYMEDIA_NAME      : S251 "Japonesa y Media"
-STR_WOODENWAGON_NAME     : Vagon de pasajeros de Madera
-STR_FPW_NAME             : Vagon de Pasajeros de 1ra Generación
+STR_TALGOIV_NAME         : S354 "Talgo IV"
+STR_WOODENWAGON_NAME     : Vagon de Pasajeros de 1ra Generación
+STR_FPW_NAME             : Vagon de Pasajeros de 2da Generación
+STR_3PW_NAME             : Vagon de Pasajeros de 3ra Generación
 STR_TALGOPAS_NAME        : Vagon Talgo
-STR_WOODMAIL_NAME        : Vagon de Correo de Madera
-STR_FMW_NAME             : Vagón de Correo de 1ra Generación
+STR_TPP_NAME             : Vagon Talgo Pendular
+STR_WOODMAIL_NAME        : Vagón de Correo de 1ra Generación
+STR_FMW_NAME             : Vagón de Correo de 2da Generación
+STR_3MW_NAME             : Vagón de Correo de 3ra Generación
 STR_TALGOMAL_NAME        : Vagon Talgo de Correo
+STR_TPM_NAME             : Vagón Talgo Pendular de Correo
 
 STR_IRYO_CANNOT_START             :... tren muy largo (max. 16 carros).
 STR_IRYO_CANNOT_ATTACH_OTHER      :... El Iryo no se puede adjuntar a otros trenes.

@@ -2,7 +2,7 @@ grf {
     grfid : "SPA3" ;
     name : string(STR_GRF_NAME);
     desc : string(STR_GRF_DESC ) ;
-    version : 57;
+    version : 60;
     min_compatible_version : 33;
 }
 
@@ -1687,7 +1687,7 @@ item(FEAT_TRAINS, item_woodenwagon) {
         //can_attach_wagon:             sw_woodenwagon_can_attach_wagon;
     }
 }
-/*1st Gen Wagon*/
+/*2nd Gen Wagon*/
 spriteset (set_fpw_front_lighted, "gfx/fpw.png") { tmpl_vehicle_8_views(0, 0) }
 spriteset (set_fpw_rear_lighted,  "gfx/fpw.png") { tmpl_vehicle_8_views(1, 1) }
 spriteset (set_fpw_front,         "gfx/fpw.png") { tmpl_vehicle_8_views(2, 0) }
@@ -1738,6 +1738,59 @@ item(FEAT_TRAINS, item_fpw) {
         //start_stop:                   sw_fpw_start_stop;
         //articulated_part:             sw_fpw_articulated_part;
         //can_attach_wagon:             sw_fpw_can_attach_wagon;
+    }
+}
+/*3rd Gen Passenger Wagon*/
+spriteset (set_pw3_front_lighted, "gfx/pw3.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_pw3_rear_lighted,  "gfx/pw3.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_pw3_front,         "gfx/pw3.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_pw3_rear,          "gfx/pw3.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_pw3_middle,        "gfx/pw3.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_pw3_purchase,      "gfx/pw3.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_pw3_invisible,     "gfx/pw3.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+
+
+item(FEAT_TRAINS, item_pw3) {
+    property {
+        name:                         string(STR_3PW_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1960, 1, 1);
+        model_life:                   70;
+        vehicle_life:                 30;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                6; 
+        cost_factor:                  220;
+        running_cost_factor:          110;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        160 km/h;
+        //misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   50;
+        track_type:                   RAIL;
+        //ai_special_flag:              AI_FLAG_PASSENGER;
+        //power:                        5600 kW;
+        running_cost_base:            RUNNING_COST_NONE;
+        dual_headed:                  0;
+        cargo_capacity:               48;
+        weight:                       22 ton;
+        ai_engine_rank:               0;
+        //engine_class:                 ENGINE_CLASS_ELECTRIC;
+        //extra_power_per_wagon:        0 kW;
+        //tractive_effort_coefficient:  0.3 / 3;
+        air_drag_coefficient:         0.06;
+        //visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        //extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        //default:                      sw_woodmailwagon_graphics;
+        //default:                      set_woodmailwagon_front_lighted;
+        default:                      set_pw3_middle;
+        purchase:                     set_pw3_purchase;
+        //start_stop:                   sw_woodmailwagon_start_stop;
+        //articulated_part:             sw_woodmailwagon_articulated_part;
+        //can_attach_wagon:             sw_woodmailwagon_can_attach_wagon;
     }
 }
 /*Talgo Wagon*/
@@ -1793,7 +1846,60 @@ item(FEAT_TRAINS, item_talgopw) {
         //can_attach_wagon:             sw_fpw_can_attach_wagon;
     }
 }
-/*Wooden Mail Wagon*/
+/*Talgo Pendular Wagon*/
+spriteset (set_tpp_front_lighted, "gfx/tpp.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_tpp_rear_lighted,  "gfx/tpp.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_tpp_front,         "gfx/tpp.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_tpp_rear,          "gfx/tpp.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_tpp_middle,        "gfx/tpp.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_tpp_purchase,      "gfx/tpp.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_tpp_invisible,     "gfx/tpp.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+
+
+item(FEAT_TRAINS, item_tpp) {
+    property {
+        name:                         string(STR_TPP_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1980, 1, 1);
+        model_life:                   70;
+        vehicle_life:                 30;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                6; 
+        cost_factor:                  250;
+        running_cost_factor:          100;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        220 km/h;
+        //misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   RAIL;
+        //ai_special_flag:              AI_FLAG_PASSENGER;
+        //power:                        5600 kW;
+        running_cost_base:            RUNNING_COST_NONE;
+        dual_headed:                  0;
+        cargo_capacity:               40;
+        weight:                       12 ton;
+        ai_engine_rank:               0;
+        //engine_class:                 ENGINE_CLASS_ELECTRIC;
+        //extra_power_per_wagon:        0 kW;
+        //tractive_effort_coefficient:  0.3 / 3;
+        air_drag_coefficient:         0.06;
+        //visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        //extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        //default:                      sw_fpw_graphics;
+        //default:                      set_fpw_front_lighted;
+        default:                      set_tpp_middle;
+        purchase:                     set_tpp_purchase;
+        //start_stop:                   sw_fpw_start_stop;
+        //articulated_part:             sw_fpw_articulated_part;
+        //can_attach_wagon:             sw_fpw_can_attach_wagon;
+    }
+}
+/*1st Gen Mail Wagon*/
 spriteset (set_woodmailwagon_front_lighted, "gfx/woodenmailwagon.png") { tmpl_vehicle_8_views(0, 0) }
 spriteset (set_woodmailwagon_rear_lighted,  "gfx/woodenmailwagon.png") { tmpl_vehicle_8_views(1, 1) }
 spriteset (set_woodmailwagon_front,         "gfx/woodenmailwagon.png") { tmpl_vehicle_8_views(2, 0) }
@@ -1846,7 +1952,7 @@ item(FEAT_TRAINS, item_woodmailwagon) {
         //can_attach_wagon:             sw_woodmailwagon_can_attach_wagon;
     }
 }
-/*1st Gen Mail Wagon*/
+/*2nd Gen Mail Wagon*/
 spriteset (set_fmw_front_lighted, "gfx/fmw.png") { tmpl_vehicle_8_views(0, 0) }
 spriteset (set_fmw_rear_lighted,  "gfx/fmw.png") { tmpl_vehicle_8_views(1, 1) }
 spriteset (set_fmw_front,         "gfx/fmw.png") { tmpl_vehicle_8_views(2, 0) }
@@ -1899,6 +2005,59 @@ item(FEAT_TRAINS, item_fmw) {
         //can_attach_wagon:             sw_woodmailwagon_can_attach_wagon;
     }
 }
+/*3rd Gen Mail Wagon*/
+spriteset (set_mw3_front_lighted, "gfx/mw3.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_mw3_rear_lighted,  "gfx/mw3.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_mw3_front,         "gfx/mw3.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_mw3_rear,          "gfx/mw3.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_mw3_middle,        "gfx/mw3.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_mw3_purchase,      "gfx/mw3.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_mw3_invisible,     "gfx/mw3.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+
+
+item(FEAT_TRAINS, item_mw3) {
+    property {
+        name:                         string(STR_3MW_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1960, 1, 1);
+        model_life:                   70;
+        vehicle_life:                 30;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask(CC_MAIL);
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                6; 
+        cost_factor:                  220;
+        running_cost_factor:          110;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        160 km/h;
+        //misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   50;
+        track_type:                   RAIL;
+        //ai_special_flag:              AI_FLAG_PASSENGER;
+        //power:                        5600 kW;
+        running_cost_base:            RUNNING_COST_NONE;
+        dual_headed:                  0;
+        cargo_capacity:               45;
+        weight:                       22 ton;
+        ai_engine_rank:               0;
+        //engine_class:                 ENGINE_CLASS_ELECTRIC;
+        //extra_power_per_wagon:        0 kW;
+        //tractive_effort_coefficient:  0.3 / 3;
+        air_drag_coefficient:         0.06;
+        //visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        //extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        //default:                      sw_woodmailwagon_graphics;
+        //default:                      set_woodmailwagon_front_lighted;
+        default:                      set_mw3_middle;
+        purchase:                     set_mw3_purchase;
+        //start_stop:                   sw_woodmailwagon_start_stop;
+        //articulated_part:             sw_woodmailwagon_articulated_part;
+        //can_attach_wagon:             sw_woodmailwagon_can_attach_wagon;
+    }
+}
 /*Talgo Mail Wagon*/
 spriteset (set_talgomw_front_lighted, "gfx/talgowagon.png") { tmpl_vehicle_8_views(0, 0) }
 spriteset (set_talgomw_rear_lighted,  "gfx/talgowagon.png") { tmpl_vehicle_8_views(1, 1) }
@@ -1931,7 +2090,7 @@ item(FEAT_TRAINS, item_talgomw) {
         //power:                        5600 kW;
         running_cost_base:            RUNNING_COST_NONE;
         dual_headed:                  0;
-        cargo_capacity:               24;
+        cargo_capacity:               25;
         weight:                       10 ton;
         ai_engine_rank:               0;
         //engine_class:                 ENGINE_CLASS_ELECTRIC;
@@ -1947,6 +2106,59 @@ item(FEAT_TRAINS, item_talgomw) {
         //default:                      set_fpw_front_lighted;
         default:                      set_talgomw_middle;
         purchase:                     set_talgomw_purchase;
+        //start_stop:                   sw_fpw_start_stop;
+        //articulated_part:             sw_fpw_articulated_part;
+        //can_attach_wagon:             sw_fpw_can_attach_wagon;
+    }
+}
+/*Talgo Pendular Wagon*/
+spriteset (set_tpm_front_lighted, "gfx/tpm.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_tpm_rear_lighted,  "gfx/tpm.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_tpm_front,         "gfx/tpm.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_tpm_rear,          "gfx/tpm.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_tpm_middle,        "gfx/tpm.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_tpm_purchase,      "gfx/tpm.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_tpm_invisible,     "gfx/tpm.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+
+
+item(FEAT_TRAINS, item_tpm) {
+    property {
+        name:                         string(STR_TPM_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1980, 1, 1);
+        model_life:                   70;
+        vehicle_life:                 30;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask(CC_MAIL);
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                6; 
+        cost_factor:                  250;
+        running_cost_factor:          100;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        220 km/h;
+        //misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   RAIL;
+        //ai_special_flag:              AI_FLAG_PASSENGER;
+        //power:                        5600 kW;
+        running_cost_base:            RUNNING_COST_NONE;
+        dual_headed:                  0;
+        cargo_capacity:               35;
+        weight:                       12 ton;
+        ai_engine_rank:               0;
+        //engine_class:                 ENGINE_CLASS_ELECTRIC;
+        //extra_power_per_wagon:        0 kW;
+        //tractive_effort_coefficient:  0.3 / 3;
+        air_drag_coefficient:         0.06;
+        //visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        //extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        //default:                      sw_fpw_graphics;
+        //default:                      set_fpw_front_lighted;
+        default:                      set_tpm_middle;
+        purchase:                     set_tpm_purchase;
         //start_stop:                   sw_fpw_start_stop;
         //articulated_part:             sw_fpw_articulated_part;
         //can_attach_wagon:             sw_fpw_can_attach_wagon;
@@ -2287,6 +2499,62 @@ item(FEAT_TRAINS, item_3000T) {
     graphics {
         default:                      set_3000T_front_lighted;
         purchase:                     set_3000T_purchase;
+        
+    }
+}
+/*354 "Talgo IV"*/
+spriteset (set_talgoiv_front_lighted, "gfx/talgoiv.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_talgoiv_rear_lighted,  "gfx/talgoiv.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_talgoiv_front,         "gfx/talgoiv.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_talgoiv_rear,          "gfx/talgoiv.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_talgoiv_middle,        "gfx/talgoiv.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_talgoiv_purchase,      "gfx/talgoiv.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_talgoiv_invisible,     "gfx/talgoiv.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+
+switch(FEAT_TRAINS, SELF, sw_talgoiv_graphics, position_in_consist % 1) {
+    0:      set_talgoiv_front_lighted;
+}
+
+switch(FEAT_TRAINS, SELF, sw_talgoiv_articulated_part, extra_callback_info1) {
+    1 .. 3: return item_talgoiv;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item(FEAT_TRAINS, item_talgoiv) {
+    property {
+        name:                         string(STR_TALGOIV_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1983, 1, 1);
+        model_life:                   40;
+        vehicle_life:                 30;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask();
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                0; 
+        cost_factor:                  80;
+        running_cost_factor:          180;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        200 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   RAIL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        3110 kW;
+        running_cost_base:            RUNNING_COST_DIESEL;
+        dual_headed:                  0;
+        cargo_capacity:               0;
+        weight:                       80 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.6 / 3;
+        air_drag_coefficient:         0.06;
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      set_talgoiv_front_lighted;
+        purchase:                     set_talgoiv_purchase;
         
     }
 }

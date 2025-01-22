@@ -36,12 +36,17 @@ STR_OBISPO_NAME              : Class 432 "Bishops"
 STR_TER_NAME                 : Class 597 "TER"
 STR_440_NAME                 : Class 440 "Little Red Riding Hood"
 STR_JAPOYMEDIA_NAME          : Class 251 "Japanese & Half"
-STR_WOODENWAGON_NAME         : Wooden Passenger Wagon
-STR_FPW_NAME                 : 1st Gen Passenger carriage
+STR_TALGOIV_NAME             : Class 354 "Talgo IV"
+STR_WOODENWAGON_NAME         : 1st Gen Passenger Carriage
+STR_FPW_NAME                 : 2nd Gen Passenger Carriage
+STR_3PW_NAME                 : 3rd Gen Passenger Carriage
 STR_TALGOPAS_NAME            : Talgo wagon
-STR_WOODMAIL_NAME            : Wooden Mail Wagon
-STR_FMW_NAME                 : 1st Gen Mail Wagon
+STR_TPP_NAME                 : Pendular Talgo Wagon
+STR_WOODMAIL_NAME            : 1st Gen Mail Wagon
+STR_FMW_NAME                 : 2nd Gen Mail Wagon
+STR_3MW_NAME                 : 3rd Gen Mail Wagon
 STR_TALGOMAL_NAME            : Talgo Mail Wagon
+STR_TPM_NAME                 : Pendular Talgo Mail Wagon
 
 STR_IRYO_CANNOT_START             :... train too long (max. 16 wagons).
 STR_IRYO_CANNOT_ATTACH_OTHER      :... Iryo may not be attached to other types of trains.
