@@ -2,7 +2,7 @@ grf {
     grfid : "SPA3" ;
     name : string(STR_GRF_NAME);
     desc : string(STR_GRF_DESC ) ;
-    version : 61;
+    version : 62;
     min_compatible_version : 33;
 }
 
@@ -2991,6 +2991,78 @@ item(FEAT_TRAINS, item_renault) {
         start_stop:                   sw_renault_start_stop;
         articulated_part:             sw_renault_articulated_part;
         can_attach_wagon:             sw_renault_can_attach_wagon;
+    }
+}
+/*S593 "Camello" Train */
+spriteset (set_camello_front_lighted, "gfx/camello.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_camello_rear_lighted,  "gfx/camello.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_camello_front,         "gfx/camello.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_camello_rear,          "gfx/camello.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_camello_middle,        "gfx/camello.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_camello_purchase,      "gfx/camello.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_camello_invisible,     "gfx/camello.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+
+switch(FEAT_TRAINS, SELF, sw_camello_graphics, position_in_consist % 3) {
+    0:      set_camello_front_lighted;
+    2:      set_camello_rear_lighted;
+    set_camello_middle;
+}
+
+switch(FEAT_TRAINS, SELF, sw_camello_articulated_part, extra_callback_info1) {
+    1 .. 2: return item_camello;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch(FEAT_TRAINS, SELF, sw_camello_start_stop, num_vehs_in_consist) {
+    1 .. 9: return CB_RESULT_NO_TEXT;
+    return string(STR_CAMELLO_CANNOT_START);
+}
+
+switch(FEAT_TRAINS, SELF, sw_camello_can_attach_wagon, vehicle_type_id) {
+    item_camello: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_CAMELLO_CANNOT_ATTACH_OTHER);
+}
+
+item(FEAT_TRAINS, item_camello) {
+    property {
+        name:                         string(STR_CAMELLO_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1982, 1, 1);
+        model_life:                   40;
+        vehicle_life:                 30;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                10; 
+        cost_factor:                  70;
+        running_cost_factor:          140;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        120 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   RAIL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        650 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               76;
+        /*Cargo Capacity per wagon, up to a total of 228*/
+        weight:                       132 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.4 / 3;
+        air_drag_coefficient:         0.06;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      sw_camello_graphics;
+        purchase:                     set_camello_purchase;
+        start_stop:                   sw_camello_start_stop;
+        articulated_part:             sw_camello_articulated_part;
+        can_attach_wagon:             sw_camello_can_attach_wagon;
     }
 }
 /*S595: TAF Train */
