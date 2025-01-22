@@ -2856,14 +2856,9 @@ spriteset (set_lavadora_middle,        "gfx/lavadora.png") { tmpl_vehicle_4_view
 spriteset (set_lavadora_purchase,      "gfx/lavadora.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
 spriteset (set_lavadora_invisible,     "gfx/lavadora.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
 
-switch(FEAT_TRAINS, SELF, sw_lavadora_graphics, position_in_consist % 12) {
+switch(FEAT_TRAINS, SELF, sw_lavadora_graphics, position_in_consist % 3) {
     0:      set_lavadora_front_lighted;
     2:      set_lavadora_rear_lighted;
-    set_lavadora_middle;
-}
-switch(FEAT_TRAINS, SELF, sw_lavadora_graphics, position_in_consist % 12) {
-    0:      set_lavadora_front_lighted;
-    8:      set_lavadora_rear_lighted;
     set_lavadora_middle;
 }
 
