@@ -37,6 +37,7 @@ STR_TER_NAME                 : Class 597 "TER"
 STR_440_NAME                 : Class 440 "Little Red Riding Hood"
 STR_JAPOYMEDIA_NAME          : Class 251 "Japanese & Half"
 STR_TALGOIV_NAME             : Class 354 "Talgo IV"
+STR_LAVADORA_NAME            : Class 448 "Washing machine"
 STR_WOODENWAGON_NAME         : 1st Gen Passenger Carriage
 STR_FPW_NAME                 : 2nd Gen Passenger Carriage
 STR_3PW_NAME                 : 3rd Gen Passenger Carriage
@@ -82,6 +83,8 @@ STR_TER_CANNOT_START              :...train too long (max. 12 wagons)
 STR_TER_CANNOT_ATTACH_OTHER       :...the Class 597 DMU may not be attached to other types of trains.
 STR_440_CANNOT_START              :...train too long (max. 9 wagons)
 STR_440_CANNOT_ATTACH_OTHER       :...the Class 440 EMU may not be attached to other types of trains.
+STR_LAVADORA_CANNOT_START         :...train too long (max. 9 wagons)
+STR_LAVADORA_CANNOT_ATTACH_OTHER  :...the Class 448 EMU may not be attached to other types of trains.
 
 
 STR_HS_RAIL                       : High Speed Line (1435 mm)

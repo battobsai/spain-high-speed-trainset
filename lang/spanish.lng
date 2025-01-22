@@ -37,6 +37,7 @@ STR_TER_NAME             : S597 "Tren Español Rápido (TER)"
 STR_440_NAME             : S440 "Caperucitas"
 STR_JAPOYMEDIA_NAME      : S251 "Japonesa y Media"
 STR_TALGOIV_NAME         : S354 "Talgo IV"
+STR_LAVADORA_NAME        : S448 "Lavadora"
 STR_WOODENWAGON_NAME     : Vagon de Pasajeros de 1ra Generación
 STR_FPW_NAME             : Vagon de Pasajeros de 2da Generación
 STR_3PW_NAME             : Vagon de Pasajeros de 3ra Generación
@@ -82,6 +83,8 @@ STR_TER_CANNOT_START              :...tren muy largo (max. 12 carros)
 STR_TER_CANNOT_ATTACH_OTHER       :...la Serie 597 (TER) no se puede adjuntar a otros trenes.
 STR_440_CANNOT_START              :...tren muy largo (max. 9 carros)
 STR_440_CANNOT_ATTACH_OTHER       :...la Serie 440 no se puede adjuntar a otros trenes.
+STR_LAVADORA_CANNOT_START         :...tren muy largo (max. 9 carros)
+STR_LAVADORA_CANNOT_ATTACH_OTHER  :...la Serie 448 no se puede adjuntar a otros trenes.
 
 STR_HS_RAIL                       : Línea de Alta Velocidad (1435 mm)
 STR_BUILD_CAPTION                 : Nuevos trenes de Alta Velocidad (1435 mm)
