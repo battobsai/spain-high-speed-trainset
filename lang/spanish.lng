@@ -39,6 +39,8 @@ STR_JAPOYMEDIA_NAME      : S251 "Japonesa y Media"
 STR_TALGOIV_NAME         : S354 "Talgo IV"
 STR_LAVADORA_NAME        : S448 "Lavadora"
 STR_CAMELLO_NAME         : S593 "Camello"
+STR_EUROSPRINTER_NAME    : S252 (Pre-Euro Sprinter)
+STR_BUQUE_NAME           : S450 "Buque"
 STR_WOODENWAGON_NAME     : Vagon de Pasajeros de 1ra Generación
 STR_FPW_NAME             : Vagon de Pasajeros de 2da Generación
 STR_3PW_NAME             : Vagon de Pasajeros de 3ra Generación
@@ -88,6 +90,8 @@ STR_LAVADORA_CANNOT_START         :...tren muy largo (max. 9 carros)
 STR_LAVADORA_CANNOT_ATTACH_OTHER  :...la Serie 448 no se puede adjuntar a otros trenes.
 STR_CAMELLO_CANNOT_START          :...tren muy largo (max. 9 Carros)
 STR_CAMELLO_CANNOT_ATTACH_OTHER   :...la Serie 593 "Camellos" no se puede adjuntar a otros trenes.
+STR_BUQUE_CANNOT_START            :...tren muy largo (max. 12 carros)
+STR_BUQUE_CANNOT_ATTACH_OTHER     :...la Serie 450 "Buque" no se puede adjuntar a otros trenes.
 
 STR_HS_RAIL                       : Línea de Alta Velocidad (1435 mm)
 STR_BUILD_CAPTION                 : Nuevos trenes de Alta Velocidad (1435 mm)

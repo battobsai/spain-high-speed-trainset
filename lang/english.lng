@@ -39,6 +39,8 @@ STR_JAPOYMEDIA_NAME          : Class 251 "Japanese & Half"
 STR_TALGOIV_NAME             : Class 354 "Talgo IV"
 STR_LAVADORA_NAME            : Class 448 "Washing machine"
 STR_CAMELLO_NAME             : Class 593 "Camel"
+STR_EUROSPRINTER_NAME        : Class 252 (Pre-Euro Sprinter)
+STR_BUQUE_NAME               : Class 450 "Vessel"
 STR_WOODENWAGON_NAME         : 1st Gen Passenger Carriage
 STR_FPW_NAME                 : 2nd Gen Passenger Carriage
 STR_3PW_NAME                 : 3rd Gen Passenger Carriage
@@ -88,6 +90,8 @@ STR_LAVADORA_CANNOT_START         :...train too long (max. 9 wagons)
 STR_LAVADORA_CANNOT_ATTACH_OTHER  :...the Class 448 EMU may not be attached to other types of trains.
 STR_CAMELLO_CANNOT_START          :...train too long (max. 9 wagons)
 STR_CAMELLO_CANNOT_ATTACH_OTHER   :...the Class 593 DMU may not be attached to other types of trains.
+STR_BUQUE_CANNOT_START            :...train too long (max. 12 wagons)
+STR_BUQUE_CANNOT_ATTACH_OTHER     :...the Class 450 EMU may not be attached to other types of trainjs.
 
 
 STR_HS_RAIL                       : High Speed Line (1435 mm)
