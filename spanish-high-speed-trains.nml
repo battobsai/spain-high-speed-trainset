@@ -2,7 +2,7 @@ grf {
     grfid : "SPA3" ;
     name : string(STR_GRF_NAME);
     desc : string(STR_GRF_DESC ) ;
-    version : 64;
+    version : 65;
     min_compatible_version : 33;
 }
 
@@ -312,13 +312,13 @@ spriteset(gui_electric, "gfx/gui_erail.png") {
  * Railtype definitions:
  **********************************************
 
-/* Define the electric rails */
+/* Define the highspeed rails */
 item(FEAT_RAILTYPES, hsrail) {
     /* Set only the most essential properties,
      * Lots of compatible railtypes are defined to allow compatibility with
      * various other sets out there */
     property {
-        label: "HSRL"; // Let this railtype replace the default electric rails
+        label: "HSRL"; // 
         name : string (STR_HSRAIL_NAME);
         menu_text: string (STR_HSRAIL_NAME);
         build_window_caption: string (STR_HSRAIL_DEPOT);
@@ -2274,6 +2274,62 @@ item(FEAT_TRAINS, item_eurosprinter) {
     graphics {
         default:                      set_eurosprinter_front_lighted;
         purchase:                     set_eurosprinter_purchase;
+        
+    }
+}
+/*253: "TRAXX"*/
+spriteset (set_traxx_front_lighted, "gfx/traxx.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_traxx_rear_lighted,  "gfx/traxx.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_traxx_front,         "gfx/traxx.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_traxx_rear,          "gfx/traxx.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_traxx_middle,        "gfx/traxx.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_traxx_purchase,      "gfx/traxx.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_traxx_invisible,     "gfx/traxx.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+
+switch(FEAT_TRAINS, SELF, sw_traxx_graphics, position_in_consist % 1) {
+    0:      set_traxx_front_lighted;
+}
+
+switch(FEAT_TRAINS, SELF, sw_traxx_articulated_part, extra_callback_info1) {
+    1 .. 3: return item_traxx;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item(FEAT_TRAINS, item_traxx) {
+    property {
+        name:                         string(STR_TRAXX_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(2008, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 30;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask();
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                0; 
+        cost_factor:                  88;
+        running_cost_factor:          175;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        140 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   ELRL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        5400 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               0;
+        weight:                       87 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.8 / 3;
+        air_drag_coefficient:         0.06;
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      set_traxx_front_lighted;
+        purchase:                     set_traxx_purchase;
         
     }
 }

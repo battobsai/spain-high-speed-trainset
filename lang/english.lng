@@ -1,8 +1,8 @@
 ##grflangid 0x01
 #English language file
 
-STR_GRF_NAME                 :{ORANGE}New Spanish Trainset
-STR_GRF_DESC                 :{ORANGE}New Spanish Trainset{}{BLACK}This NewGRF is intended to provide Spanish trains. 
+STR_GRF_NAME                 :{ORANGE}Battobsai Spanish Trainset
+STR_GRF_DESC                 :{ORANGE}Battobsai Spanish Trainset{}{BLACK}This NewGRF is intended to provide Spanish trains. 
 STR_IRYO_NAME                : Class 109 Iryo 
 STR_OUIGO_NAME               : Class 108 Ouigo
 STR_AVLOAVRIL_NAME           : Class 106 "Avril" (Avlo)
@@ -41,6 +41,7 @@ STR_LAVADORA_NAME            : Class 448 "Washing machine"
 STR_CAMELLO_NAME             : Class 593 "Camel"
 STR_EUROSPRINTER_NAME        : Class 252 (Pre-Euro Sprinter)
 STR_BUQUE_NAME               : Class 450 "Vessel"
+STR_TRAXX_NAME               : Class 253 "TRAXX"
 STR_WOODENWAGON_NAME         : 1st Gen Passenger Carriage
 STR_FPW_NAME                 : 2nd Gen Passenger Carriage
 STR_3PW_NAME                 : 3rd Gen Passenger Carriage

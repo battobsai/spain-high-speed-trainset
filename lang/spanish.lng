@@ -1,8 +1,8 @@
 ##grflangid 04
 #Archivo Lang del Español
 
-STR_GRF_NAME             : {ORANGE} Set de Trenes Españoles para OpenTTD
-STR_GRF_DESC             : {ORANGE} Trenes Españoles {}{BLACK}Este NewGRF está diseñado para conseguir trenes de España. Aún está en desarrollo. 
+STR_GRF_NAME             : {ORANGE} Trenes Españoles de Battobsai
+STR_GRF_DESC             : {ORANGE} Trenes Españoles de Battobsai{}{BLACK}Este NewGRF está diseñado para conseguir trenes de España. Aún está en desarrollo. 
 STR_IRYO_NAME            : S109 Iryo 
 STR_OUIGO_NAME           : S108 Ouigo
 STR_AVLOAVRIL_NAME       : S106 "Avril" (Avlo)
@@ -41,6 +41,7 @@ STR_LAVADORA_NAME        : S448 "Lavadora"
 STR_CAMELLO_NAME         : S593 "Camello"
 STR_EUROSPRINTER_NAME    : S252 (Pre-Euro Sprinter)
 STR_BUQUE_NAME           : S450 "Buque"
+STR_TRAXX_NAME           : S253 "TRAXX"
 STR_WOODENWAGON_NAME     : Vagon de Pasajeros de 1ra Generación
 STR_FPW_NAME             : Vagon de Pasajeros de 2da Generación
 STR_3PW_NAME             : Vagon de Pasajeros de 3ra Generación
