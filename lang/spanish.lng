@@ -42,6 +42,11 @@ STR_CAMELLO_NAME         : S593 "Camello"
 STR_EUROSPRINTER_NAME    : S252 (Pre-Euro Sprinter)
 STR_BUQUE_NAME           : S450 "Buque"
 STR_TRAXX_NAME           : S253 "TRAXX"
+STR_BESUGO_NAME          : S449 "Besugo"
+STR_TDMD_NAME            : S599 "TDMD"
+STR_EURO6000_NAME        : S256 "Euro 6000"
+STR_SEMIBUQUE_NAME       : S452 "Semi-Buque"
+STR_480_NAME             : S480
 STR_WOODENWAGON_NAME     : Vagon de Pasajeros de 1ra Generación
 STR_FPW_NAME             : Vagon de Pasajeros de 2da Generación
 STR_3PW_NAME             : Vagon de Pasajeros de 3ra Generación
@@ -93,6 +98,14 @@ STR_CAMELLO_CANNOT_START          :...tren muy largo (max. 9 Carros)
 STR_CAMELLO_CANNOT_ATTACH_OTHER   :...la Serie 593 "Camellos" no se puede adjuntar a otros trenes.
 STR_BUQUE_CANNOT_START            :...tren muy largo (max. 12 carros)
 STR_BUQUE_CANNOT_ATTACH_OTHER     :...la Serie 450 "Buque" no se puede adjuntar a otros trenes.
+STR_BESUGO_CANNOT_START           :...tren muy largo (max. 15 carros)
+STR_BESUGO_CANNOT_ATTACH_OTHER    :...la Serie 449 "Besugos" no se puede adjuntar a otros trenes.
+STR_TDMD_CANNOT_START             :...tren muy largo (max. 9 carros)
+STR_TDMD_CANNOT_ATTACH_OTHER      :...la Serie 599 "TDMD" no se puede adjuntar a otros trenes.
+STR_SEMIBUQUE_CANNOT_START        :...tren muy largo (max. 12 carros)
+STR_SEMIBUQUE_CANNOT_ATTACH_OTHER :...la Serie 452 "Semibuques" no se puede adjuntar a otros trenes.
+STR_480_CANNOT_START              :...tren muy largo (max. 12 carros)
+STR_480_CANNOT_ATTACH_OTHER       :...la Serie 480 no se puede adjuntar a otros trenes.
 
 STR_HS_RAIL                       : Línea de Alta Velocidad (1435 mm)
 STR_BUILD_CAPTION                 : Nuevos trenes de Alta Velocidad (1435 mm)
