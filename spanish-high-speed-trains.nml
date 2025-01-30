@@ -2,7 +2,7 @@ grf {
     grfid : "SPA3" ;
     name : string(STR_GRF_NAME);
     desc : string(STR_GRF_DESC ) ;
-    version : 71;
+    version : 72;
     min_compatible_version : 33;
 }
 
@@ -1806,7 +1806,7 @@ item(FEAT_TRAINS, item_talgopw) {
     property {
         name:                         string(STR_TALGOPAS_NAME);
         climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
-        introduction_date:            date(1950, 1, 1);
+        introduction_date:            date(1949, 1, 1);
         model_life:                   70;
         vehicle_life:                 30;
         reliability_decay:            20;
@@ -2071,7 +2071,7 @@ item(FEAT_TRAINS, item_talgomw) {
     property {
         name:                         string(STR_TALGOMAL_NAME);
         climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
-        introduction_date:            date(1950, 1, 1);
+        introduction_date:            date(1949, 1, 1);
         model_life:                   70;
         vehicle_life:                 30;
         reliability_decay:            20;
