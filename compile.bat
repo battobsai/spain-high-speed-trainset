@@ -1,1 +1,1 @@
-nmlc -c --grf spanish-high-speed-trains.grf spanish-high-speed-trains.nml
+nmlc -c --grf spanish-trains.grf spanish-high-speed-trains.nml

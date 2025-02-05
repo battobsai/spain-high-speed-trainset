@@ -2,7 +2,7 @@
 #Archivo Lang del Español
 
 STR_GRF_NAME             : {ORANGE} Trenes Españoles de Battobsai
-STR_GRF_DESC             : {ORANGE} Trenes Españoles de Battobsai{}{BLACK}Este NewGRF está diseñado para conseguir trenes de España. Aún está en desarrollo. 
+STR_GRF_DESC             : {ORANGE} Trenes Españoles de Battobsai{}{BLACK}Este NewGRF está diseñado para conseguir trenes de España. Se introducen trenes entre 1848 y 2026. 
 STR_IRYO_NAME            : S109 Iryo 
 STR_OUIGO_NAME           : S108 Ouigo
 STR_AVLOAVRIL_NAME       : S106 "Avril" (Avlo)
@@ -15,6 +15,7 @@ STR_PATITO_NAME          : S130 "Patito"
 STR_AVEAVRIL_NAME        : S106 "Avril" (AVE)
 STR_PINGUINO_NAME        : S433 (ex. 300) "Pingüino"
 STR_TAF_NAME             : S595 "Tren Automotor Fiat/TAF"
+STR_MATARO_NAME          : 1-1-1 "Mataró"
 STR_120_NAME             : 1-2-0
 STR_BOURBONNAIS_NAME     : 0-3-0 "Bourbonnais"
 STR_COMPOUND_NAME        : 2-3-0 "Compound"
