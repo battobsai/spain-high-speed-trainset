@@ -16,6 +16,9 @@ STR_AVEAVRIL_NAME            : Class 106 "AVRIL" (AVE)
 STR_PINGUINO_NAME            : Class 433 (ex. 300) "Penguin"
 STR_TAF_NAME                 : Class 595 "TAF"
 STR_MATARO_NAME              : 1-1-1 "Mataró"
+STR_MARTORELL_NAME           : 1-2-0 T "Martorell"
+STR_GUITARRA_NAME            : 0-3-0 "Guitar"
+STR_040_NAME                 : 0-4-0
 STR_120_NAME                 : 1-2-0
 STR_BOURBONNAIS_NAME         : 0-3-0 "Bourbonnais"
 STR_COMPOUND_NAME            : 2-3-0 "Compound"

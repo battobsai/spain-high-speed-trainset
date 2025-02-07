@@ -2,9 +2,12 @@ grf {
     grfid : "SPA3" ;
     name : string(STR_GRF_NAME);
     desc : string(STR_GRF_DESC ) ;
-    version : 73;
+    version : 76;
     min_compatible_version : 33;
 }
+//Disabling of all train items except rail/electric rail cargo wagons
+disable_item (FEAT_TRAINS, 0, 28);
+disable_item (FEAT_TRAINS, 54, 115);
 
 template tmpl_vehicle_basic(x, y) {
     [x,      y,  8, 24,  -3, -12]
@@ -1106,7 +1109,7 @@ item(FEAT_TRAINS, item_mataro) {
         cost_factor:                  5;
         running_cost_factor:          20;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
-        speed:                        48 km/h;
+        speed:                        60 km/h;
         misc_flags:                  bitmask(TRAIN_FLAG_MU);
         refit_cost:                   0;
         track_type:                   RAIL;
@@ -1127,6 +1130,174 @@ item(FEAT_TRAINS, item_mataro) {
     graphics {
         default:                      set_mataro_front_lighted;
         purchase:                     set_mataro_purchase;
+        
+    }
+}
+/*1-2-0 T "Martorell"*/
+spriteset (set_martorell_front_lighted, "gfx/martorell.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_martorell_rear_lighted,  "gfx/martorell.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_martorell_front,         "gfx/martorell.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_martorell_rear,          "gfx/martorell.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_martorell_middle,        "gfx/martorell.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_martorell_purchase,      "gfx/martorell.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_martorell_invisible,     "gfx/martorell.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+
+switch(FEAT_TRAINS, SELF, sw_martorell_graphics, position_in_consist % 1) {
+    0:      set_martorell_front_lighted;
+}
+
+switch(FEAT_TRAINS, SELF, sw_martorell_articulated_part, extra_callback_info1) {
+    1 .. 3: return item_martorell;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item(FEAT_TRAINS, item_martorell) {
+    property {
+        name:                         string(STR_MARTORELL_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1854, 1, 1);
+        model_life:                   70;
+        vehicle_life:                 50;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask();
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                0; 
+        cost_factor:                  8;
+        running_cost_factor:          30;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        60 km/h;
+        misc_flags:                  bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   RAIL;
+        ai_special_flag:             AI_FLAG_PASSENGER;
+        power:                        460 kW;
+        running_cost_base:            RUNNING_COST_STEAM;
+        dual_headed:                  0;
+        cargo_capacity:               0;
+        weight:                       62 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_STEAM;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.1 / 3;
+        air_drag_coefficient:         0.06;
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      set_martorell_front_lighted;
+        purchase:                     set_martorell_purchase;
+        
+    }
+}
+/*0-3-0 "Guitarras"*/
+spriteset (set_guitarra_front_lighted, "gfx/guitarras.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_guitarra_rear_lighted,  "gfx/guitarras.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_guitarra_front,         "gfx/guitarras.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_guitarra_rear,          "gfx/guitarras.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_guitarra_middle,        "gfx/guitarras.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_guitarra_purchase,      "gfx/guitarras.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_guitarra_invisible,     "gfx/guitarras.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+
+switch(FEAT_TRAINS, SELF, sw_guitarra_graphics, position_in_consist % 1) {
+    0:      set_guitarra_front_lighted;
+}
+
+switch(FEAT_TRAINS, SELF, sw_guitarra_articulated_part, extra_callback_info1) {
+    1 .. 3: return item_guitarra;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item(FEAT_TRAINS, item_guitarra) {
+    property {
+        name:                         string(STR_GUITARRA_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1865, 1, 1);
+        model_life:                   50;
+        vehicle_life:                 40;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask();
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                0; 
+        cost_factor:                  10;
+        running_cost_factor:          40;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        65 km/h;
+        misc_flags:                  bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   RAIL;
+        ai_special_flag:             AI_FLAG_PASSENGER;
+        power:                        600 kW;
+        running_cost_base:            RUNNING_COST_STEAM;
+        dual_headed:                  0;
+        cargo_capacity:               0;
+        weight:                       62 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_STEAM;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.2 / 3;
+        air_drag_coefficient:         0.06;
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      set_guitarra_front_lighted;
+        purchase:                     set_guitarra_purchase;
+        
+    }
+}
+/*0-4-0 (Unknown name)*/
+spriteset (set_040_front_lighted, "gfx/040.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_040_rear_lighted,  "gfx/040.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_040_front,         "gfx/040.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_040_rear,          "gfx/040.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_040_middle,        "gfx/040.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_040_purchase,      "gfx/040.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_040_invisible,     "gfx/040.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+
+switch(FEAT_TRAINS, SELF, sw_040_graphics, position_in_consist % 1) {
+    0:      set_040_front_lighted;
+}
+
+switch(FEAT_TRAINS, SELF, sw_040_articulated_part, extra_callback_info1) {
+    1 .. 3: return item_040;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item(FEAT_TRAINS, item_040) {
+    property {
+        name:                         string(STR_040_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1878, 1, 1);
+        model_life:                   60;
+        vehicle_life:                 40;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask();
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                0; 
+        cost_factor:                  12;
+        running_cost_factor:          50;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        70 km/h;
+        misc_flags:                  bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   RAIL;
+        ai_special_flag:             AI_FLAG_PASSENGER;
+        power:                        630 kW;
+        running_cost_base:            RUNNING_COST_STEAM;
+        dual_headed:                  0;
+        cargo_capacity:               0;
+        weight:                       87 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_STEAM;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.3 / 3;
+        air_drag_coefficient:         0.06;
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      set_040_front_lighted;
+        purchase:                     set_040_purchase;
         
     }
 }
@@ -1175,7 +1346,7 @@ item(FEAT_TRAINS, item_120) {
         ai_engine_rank:               0;
         engine_class:                 ENGINE_CLASS_STEAM;
         extra_power_per_wagon:        0 kW;
-        tractive_effort_coefficient:  0.3 / 3;
+        tractive_effort_coefficient:  0.2 / 3;
         air_drag_coefficient:         0.06;
         extra_weight_per_wagon:       0 ton;
         bitmask_vehicle_info:         0;

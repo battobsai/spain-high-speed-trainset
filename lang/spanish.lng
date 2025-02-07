@@ -16,6 +16,9 @@ STR_AVEAVRIL_NAME        : S106 "Avril" (AVE)
 STR_PINGUINO_NAME        : S433 (ex. 300) "Pingüino"
 STR_TAF_NAME             : S595 "Tren Automotor Fiat/TAF"
 STR_MATARO_NAME          : 1-1-1 "Mataró"
+STR_MARTORELL_NAME       : 1-2-0 T "Martorell"
+STR_GUITARRA_NAME        : 0-3-0 "Guitarra"
+STR_040_NAME             : 0-4-0
 STR_120_NAME             : 1-2-0
 STR_BOURBONNAIS_NAME     : 0-3-0 "Bourbonnais"
 STR_COMPOUND_NAME        : 2-3-0 "Compound"
