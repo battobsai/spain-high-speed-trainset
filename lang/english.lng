@@ -20,7 +20,7 @@ STR_MARTORELL_NAME           : 1-2-0 T "Martorell"
 STR_GUITARRA_NAME            : 0-3-0 "Guitar"
 STR_040_NAME                 : 0-4-0
 STR_120_NAME                 : 1-2-0
-STR_BOURBONNAIS_NAME         : 0-3-0 "Bourbonnais"
+STR_BOURBONNAIS_NAME         : 0-3-0 "Bycicle"
 STR_COMPOUND_NAME            : 2-3-0 "Compound"
 STR_CUATROCIENTAS_NAME       : 1-4-0 (North 400's)
 STR_MASTODONTE_NAME          : 2-4-0 "Mastodon"
@@ -54,6 +54,7 @@ STR_480_NAME                 : Class 480
 STR_WOODENWAGON_NAME         : 1st Gen Passenger Carriage
 STR_FPW_NAME                 : 2nd Gen Passenger Carriage
 STR_3PW_NAME                 : 3rd Gen Passenger Carriage
+STR_4PW_NAME                 : 4th Gen Passenger Carriage
 STR_TALGOPAS_NAME            : Talgo wagon
 STR_TPP_NAME                 : Pendular Talgo Wagon
 STR_WOODMAIL_NAME            : 1st Gen Mail Wagon

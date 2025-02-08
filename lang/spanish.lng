@@ -20,7 +20,7 @@ STR_MARTORELL_NAME       : 1-2-0 T "Martorell"
 STR_GUITARRA_NAME        : 0-3-0 "Guitarra"
 STR_040_NAME             : 0-4-0
 STR_120_NAME             : 1-2-0
-STR_BOURBONNAIS_NAME     : 0-3-0 "Bourbonnais"
+STR_BOURBONNAIS_NAME     : 0-3-0 "Bicicleta"
 STR_COMPOUND_NAME        : 2-3-0 "Compound"
 STR_CUATROCIENTAS_NAME   : 1-4-0 (400 de Norte)
 STR_MASTODONTE_NAME      : 2-4-0 "Mastodonte"
@@ -54,6 +54,7 @@ STR_480_NAME             : S480
 STR_WOODENWAGON_NAME     : Vagon de Pasajeros de 1ra Generación
 STR_FPW_NAME             : Vagon de Pasajeros de 2da Generación
 STR_3PW_NAME             : Vagon de Pasajeros de 3ra Generación
+STR_4PW_NAME             : Vagón de Pasajeros de 4ta Generación
 STR_TALGOPAS_NAME        : Vagon Talgo
 STR_TPP_NAME             : Vagon Talgo Pendular
 STR_WOODMAIL_NAME        : Vagón de Correo de 1ra Generación
