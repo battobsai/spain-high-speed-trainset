@@ -2457,19 +2457,25 @@ item(FEAT_TRAINS, item_tpm) {
 spriteset (set_tolva_wagon_1860,             "gfx/tolva_wagon_1860.png") { tmpl_vehicle_4_views(0)    }
 spriteset (set_tolva_wagon_1860_load_coal,   "gfx/tolva_wagon_1860.png") { tmpl_vehicle_4_views(1)    }
 spriteset (set_tolva_wagon_1860_load_iron,   "gfx/tolva_wagon_1860.png") { tmpl_vehicle_4_views(2)    }
+spriteset (set_tolva_wagon_1860_load_grain,  "gfx/tolva_wagon_1860.png") { tmpl_vehicle_4_views(3)    }
 
 
 switch (FEAT_TRAINS, SELF, tolva_wagon_1860_switch_vehicle, STORE_TEMP(CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT, 0x100)) {
     return set_tolva_wagon_1860;
 }
 
-switch (FEAT_TRAINS, SELF, tolva_wagon_1860_switch_load, STORE_TEMP(PALETTE_USE_DEFAULT, 0x100)) {
+switch (FEAT_TRAINS, SELF, tolva_wagon_1860_switch_coal_load, STORE_TEMP(PALETTE_USE_DEFAULT, 0x100)) {
     return set_tolva_wagon_1860_load_coal;
 }
-
+switch (FEAT_TRAINS, SELF, tolva_wagon_1860_switch_iron_load, STORE_TEMP(PALETTE_USE_DEFAULT, 0x100)) {
+    return set_tolva_wagon_1860_load_iron;
+}
+switch (FEAT_TRAINS, SELF, tolva_wagon_1860_switch_grain_load, STORE_TEMP(PALETTE_USE_DEFAULT, 0x100)) {
+    return set_tolva_wagon_1860_load_grain;
+}
 switch (FEAT_TRAINS, SELF, tolva_wagon_1860_switch_graphics, getbits(extra_callback_info1, 8, 8)) {
     0: return set_tolva_wagon_1860;
-    return set_tolva_wagon_1860_load_coal;
+    return set_tolva_wagon_1860;
 }
 switch(FEAT_TRAINS, SELF, sw_tolva_coal_1860, cargo_count) {
 	0 .. 12: return set_tolva_wagon_1860;
@@ -2479,9 +2485,14 @@ switch(FEAT_TRAINS, SELF, sw_tolva_iron_1860, cargo_count) {
 	0 .. 12: return set_tolva_wagon_1860;
 	13 .. 20: return set_tolva_wagon_1860_load_iron;
 }
-switch(FEAT_TRAINS,SELF, sw_tolva_cargo, cargo_type_in_veh){
+switch(FEAT_TRAINS, SELF, sw_tolva_grain_1860, cargo_count) {
+	0 .. 12: return set_tolva_wagon_1860;
+	13 .. 20: return set_tolva_wagon_1860_load_grain;
+}
+switch(FEAT_TRAINS,SELF, sw_tolva_1860_cargo, cargo_type_in_veh){
 	COAL: sw_tolva_coal_1860;
     IORE: sw_tolva_iron_1860;
+    GRAI: sw_tolva_grain_1860;
 }
 
 item(FEAT_TRAINS, tolva_wagon_1860) {
@@ -2500,7 +2511,7 @@ item(FEAT_TRAINS, tolva_wagon_1860) {
         running_cost_base:        RUNNING_COST_NONE;
     }
     graphics {
-        default: sw_tolva_coal_1860;
+        default: sw_tolva_1860_cargo;
         purchase: tolva_wagon_1860_switch_graphics;
     }
 }
