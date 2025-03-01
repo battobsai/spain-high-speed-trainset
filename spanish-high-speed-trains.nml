@@ -2446,6 +2446,46 @@ item(FEAT_TRAINS, item_tpm) {
         //can_attach_wagon:             sw_fpw_can_attach_wagon;
     }
 }
+/*Tolva 1860 Wagon*/
+spriteset (set_tolva_wagon_1860,        "gfx/tolva_wagon_1860.png") { tmpl_vehicle_4_views(0)    }
+spriteset (set_tolva_wagon_1860_load,   "gfx/tolva_wagon_1860.png") { tmpl_vehicle_4_views(1)    }
+
+switch (FEAT_TRAINS, SELF, tolva_wagon_1860_switch_vehicle, STORE_TEMP(CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT, 0x100)) {
+    return set_tolva_wagon_1860;
+}
+
+switch (FEAT_TRAINS, SELF, tolva_wagon_1860_switch_load, STORE_TEMP(PALETTE_USE_DEFAULT, 0x100)) {
+    return set_tolva_wagon_1860_load;
+}
+
+switch (FEAT_TRAINS, SELF, tolva_wagon_1860_switch_graphics, getbits(extra_callback_info1, 8, 8)) {
+    0: return set_tolva_wagon_1860;
+    return set_tolva_wagon_1860_load;
+}
+
+switch(FEAT_TRAINS, SELF, sw_tolva_1860, cargo_count) {
+	0 .. 12: return set_tolva_wagon_1860;
+	13 .. 20: return set_tolva_wagon_1860_load;
+}
+item(FEAT_TRAINS, tolva_wagon_1860) {
+    property {
+        name: string(STR_TOLVA_1860_NAME);
+        climates_available: bitmask (CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date: date(1860, 1, 1);
+        model_life: 100;
+        refittable_cargo_classes: bitmask(CC_BULK);
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 20;
+        weight: 20 ton;
+        loading_speed:                5; 
+        cost_factor:                  150;
+    }
+    graphics {
+        default: sw_tolva_1860;
+        purchase: tolva_wagon_1860_switch_graphics;
+    }
+}
 /*2XX Trains: Electric Locomotives*/
 /*251: Japonesa y media"*/
 spriteset (set_japoymedia_front_lighted, "gfx/japoymedia.png") { tmpl_vehicle_8_views(0, 0) }

@@ -67,6 +67,7 @@ STR_FMW_NAME             : Vagón de Correo de 2da Generación
 STR_3MW_NAME             : Vagón de Correo de 3ra Generación
 STR_TALGOMAL_NAME        : Vagon Talgo de Correo
 STR_TPM_NAME             : Vagón Talgo Pendular de Correo
+STR_TOLVA_1860_NAME      : Vagón Tolva de 1ra Generación
 
 STR_IRYO_CANNOT_START             :... tren muy largo (max. 16 carros).
 STR_IRYO_CANNOT_ATTACH_OTHER      :... El Iryo no se puede adjuntar a otros trenes.
