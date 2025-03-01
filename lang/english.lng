@@ -51,6 +51,9 @@ STR_TDMD_NAME                : Class 599 "TDMD"
 STR_EURO6000_NAME            : Class 256 "Euro 6000"
 STR_SEMIBUQUE_NAME           : Class 452 "Semi-Vessel"
 STR_480_NAME                 : Class 480
+STR_INGLESA_NAME             : Class 277 "English"
+STR_JAPONESA_289_NAME        : Class 289 "Japanese"
+STR_COCODRILO_272_NAME       : Class 272 "Crocodile"
 STR_WOODENWAGON_NAME         : 1st Gen Passenger Carriage
 STR_FPW_NAME                 : 2nd Gen Passenger Carriage
 STR_3PW_NAME                 : 3rd Gen Passenger Carriage

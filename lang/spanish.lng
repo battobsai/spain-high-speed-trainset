@@ -51,6 +51,9 @@ STR_TDMD_NAME            : S599 "TDMD"
 STR_EURO6000_NAME        : S256 "Euro 6000"
 STR_SEMIBUQUE_NAME       : S452 "Semi-Buque"
 STR_480_NAME             : S480
+STR_INGLESA_NAME         : S277 "Inglesas"
+STR_JAPONESA_289_NAME    : S289 "Japonesas"
+STR_COCODRILO_272_NAME   : S272 "Cocodrilos"
 STR_WOODENWAGON_NAME     : Vagon de Pasajeros de 1ra Generación
 STR_FPW_NAME             : Vagon de Pasajeros de 2da Generación
 STR_3PW_NAME             : Vagon de Pasajeros de 3ra Generación

@@ -2,8 +2,8 @@ grf {
     grfid : "SPA3" ;
     name : string(STR_GRF_NAME);
     desc : string(STR_GRF_DESC ) ;
-    version : 77;
-    min_compatible_version : 33;
+    version : 80;
+    min_compatible_version : 78;
 }
 //Disabling of all train items except rail/electric rail cargo wagons
 disable_item (FEAT_TRAINS, 0, 28);
@@ -2727,6 +2727,178 @@ item(FEAT_TRAINS, item_japonesa) {
         
     }
 }
+/*S272 "Cocodrilo" Train */
+spriteset (set_cocodrilo_272_front_lighted, "gfx/cocodrilo_272.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_cocodrilo_272_rear_lighted,  "gfx/cocodrilo_272.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_cocodrilo_272_front,         "gfx/cocodrilo_272.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_cocodrilo_272_rear,          "gfx/cocodrilo_272.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_cocodrilo_272_middle,        "gfx/cocodrilo_272.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_cocodrilo_272_purchase,      "gfx/cocodrilo_272.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_cocodrilo_272_invisible,     "gfx/cocodrilo_272.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+
+switch(FEAT_TRAINS, SELF, sw_cocodrilo_272_graphics, position_in_consist % 2) {
+    0:      set_cocodrilo_272_front_lighted;
+    1:      set_cocodrilo_272_rear_lighted;
+    set_cocodrilo_272_middle;
+}
+
+switch(FEAT_TRAINS, SELF, sw_cocodrilo_272_articulated_part, extra_callback_info1) {
+    1 .. 1: return item_cocodrilo_272;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item(FEAT_TRAINS, item_cocodrilo_272) {
+    property {
+        name:                         string(STR_COCODRILO_272_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1928, 1, 1);
+        model_life:                   50;
+        vehicle_life:                 40;
+        reliability_decay:            20;
+        //refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        //non_refittable_cargo_classes: bitmask();
+        //loading_speed:                8; 
+        cost_factor:                  80;
+        running_cost_factor:          200;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        110 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   ELRL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        2060 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        //cargo_capacity:               85;
+        /*Cargo Capacity per wagon, up to a total of 168*/
+        weight:                       156 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.5 / 3;
+        air_drag_coefficient:         0.06;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      sw_cocodrilo_272_graphics;
+        purchase:                     set_cocodrilo_272_purchase;
+        articulated_part:             sw_cocodrilo_272_articulated_part;
+    }
+}
+/*277 "Inglesa*/
+spriteset (set_inglesa_front_lighted, "gfx/inglesa.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_inglesa_rear_lighted,  "gfx/inglesa.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_inglesa_front,         "gfx/inglesa.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_inglesa_rear,          "gfx/inglesa.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_inglesa_middle,        "gfx/inglesa.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_inglesa_purchase,      "gfx/inglesa.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_inglesa_invisible,     "gfx/inglesa.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+
+switch(FEAT_TRAINS, SELF, sw_inglesa_graphics, position_in_consist % 1) {
+    0:      set_inglesa_front_lighted;
+}
+
+switch(FEAT_TRAINS, SELF, sw_inglesa_articulated_part, extra_callback_info1) {
+    1 .. 3: return item_inglesa;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item(FEAT_TRAINS, item_inglesa) {
+    property {
+        name:                         string(STR_INGLESA_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1953, 1, 1);
+        model_life:                   40;
+        vehicle_life:                 30;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask();
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                0; 
+        cost_factor:                  60;
+        running_cost_factor:          120;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        110 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   ELRL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        2210 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               0;
+        weight:                       120 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.6 / 3;
+        air_drag_coefficient:         0.06;
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      set_inglesa_front_lighted;
+        purchase:                     set_inglesa_purchase;
+        
+    }
+}
+/*289: Japonesa"*/
+spriteset (set_japonesa_289_front_lighted, "gfx/japonesa_289.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_japonesa_289_rear_lighted,  "gfx/japonesa_289.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_japonesa_289_front,         "gfx/japonesa_289.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_japonesa_289_rear,          "gfx/japonesa_289.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_japonesa_289_middle,        "gfx/japonesa_289.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_japonesa_289_purchase,      "gfx/japonesa_289.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_japonesa_289_invisible,     "gfx/japonesa_289.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+
+switch(FEAT_TRAINS, SELF, sw_japonesa_289_graphics, position_in_consist % 1) {
+    0:      set_japonesa_289_front_lighted;
+}
+
+switch(FEAT_TRAINS, SELF, sw_japonesa_289_articulated_part, extra_callback_info1) {
+    1 .. 3: return item_japonesa_289;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item(FEAT_TRAINS, item_japonesa_289) {
+    property {
+        name:                         string(STR_JAPONESA_289_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1967, 1, 1);
+        model_life:                   40;
+        vehicle_life:                 30;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask();
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                0; 
+        cost_factor:                  70;
+        running_cost_factor:          140;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        140 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   ELRL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        3100 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               0;
+        weight:                       88 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.7 / 3;
+        air_drag_coefficient:         0.06;
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      set_japonesa_289_front_lighted;
+        purchase:                     set_japonesa_289_purchase;
+        
+    }
+}
 /*3XX Trains: Diesel Locomotoives*/
 /*340 "Huevo"*/
 spriteset (set_huevo_front_lighted, "gfx/huevo.png") { tmpl_vehicle_8_views(0, 0) }
@@ -3708,17 +3880,17 @@ item(FEAT_TRAINS, item_renault) {
         track_type:                   RAIL;
         ai_special_flag:              AI_FLAG_PASSENGER;
         power:                        310 kW;
-        running_cost_base:            RUNNING_COST_ELECTRIC;
+        running_cost_base:            RUNNING_COST_DIESEL;
         dual_headed:                  0;
         cargo_capacity:               85;
         /*Cargo Capacity per wagon, up to a total of 170*/
         weight:                       58 ton;
         ai_engine_rank:               0;
-        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        engine_class:                 ENGINE_CLASS_DIESEL;
         extra_power_per_wagon:        0 kW;
         tractive_effort_coefficient:  0.3 / 3;
         air_drag_coefficient:         0.06;
-        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        
         extra_weight_per_wagon:       0 ton;
         bitmask_vehicle_info:         0;
     }
