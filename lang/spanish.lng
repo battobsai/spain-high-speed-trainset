@@ -54,6 +54,8 @@ STR_480_NAME             : S480
 STR_INGLESA_NAME         : S277 "Inglesas"
 STR_JAPONESA_289_NAME    : S289 "Japonesas"
 STR_COCODRILO_272_NAME   : S272 "Cocodrilos"
+STR_COCODRILO_275_NAME   : S275 "Cocodrilos"
+STR_TANDEM_NAME          : S289.100 "Tándem"
 STR_WOODENWAGON_NAME     : Vagon de Pasajeros de 1ra Generación
 STR_FPW_NAME             : Vagon de Pasajeros de 2da Generación
 STR_3PW_NAME             : Vagon de Pasajeros de 3ra Generación

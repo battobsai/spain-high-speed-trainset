@@ -54,6 +54,8 @@ STR_480_NAME                 : Class 480
 STR_INGLESA_NAME             : Class 277 "English"
 STR_JAPONESA_289_NAME        : Class 289 "Japanese"
 STR_COCODRILO_272_NAME       : Class 272 "Crocodile"
+STR_COCODRILO_275_NAME       : Class 275 "Crocodile"
+STR_TANDEM_NAME              : Class 289.100 "Tandem"
 STR_WOODENWAGON_NAME         : 1st Gen Passenger Carriage
 STR_FPW_NAME                 : 2nd Gen Passenger Carriage
 STR_3PW_NAME                 : 3rd Gen Passenger Carriage

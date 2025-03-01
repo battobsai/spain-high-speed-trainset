@@ -2,7 +2,7 @@ grf {
     grfid : "SPA3" ;
     name : string(STR_GRF_NAME);
     desc : string(STR_GRF_DESC ) ;
-    version : 80;
+    version : 82;
     min_compatible_version : 78;
 }
 //Disabling of all train items except rail/electric rail cargo wagons
@@ -977,7 +977,7 @@ item(FEAT_TRAINS, item_aveavril) {
         running_cost_factor:          250;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        330 km/h;
-        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        misc_flags:                   bitmask (TRAIN_FLAG_TILT);
         refit_cost:                   0;
         track_type:                   ELRL;
         ai_special_flag:              AI_FLAG_PASSENGER;
@@ -1049,7 +1049,7 @@ item(FEAT_TRAINS, item_patito) {
         running_cost_factor:          250;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        250 km/h;
-        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        misc_flags:                   bitmask (TRAIN_FLAG_TILT);
         refit_cost:                   0;
         track_type:                   ELRL;
         ai_special_flag:              AI_FLAG_PASSENGER;
@@ -2787,6 +2787,66 @@ item(FEAT_TRAINS, item_cocodrilo_272) {
         articulated_part:             sw_cocodrilo_272_articulated_part;
     }
 }
+/*S275 "Cocodrilo" Train */
+spriteset (set_cocodrilo_275_front_lighted, "gfx/cocodrilo_275.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_cocodrilo_275_rear_lighted,  "gfx/cocodrilo_275.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_cocodrilo_275_front,         "gfx/cocodrilo_275.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_cocodrilo_275_rear,          "gfx/cocodrilo_275.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_cocodrilo_275_middle,        "gfx/cocodrilo_275.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_cocodrilo_275_purchase,      "gfx/cocodrilo_275.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_cocodrilo_275_invisible,     "gfx/cocodrilo_275.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+
+switch(FEAT_TRAINS, SELF, sw_cocodrilo_275_graphics, position_in_consist % 2) {
+    0:      set_cocodrilo_275_front_lighted;
+    1:      set_cocodrilo_275_rear_lighted;
+    set_cocodrilo_275_middle;
+}
+
+switch(FEAT_TRAINS, SELF, sw_cocodrilo_275_articulated_part, extra_callback_info1) {
+    1 .. 1: return item_cocodrilo_275;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item(FEAT_TRAINS, item_cocodrilo_275) {
+    property {
+        name:                         string(STR_COCODRILO_275_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1944, 1, 1);
+        model_life:                   40;
+        vehicle_life:                 30;
+        reliability_decay:            20;
+        //refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        //non_refittable_cargo_classes: bitmask();
+        //loading_speed:                8; 
+        cost_factor:                  90;
+        running_cost_factor:          200;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        110 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   ELRL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        3000 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        //cargo_capacity:               85;
+        /*Cargo Capacity per wagon, up to a total of 168*/
+        weight:                       156 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.6 / 3;
+        air_drag_coefficient:         0.06;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      sw_cocodrilo_275_graphics;
+        purchase:                     set_cocodrilo_275_purchase;
+        articulated_part:             sw_cocodrilo_275_articulated_part;
+    }
+}
 /*277 "Inglesa*/
 spriteset (set_inglesa_front_lighted, "gfx/inglesa.png") { tmpl_vehicle_8_views(0, 0) }
 spriteset (set_inglesa_rear_lighted,  "gfx/inglesa.png") { tmpl_vehicle_8_views(1, 1) }
@@ -2897,6 +2957,66 @@ item(FEAT_TRAINS, item_japonesa_289) {
         default:                      set_japonesa_289_front_lighted;
         purchase:                     set_japonesa_289_purchase;
         
+    }
+}
+/*S289.100 "Tándem" Train */
+spriteset (set_tandem_front_lighted, "gfx/tandem.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_tandem_rear_lighted,  "gfx/tandem.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_tandem_front,         "gfx/tandem.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_tandem_rear,          "gfx/tandem.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_tandem_middle,        "gfx/tandem.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_tandem_purchase,      "gfx/tandem.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_tandem_invisible,     "gfx/tandem.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+
+switch(FEAT_TRAINS, SELF, sw_tandem_graphics, position_in_consist % 2) {
+    0:      set_tandem_front_lighted;
+    1:      set_tandem_rear_lighted;
+    set_tandem_middle;
+}
+
+switch(FEAT_TRAINS, SELF, sw_tandem_articulated_part, extra_callback_info1) {
+    1 .. 1: return item_tandem;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item(FEAT_TRAINS, item_tandem) {
+    property {
+        name:                         string(STR_TANDEM_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1998, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 25;
+        reliability_decay:            20;
+        //refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        //non_refittable_cargo_classes: bitmask();
+        //loading_speed:                8; 
+        cost_factor:                  140;
+        running_cost_factor:          255;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        100 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   ELRL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        6200 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        //cargo_capacity:               85;
+        /*Cargo Capacity per wagon, up to a total of 168*/
+        weight:                       168 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.8 / 3;
+        air_drag_coefficient:         0.06;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      sw_tandem_graphics;
+        purchase:                     set_tandem_purchase;
+        articulated_part:             sw_tandem_articulated_part;
     }
 }
 /*3XX Trains: Diesel Locomotoives*/
