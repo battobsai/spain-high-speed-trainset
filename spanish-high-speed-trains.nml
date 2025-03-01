@@ -1862,6 +1862,13 @@ item(FEAT_TRAINS, item_confe) {
         
     }
 }
+cargotable {
+//Default cargos
+   PASS, MAIL, COAL, FOOD, GOLD, GOOD, GRAI, IORE, LVST, OIL_, PAPR, STEL, VALU, WHEA, WOOD,
+
+//Tropical cargos
+   CORE, DIAM, FRUT, MAIZ, RUBR, WATR, 
+}
 /*Wagons*/
 /*Wooden Passenger Wagon*/
 spriteset (set_woodenwagon_front_lighted, "gfx/woodenwagon.png") { tmpl_vehicle_8_views(0, 0) }
@@ -2447,42 +2454,53 @@ item(FEAT_TRAINS, item_tpm) {
     }
 }
 /*Tolva 1860 Wagon*/
-spriteset (set_tolva_wagon_1860,        "gfx/tolva_wagon_1860.png") { tmpl_vehicle_4_views(0)    }
-spriteset (set_tolva_wagon_1860_load,   "gfx/tolva_wagon_1860.png") { tmpl_vehicle_4_views(1)    }
+spriteset (set_tolva_wagon_1860,             "gfx/tolva_wagon_1860.png") { tmpl_vehicle_4_views(0)    }
+spriteset (set_tolva_wagon_1860_load_coal,   "gfx/tolva_wagon_1860.png") { tmpl_vehicle_4_views(1)    }
+spriteset (set_tolva_wagon_1860_load_iron,   "gfx/tolva_wagon_1860.png") { tmpl_vehicle_4_views(2)    }
+
 
 switch (FEAT_TRAINS, SELF, tolva_wagon_1860_switch_vehicle, STORE_TEMP(CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT, 0x100)) {
     return set_tolva_wagon_1860;
 }
 
 switch (FEAT_TRAINS, SELF, tolva_wagon_1860_switch_load, STORE_TEMP(PALETTE_USE_DEFAULT, 0x100)) {
-    return set_tolva_wagon_1860_load;
+    return set_tolva_wagon_1860_load_coal;
 }
 
 switch (FEAT_TRAINS, SELF, tolva_wagon_1860_switch_graphics, getbits(extra_callback_info1, 8, 8)) {
     0: return set_tolva_wagon_1860;
-    return set_tolva_wagon_1860_load;
+    return set_tolva_wagon_1860_load_coal;
+}
+switch(FEAT_TRAINS, SELF, sw_tolva_coal_1860, cargo_count) {
+	0 .. 12: return set_tolva_wagon_1860;
+	13 .. 20: return set_tolva_wagon_1860_load_coal;
+}
+switch(FEAT_TRAINS, SELF, sw_tolva_iron_1860, cargo_count) {
+	0 .. 12: return set_tolva_wagon_1860;
+	13 .. 20: return set_tolva_wagon_1860_load_iron;
+}
+switch(FEAT_TRAINS,SELF, sw_tolva_cargo, cargo_type_in_veh){
+	COAL: sw_tolva_coal_1860;
+    IORE: sw_tolva_iron_1860;
 }
 
-switch(FEAT_TRAINS, SELF, sw_tolva_1860, cargo_count) {
-	0 .. 12: return set_tolva_wagon_1860;
-	13 .. 20: return set_tolva_wagon_1860_load;
-}
 item(FEAT_TRAINS, tolva_wagon_1860) {
     property {
         name: string(STR_TOLVA_1860_NAME);
-        climates_available: bitmask (CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
-        introduction_date: date(1860, 1, 1);
-        model_life: 100;
+        climates_available:       bitmask (CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:        date(1860, 1, 1);
+        model_life:               100;
         refittable_cargo_classes: bitmask(CC_BULK);
-        sprite_id: SPRITE_ID_NEW_TRAIN;
-        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
-        cargo_capacity: 20;
-        weight: 20 ton;
-        loading_speed:                5; 
-        cost_factor:                  150;
+        sprite_id:                SPRITE_ID_NEW_TRAIN;
+        misc_flags:               bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity:           20;
+        weight:                   20 ton;
+        loading_speed:            5; 
+        cost_factor:              150;
+        running_cost_base:        RUNNING_COST_NONE;
     }
     graphics {
-        default: sw_tolva_1860;
+        default: sw_tolva_coal_1860;
         purchase: tolva_wagon_1860_switch_graphics;
     }
 }
