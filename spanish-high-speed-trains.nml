@@ -2,12 +2,11 @@ grf {
     grfid : "SPA3" ;
     name : string(STR_GRF_NAME);
     desc : string(STR_GRF_DESC ) ;
-    version : 82;
+    version : 86;
     min_compatible_version : 78;
 }
-//Disabling of all train items except rail/electric rail cargo wagons
-disable_item (FEAT_TRAINS, 0, 28);
-disable_item (FEAT_TRAINS, 54, 115);
+//Disabling of all train items
+disable_item (FEAT_TRAINS, 0, 115);
 
 template tmpl_vehicle_basic(x, y) {
     [x,      y,  8, 24,  -3, -12]
@@ -2492,7 +2491,10 @@ switch(FEAT_TRAINS, SELF, sw_tolva_grain_1860, cargo_count) {
 switch(FEAT_TRAINS,SELF, sw_tolva_1860_cargo, cargo_type_in_veh){
 	COAL: sw_tolva_coal_1860;
     IORE: sw_tolva_iron_1860;
+    CORE: sw_tolva_iron_1860;
     GRAI: sw_tolva_grain_1860;
+    FRUT: sw_tolva_grain_1860;
+    MAIZ: sw_tolva_grain_1860;
 }
 
 item(FEAT_TRAINS, tolva_wagon_1860) {
@@ -2504,6 +2506,7 @@ item(FEAT_TRAINS, tolva_wagon_1860) {
         refittable_cargo_classes: bitmask(CC_BULK);
         sprite_id:                SPRITE_ID_NEW_TRAIN;
         misc_flags:               bitmask(TRAIN_FLAG_SPRITE_STACK);
+        speed:                    70 km/h;
         cargo_capacity:           20;
         weight:                   20 ton;
         loading_speed:            5; 
@@ -2513,6 +2516,166 @@ item(FEAT_TRAINS, tolva_wagon_1860) {
     graphics {
         default: sw_tolva_1860_cargo;
         purchase: tolva_wagon_1860_switch_graphics;
+    }
+}
+/*Tolva 1940 Wagon*/
+spriteset (set_tolva_wagon_1940,             "gfx/tolva_wagon_1940.png") { tmpl_vehicle_4_views(0)    }
+spriteset (set_tolva_wagon_1940_load_coal,   "gfx/tolva_wagon_1940.png") { tmpl_vehicle_4_views(1)    }
+spriteset (set_tolva_wagon_1940_load_iron,   "gfx/tolva_wagon_1940.png") { tmpl_vehicle_4_views(2)    }
+spriteset (set_tolva_wagon_1940_load_grain,  "gfx/tolva_wagon_1940.png") { tmpl_vehicle_4_views(3)    }
+
+
+switch (FEAT_TRAINS, SELF, tolva_wagon_1940_switch_vehicle, STORE_TEMP(CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT, 0x100)) {
+    return set_tolva_wagon_1940;
+}
+
+switch (FEAT_TRAINS, SELF, tolva_wagon_1940_switch_coal_load, STORE_TEMP(PALETTE_USE_DEFAULT, 0x100)) {
+    return set_tolva_wagon_1940_load_coal;
+}
+switch (FEAT_TRAINS, SELF, tolva_wagon_1940_switch_iron_load, STORE_TEMP(PALETTE_USE_DEFAULT, 0x100)) {
+    return set_tolva_wagon_1940_load_iron;
+}
+switch (FEAT_TRAINS, SELF, tolva_wagon_1940_switch_grain_load, STORE_TEMP(PALETTE_USE_DEFAULT, 0x100)) {
+    return set_tolva_wagon_1940_load_grain;
+}
+switch (FEAT_TRAINS, SELF, tolva_wagon_1940_switch_graphics, getbits(extra_callback_info1, 8, 8)) {
+    0: return set_tolva_wagon_1940;
+    return set_tolva_wagon_1940;
+}
+switch(FEAT_TRAINS, SELF, sw_tolva_coal_1940, cargo_count) {
+	0 .. 18: return set_tolva_wagon_1940;
+	19 .. 30: return set_tolva_wagon_1940_load_coal;
+}
+switch(FEAT_TRAINS, SELF, sw_tolva_iron_1940, cargo_count) {
+	0 .. 18: return set_tolva_wagon_1940;
+	19 .. 30: return set_tolva_wagon_1940_load_iron;
+}
+switch(FEAT_TRAINS, SELF, sw_tolva_grain_1940, cargo_count) {
+	0 .. 18: return set_tolva_wagon_1940;
+	19 .. 30: return set_tolva_wagon_1940_load_grain;
+}
+switch(FEAT_TRAINS,SELF, sw_tolva_1940_cargo, cargo_type_in_veh){
+	COAL: sw_tolva_coal_1940;
+    IORE: sw_tolva_iron_1940;
+    CORE: sw_tolva_iron_1940;
+    GRAI: sw_tolva_grain_1940;
+    FRUT: sw_tolva_grain_1940;
+    MAIZ: sw_tolva_grain_1940;
+}
+
+item(FEAT_TRAINS, tolva_wagon_1940) {
+    property {
+        name: string(STR_TOLVA_1940_NAME);
+        climates_available:       bitmask (CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:        date(1940, 1, 1);
+        model_life:               80;
+        refittable_cargo_classes: bitmask(CC_BULK);
+        sprite_id:                SPRITE_ID_NEW_TRAIN;
+        misc_flags:               bitmask(TRAIN_FLAG_SPRITE_STACK);
+        speed:                    110 km/h;
+        cargo_capacity:           30;
+        weight:                   24 ton;
+        loading_speed:            10; 
+        cost_factor:              202;
+        running_cost_base:        RUNNING_COST_NONE;
+    }
+    graphics {
+        default: sw_tolva_1940_cargo;
+        purchase: tolva_wagon_1940_switch_graphics;
+    }
+}
+/*Tolva 2010 Wagon*/
+spriteset (set_tolva_wagon_2010,             "gfx/tolva_wagon_2010.png") { tmpl_vehicle_4_views(0)    }
+spriteset (set_tolva_wagon_2010_load_coal,   "gfx/tolva_wagon_2010.png") { tmpl_vehicle_4_views(1)    }
+spriteset (set_tolva_wagon_2010_load_iron,   "gfx/tolva_wagon_2010.png") { tmpl_vehicle_4_views(2)    }
+spriteset (set_tolva_wagon_2010_load_grain,  "gfx/tolva_wagon_2010.png") { tmpl_vehicle_4_views(3)    }
+
+
+switch (FEAT_TRAINS, SELF, tolva_wagon_2010_switch_vehicle, STORE_TEMP(CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT, 0x100)) {
+    return set_tolva_wagon_2010;
+}
+
+switch (FEAT_TRAINS, SELF, tolva_wagon_2010_switch_coal_load, STORE_TEMP(PALETTE_USE_DEFAULT, 0x100)) {
+    return set_tolva_wagon_2010_load_coal;
+}
+switch (FEAT_TRAINS, SELF, tolva_wagon_2010_switch_iron_load, STORE_TEMP(PALETTE_USE_DEFAULT, 0x100)) {
+    return set_tolva_wagon_2010_load_iron;
+}
+switch (FEAT_TRAINS, SELF, tolva_wagon_2010_switch_grain_load, STORE_TEMP(PALETTE_USE_DEFAULT, 0x100)) {
+    return set_tolva_wagon_2010_load_grain;
+}
+switch (FEAT_TRAINS, SELF, tolva_wagon_2010_switch_graphics, getbits(extra_callback_info1, 8, 8)) {
+    0: return set_tolva_wagon_2010;
+    return set_tolva_wagon_2010;
+}
+switch(FEAT_TRAINS, SELF, sw_tolva_coal_2010, cargo_count) {
+	0 .. 24: return set_tolva_wagon_2010;
+	25 .. 40: return set_tolva_wagon_2010_load_coal;
+}
+switch(FEAT_TRAINS, SELF, sw_tolva_iron_2010, cargo_count) {
+	0 .. 24: return set_tolva_wagon_2010;
+	25 .. 40: return set_tolva_wagon_2010_load_iron;
+}
+switch(FEAT_TRAINS, SELF, sw_tolva_grain_2010, cargo_count) {
+	0 .. 24: return set_tolva_wagon_2010;
+	25 .. 40: return set_tolva_wagon_2010_load_grain;
+}
+switch(FEAT_TRAINS,SELF, sw_tolva_2010_cargo, cargo_type_in_veh){
+	COAL: sw_tolva_coal_2010;
+    IORE: sw_tolva_iron_2010;
+    CORE: sw_tolva_iron_2010;
+    GRAI: sw_tolva_grain_2010;
+    FRUT: sw_tolva_grain_2010;
+    MAIZ: sw_tolva_grain_2010;
+}
+
+item(FEAT_TRAINS, tolva_wagon_2010) {
+    property {
+        name: string(STR_TOLVA_2010_NAME);
+        climates_available:       bitmask (CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:        date(2010, 1, 1);
+        model_life:               VEHICLE_NEVER_EXPIRES;
+        refittable_cargo_classes: bitmask(CC_BULK);
+        sprite_id:                SPRITE_ID_NEW_TRAIN;
+        misc_flags:               bitmask(TRAIN_FLAG_SPRITE_STACK);
+        speed:                    150 km/h;
+        cargo_capacity:           40;
+        weight:                   30 ton;
+        loading_speed:            15; 
+        cost_factor:              255;
+        running_cost_base:        RUNNING_COST_NONE;
+    }
+    graphics {
+        default: sw_tolva_2010_cargo;
+        purchase: tolva_wagon_2010_switch_graphics;
+    }
+}
+/*Tank 1860 wagon*/
+spriteset (set_cisterna_1860,             "gfx/cisterna_wagon.png") { tmpl_vehicle_4_views(0)    }
+
+switch (FEAT_TRAINS, SELF, cisterna_1860_switch_graphics, STORE_TEMP(CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT, 0x100)) {
+    return set_cisterna_1860;
+}
+
+item(FEAT_TRAINS, cisterna_1860) {
+    property {
+        name: string(STR_CISTERNA_1860_NAME);
+        climates_available:       bitmask (CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:        date(1860, 1, 1);
+        model_life:               100;
+        refittable_cargo_classes: bitmask(CC_LIQUID);
+        sprite_id:                SPRITE_ID_NEW_TRAIN;
+        misc_flags:               bitmask(TRAIN_FLAG_SPRITE_STACK);
+        speed:                    70 km/h;
+        cargo_capacity:           20.000;
+        weight:                   20 ton;
+        loading_speed:            5; 
+        cost_factor:              150;
+        running_cost_base:        RUNNING_COST_NONE;
+    }
+    graphics {
+        default: set_cisterna_1860;
+        purchase: cisterna_1860_switch_graphics;
     }
 }
 /*2XX Trains: Electric Locomotives*/
