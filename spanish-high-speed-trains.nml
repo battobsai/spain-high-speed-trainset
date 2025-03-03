@@ -2,7 +2,7 @@ grf {
     grfid : "SPA3" ;
     name : string(STR_GRF_NAME);
     desc : string(STR_GRF_DESC ) ;
-    version : 87;
+    version : 89;
     min_compatible_version : 71;
 }
 //Disabling of all train items
@@ -2704,6 +2704,62 @@ item(FEAT_TRAINS, cisterna_1940) {
     graphics {
         default: set_cisterna_1940;
         purchase: cisterna_1940_switch_graphics;
+    }
+}
+/*Tank 2010 wagon*/
+spriteset (set_cisterna_2010,             "gfx/cisterna_wagon.png") { tmpl_vehicle_4_views(2)    }
+
+switch (FEAT_TRAINS, SELF, cisterna_2010_switch_graphics, STORE_TEMP(CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT, 0x100)) {
+    return set_cisterna_2010;
+}
+
+item(FEAT_TRAINS, cisterna_2010) {
+    property {
+        name: string(STR_CISTERNA_2010_NAME);
+        climates_available:       bitmask (CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:        date(2010, 1, 1);
+        model_life:               VEHICLE_NEVER_EXPIRES;
+        refittable_cargo_classes: bitmask(CC_LIQUID);
+        sprite_id:                SPRITE_ID_NEW_TRAIN;
+        misc_flags:               bitmask(TRAIN_FLAG_SPRITE_STACK);
+        speed:                    150 km/h;
+        cargo_capacity:           32.000;
+        weight:                   30 ton;
+        loading_speed:            20; 
+        cost_factor:              250;
+        running_cost_base:        RUNNING_COST_NONE;
+    }
+    graphics {
+        default: set_cisterna_2010;
+        purchase: cisterna_2010_switch_graphics;
+    }
+}
+/*Livestock 1860 Van*/
+spriteset (set_furgon_1860,             "gfx/furgon_wagon.png") { tmpl_vehicle_4_views(0)    }
+
+switch (FEAT_TRAINS, SELF, furgon_1860_switch_graphics, STORE_TEMP(CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT, 0x100)) {
+    return set_furgon_1860;
+}
+
+item(FEAT_TRAINS, furgon_1860) {
+    property {
+        name: string(STR_FURGON_1860_NAME);
+        climates_available:       bitmask (CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:        date(1860, 1, 1);
+        model_life:               100;
+        refittable_cargo_classes: bitmask(CC_PIECE_GOODS);
+        sprite_id:                SPRITE_ID_NEW_TRAIN;
+        misc_flags:               bitmask(TRAIN_FLAG_SPRITE_STACK);
+        speed:                    70 km/h;
+        cargo_capacity:           20;
+        weight:                   18 ton;
+        loading_speed:            5; 
+        cost_factor:              150;
+        running_cost_base:        RUNNING_COST_NONE;
+    }
+    graphics {
+        default: set_furgon_1860;
+        purchase: furgon_1860_switch_graphics;
     }
 }
 /*2XX Trains: Electric Locomotives*/

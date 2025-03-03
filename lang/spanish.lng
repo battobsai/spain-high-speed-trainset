@@ -72,6 +72,8 @@ STR_TOLVA_1940_NAME      : Vagón Tolva de 2da Generación
 STR_TOLVA_2010_NAME      : Vagón Tolva de 3ra Generación
 STR_CISTERNA_1860_NAME   : Vagón Cisterna de 1ra Generación
 STR_CISTERNA_1940_NAME   : Vagón Cisterna de 2da Generación
+STR_CISTERNA_2010_NAME   : Vagón Cisterna de 3ra Generación
+STR_FURGON_1860_NAME     : Carro de 1ra Generación
 
 STR_IRYO_CANNOT_START             :... tren muy largo (max. 16 carros).
 STR_IRYO_CANNOT_ATTACH_OTHER      :... El Iryo no se puede adjuntar a otros trenes.
@@ -121,6 +123,7 @@ STR_SEMIBUQUE_CANNOT_START        :...tren muy largo (max. 12 carros)
 STR_SEMIBUQUE_CANNOT_ATTACH_OTHER :...la Serie 452 "Semibuques" no se puede adjuntar a otros trenes.
 STR_480_CANNOT_START              :...tren muy largo (max. 12 carros)
 STR_480_CANNOT_ATTACH_OTHER       :...la Serie 480 no se puede adjuntar a otros trenes.
+
 
 STR_HS_RAIL                       : Línea de Alta Velocidad (1435 mm)
 STR_BUILD_CAPTION                 : Nuevos trenes de Alta Velocidad (1435 mm)

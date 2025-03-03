@@ -72,6 +72,8 @@ STR_TOLVA_1940_NAME          : 2nd Gen Hopper Wagon
 STR_TOLVA_2010_NAME          : 3rd Gen Hopper Wagon
 STR_CISTERNA_1860_NAME       : 1st Gen Tank Wagon
 STR_CISTERNA_1940_NAME       : 2nd Gen Tank Wagon
+STR_CISTERNA_2010_NAME       : 3rd Gen Tank Wagon
+STR_FURGON_1860_NAME         : 1st Gen Truck
 
 STR_IRYO_CANNOT_START             :... train too long (max. 16 wagons).
 STR_IRYO_CANNOT_ATTACH_OTHER      :... Iryo may not be attached to other types of trains.
@@ -121,6 +123,7 @@ STR_SEMIBUQUE_CANNOT_START        :...train too long (max. 12 wagons)
 STR_SEMIBUQUE_CANNOT_ATTACH_OTHER :...the Class 452 EMU may not be attached to other types of trains.
 STR_480_CANNOT_START              :...train too long (max. 12 wagons)
 STR_480_CANNOT_ATTACH_OTHER       :...the Class 480 EMU may not be attached to other types of trains.
+
 
 
 STR_HS_RAIL                       : High Speed Line (1435 mm)
