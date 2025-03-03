@@ -71,6 +71,7 @@ STR_TOLVA_1860_NAME          : 1st Gen Hopper Wagon
 STR_TOLVA_1940_NAME          : 2nd Gen Hopper Wagon
 STR_TOLVA_2010_NAME          : 3rd Gen Hopper Wagon
 STR_CISTERNA_1860_NAME       : 1st Gen Tank Wagon
+STR_CISTERNA_1940_NAME       : 2nd Gen Tank Wagon
 
 STR_IRYO_CANNOT_START             :... train too long (max. 16 wagons).
 STR_IRYO_CANNOT_ATTACH_OTHER      :... Iryo may not be attached to other types of trains.

@@ -2,8 +2,8 @@ grf {
     grfid : "SPA3" ;
     name : string(STR_GRF_NAME);
     desc : string(STR_GRF_DESC ) ;
-    version : 86;
-    min_compatible_version : 78;
+    version : 87;
+    min_compatible_version : 71;
 }
 //Disabling of all train items
 disable_item (FEAT_TRAINS, 0, 115);
@@ -2676,6 +2676,34 @@ item(FEAT_TRAINS, cisterna_1860) {
     graphics {
         default: set_cisterna_1860;
         purchase: cisterna_1860_switch_graphics;
+    }
+}
+/*Tank 1940 wagon*/
+spriteset (set_cisterna_1940,             "gfx/cisterna_wagon.png") { tmpl_vehicle_4_views(1)    }
+
+switch (FEAT_TRAINS, SELF, cisterna_1940_switch_graphics, STORE_TEMP(CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT, 0x100)) {
+    return set_cisterna_1940;
+}
+
+item(FEAT_TRAINS, cisterna_1940) {
+    property {
+        name: string(STR_CISTERNA_1940_NAME);
+        climates_available:       bitmask (CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:        date(1940, 1, 1);
+        model_life:               80;
+        refittable_cargo_classes: bitmask(CC_LIQUID);
+        sprite_id:                SPRITE_ID_NEW_TRAIN;
+        misc_flags:               bitmask(TRAIN_FLAG_SPRITE_STACK);
+        speed:                    110 km/h;
+        cargo_capacity:           25.000;
+        weight:                   26 ton;
+        loading_speed:            10; 
+        cost_factor:              200;
+        running_cost_base:        RUNNING_COST_NONE;
+    }
+    graphics {
+        default: set_cisterna_1940;
+        purchase: cisterna_1940_switch_graphics;
     }
 }
 /*2XX Trains: Electric Locomotives*/

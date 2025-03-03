@@ -71,6 +71,7 @@ STR_TOLVA_1860_NAME      : Vagón Tolva de 1ra Generación
 STR_TOLVA_1940_NAME      : Vagón Tolva de 2da Generación
 STR_TOLVA_2010_NAME      : Vagón Tolva de 3ra Generación
 STR_CISTERNA_1860_NAME   : Vagón Cisterna de 1ra Generación
+STR_CISTERNA_1940_NAME   : Vagón Cisterna de 2da Generación
 
 STR_IRYO_CANNOT_START             :... tren muy largo (max. 16 carros).
 STR_IRYO_CANNOT_ATTACH_OTHER      :... El Iryo no se puede adjuntar a otros trenes.
