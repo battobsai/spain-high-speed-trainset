@@ -2,9 +2,10 @@ grf {
     grfid : "SPA3" ;
     name : string(STR_GRF_NAME);
     desc : string(STR_GRF_DESC ) ;
-    version : 89;
+    version : 90;
     min_compatible_version : 71;
 }
+
 //Disabling of all train items
 disable_item (FEAT_TRAINS, 0, 115);
 
@@ -541,7 +542,7 @@ item(FEAT_TRAINS, item_avloavril) {
         running_cost_factor:          250;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        330 km/h;
-        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        misc_flags:                   bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_TILT);
         refit_cost:                   0;
         track_type:                   railtype("HSRL");
         ai_special_flag:              AI_FLAG_PASSENGER;
@@ -685,7 +686,7 @@ item(FEAT_TRAINS, item_avepato) {
         running_cost_factor:          250;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        330 km/h;
-        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        misc_flags:                   bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_TILT);
         refit_cost:                   0;
         track_type:                   railtype("HSRL");
         ai_special_flag:              AI_FLAG_PASSENGER;
@@ -2159,7 +2160,7 @@ item(FEAT_TRAINS, item_tpp) {
         running_cost_factor:          100;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        220 km/h;
-        //misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        misc_flags:                   bitmask(TRAIN_FLAG_TILT);
         refit_cost:                   0;
         track_type:                   RAIL;
         //ai_special_flag:              AI_FLAG_PASSENGER;
@@ -2205,7 +2206,7 @@ item(FEAT_TRAINS, item_woodmailwagon) {
         model_life:                   70;
         vehicle_life:                 30;
         reliability_decay:            20;
-        refittable_cargo_classes:     bitmask(CC_MAIL);
+        refittable_cargo_classes:     bitmask(CC_MAIL, CC_ARMOURED);
         non_refittable_cargo_classes: bitmask();
         loading_speed:                6; 
         cost_factor:                  150;
@@ -2258,7 +2259,7 @@ item(FEAT_TRAINS, item_fmw) {
         model_life:                   70;
         vehicle_life:                 30;
         reliability_decay:            20;
-        refittable_cargo_classes:     bitmask(CC_MAIL);
+        refittable_cargo_classes:     bitmask(CC_MAIL, CC_ARMOURED);
         non_refittable_cargo_classes: bitmask();
         loading_speed:                6; 
         cost_factor:                  200;
@@ -2311,7 +2312,7 @@ item(FEAT_TRAINS, item_mw3) {
         model_life:                   VEHICLE_NEVER_EXPIRES;
         vehicle_life:                 30;
         reliability_decay:            20;
-        refittable_cargo_classes:     bitmask(CC_MAIL);
+        refittable_cargo_classes:     bitmask(CC_MAIL, CC_ARMOURED);
         non_refittable_cargo_classes: bitmask();
         loading_speed:                6; 
         cost_factor:                  220;
@@ -2424,7 +2425,7 @@ item(FEAT_TRAINS, item_tpm) {
         running_cost_factor:          100;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        220 km/h;
-        //misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        misc_flags:                   bitmask(TRAIN_FLAG_TILT);
         refit_cost:                   0;
         track_type:                   RAIL;
         //ai_special_flag:              AI_FLAG_PASSENGER;
@@ -2734,34 +2735,65 @@ item(FEAT_TRAINS, cisterna_2010) {
         purchase: cisterna_2010_switch_graphics;
     }
 }
-/*Livestock 1860 Van*/
-spriteset (set_furgon_1860,             "gfx/furgon_wagon.png") { tmpl_vehicle_4_views(0)    }
+/*Flatbed 1860 Wagon*/
+spriteset (set_flatbed_wagon_1860,                  "gfx/flatbed_wagon_1860.png") { tmpl_vehicle_4_views(0)    }
+spriteset (set_flatbed_wagon_1860_load_container,   "gfx/flatbed_wagon_1860.png") { tmpl_vehicle_4_views(1)    }
+spriteset (set_flatbed_wagon_1860_load_wood,        "gfx/flatbed_wagon_1860.png") { tmpl_vehicle_4_views(2)    }
+spriteset (set_flatbed_wagon_1860_load_grain,       "gfx/flatbed_wagon_1860.png") { tmpl_vehicle_4_views(3)    }
 
-switch (FEAT_TRAINS, SELF, furgon_1860_switch_graphics, STORE_TEMP(CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT, 0x100)) {
-    return set_furgon_1860;
+
+switch (FEAT_TRAINS, SELF, flatbed_wagon_1860_switch_vehicle, STORE_TEMP(CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT, 0x100)) {
+    return set_flatbed_wagon_1860;
 }
 
-item(FEAT_TRAINS, furgon_1860) {
+switch (FEAT_TRAINS, SELF, flatbed_wagon_1860_switch_container_load, STORE_TEMP(PALETTE_USE_DEFAULT, 0x100)) {
+    return set_flatbed_wagon_1860_load_container;
+}
+switch (FEAT_TRAINS, SELF, flatbed_wagon_1860_switch_wood_load, STORE_TEMP(PALETTE_USE_DEFAULT, 0x100)) {
+    return set_flatbed_wagon_1860_load_wood;
+}
+switch (FEAT_TRAINS, SELF, flatbed_wagon_1860_switch_graphics, getbits(extra_callback_info1, 8, 8)) {
+    0: return set_flatbed_wagon_1860;
+    return set_flatbed_wagon_1860;
+}
+switch(FEAT_TRAINS, SELF, sw_flatbed_container_1860, cargo_count) {
+	0 .. 12: return set_flatbed_wagon_1860;
+	13 .. 30: return set_flatbed_wagon_1860_load_container;
+}
+switch(FEAT_TRAINS, SELF, sw_flatbed_wood_1860, cargo_count) {
+	0 .. 8: return set_flatbed_wagon_1860;
+	9 .. 15: return set_flatbed_wagon_1860_load_wood;
+}
+
+switch(FEAT_TRAINS,SELF, sw_flatbed_1860_cargo, cargo_type_in_veh){
+	LVST: sw_flatbed_container_1860;
+    GOOD: sw_flatbed_container_1860;
+    FOOD: sw_flatbed_container_1860;
+    WOOD: sw_flatbed_wood_1860;
+}
+
+item(FEAT_TRAINS, flatbed_wagon_1860) {
     property {
-        name: string(STR_FURGON_1860_NAME);
+        name: string(STR_FLATBED_1860_NAME);
         climates_available:       bitmask (CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
         introduction_date:        date(1860, 1, 1);
         model_life:               100;
-        refittable_cargo_classes: bitmask(CC_PIECE_GOODS);
+        refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS);
         sprite_id:                SPRITE_ID_NEW_TRAIN;
         misc_flags:               bitmask(TRAIN_FLAG_SPRITE_STACK);
         speed:                    70 km/h;
-        cargo_capacity:           20;
-        weight:                   18 ton;
+        cargo_capacity:           30;
+        weight:                   20 ton;
         loading_speed:            5; 
-        cost_factor:              150;
+        cost_factor:              100;
         running_cost_base:        RUNNING_COST_NONE;
     }
     graphics {
-        default: set_furgon_1860;
-        purchase: furgon_1860_switch_graphics;
+        default: sw_flatbed_1860_cargo;
+        purchase: flatbed_wagon_1860_switch_graphics;
     }
 }
+/*
 /*2XX Trains: Electric Locomotives*/
 /*251: Japonesa y media"*/
 spriteset (set_japoymedia_front_lighted, "gfx/japoymedia.png") { tmpl_vehicle_8_views(0, 0) }
@@ -3537,7 +3569,7 @@ item(FEAT_TRAINS, item_3000T) {
         running_cost_factor:          170;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        180 km/h;
-        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        misc_flags:                   bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_TILT);
         refit_cost:                   0;
         track_type:                   RAIL;
         ai_special_flag:              AI_FLAG_PASSENGER;
@@ -3593,7 +3625,7 @@ item(FEAT_TRAINS, item_talgoiv) {
         running_cost_factor:          180;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        200 km/h;
-        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        misc_flags:                   bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_TILT);
         refit_cost:                   0;
         track_type:                   RAIL;
         ai_special_flag:              AI_FLAG_PASSENGER;
