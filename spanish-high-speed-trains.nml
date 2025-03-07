@@ -2,7 +2,7 @@ grf {
     grfid : "SPA3" ;
     name : string(STR_GRF_NAME);
     desc : string(STR_GRF_DESC ) ;
-    version : 90;
+    version : 91;
     min_compatible_version : 71;
 }
 
@@ -2739,7 +2739,7 @@ item(FEAT_TRAINS, cisterna_2010) {
 spriteset (set_flatbed_wagon_1860,                  "gfx/flatbed_wagon_1860.png") { tmpl_vehicle_4_views(0)    }
 spriteset (set_flatbed_wagon_1860_load_container,   "gfx/flatbed_wagon_1860.png") { tmpl_vehicle_4_views(1)    }
 spriteset (set_flatbed_wagon_1860_load_wood,        "gfx/flatbed_wagon_1860.png") { tmpl_vehicle_4_views(2)    }
-spriteset (set_flatbed_wagon_1860_load_grain,       "gfx/flatbed_wagon_1860.png") { tmpl_vehicle_4_views(3)    }
+spriteset (set_flatbed_wagon_1860_load_steel,       "gfx/flatbed_wagon_1860.png") { tmpl_vehicle_4_views(3)    }
 
 
 switch (FEAT_TRAINS, SELF, flatbed_wagon_1860_switch_vehicle, STORE_TEMP(CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT, 0x100)) {
@@ -2750,6 +2750,9 @@ switch (FEAT_TRAINS, SELF, flatbed_wagon_1860_switch_container_load, STORE_TEMP(
     return set_flatbed_wagon_1860_load_container;
 }
 switch (FEAT_TRAINS, SELF, flatbed_wagon_1860_switch_wood_load, STORE_TEMP(PALETTE_USE_DEFAULT, 0x100)) {
+    return set_flatbed_wagon_1860_load_wood;
+}
+switch (FEAT_TRAINS, SELF, flatbed_wagon_1860_switch_wood_steel, STORE_TEMP(PALETTE_USE_DEFAULT, 0x100)) {
     return set_flatbed_wagon_1860_load_wood;
 }
 switch (FEAT_TRAINS, SELF, flatbed_wagon_1860_switch_graphics, getbits(extra_callback_info1, 8, 8)) {
@@ -2764,12 +2767,16 @@ switch(FEAT_TRAINS, SELF, sw_flatbed_wood_1860, cargo_count) {
 	0 .. 8: return set_flatbed_wagon_1860;
 	9 .. 15: return set_flatbed_wagon_1860_load_wood;
 }
-
+switch(FEAT_TRAINS, SELF, sw_flatbed_steel_1860, cargo_count) {
+	0 .. 8: return set_flatbed_wagon_1860;
+	9 .. 15: return set_flatbed_wagon_1860_load_steel;
+}
 switch(FEAT_TRAINS,SELF, sw_flatbed_1860_cargo, cargo_type_in_veh){
 	LVST: sw_flatbed_container_1860;
     GOOD: sw_flatbed_container_1860;
     FOOD: sw_flatbed_container_1860;
     WOOD: sw_flatbed_wood_1860;
+    STEL: sw_flatbed_steel_1860;
 }
 
 item(FEAT_TRAINS, flatbed_wagon_1860) {
