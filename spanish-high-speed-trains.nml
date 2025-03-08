@@ -2,7 +2,7 @@ grf {
     grfid : "SPA3" ;
     name : string(STR_GRF_NAME);
     desc : string(STR_GRF_DESC ) ;
-    version : 91;
+    version : 93;
     min_compatible_version : 71;
 }
 
@@ -2800,7 +2800,136 @@ item(FEAT_TRAINS, flatbed_wagon_1860) {
         purchase: flatbed_wagon_1860_switch_graphics;
     }
 }
-/*
+/*Flatbed 1940 Wagon*/
+spriteset (set_flatbed_wagon_1940,                  "gfx/flatbed_wagon_1940.png") { tmpl_vehicle_4_views(0)    }
+spriteset (set_flatbed_wagon_1940_load_container,   "gfx/flatbed_wagon_1940.png") { tmpl_vehicle_4_views(1)    }
+spriteset (set_flatbed_wagon_1940_load_wood,        "gfx/flatbed_wagon_1940.png") { tmpl_vehicle_4_views(2)    }
+spriteset (set_flatbed_wagon_1940_load_steel,       "gfx/flatbed_wagon_1940.png") { tmpl_vehicle_4_views(3)    }
+
+
+switch (FEAT_TRAINS, SELF, flatbed_wagon_1940_switch_vehicle, STORE_TEMP(CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT, 0x100)) {
+    return set_flatbed_wagon_1940;
+}
+
+switch (FEAT_TRAINS, SELF, flatbed_wagon_1940_switch_container_load, STORE_TEMP(PALETTE_USE_DEFAULT, 0x100)) {
+    return set_flatbed_wagon_1940_load_container;
+}
+switch (FEAT_TRAINS, SELF, flatbed_wagon_1940_switch_wood_load, STORE_TEMP(PALETTE_USE_DEFAULT, 0x100)) {
+    return set_flatbed_wagon_1940_load_wood;
+}
+switch (FEAT_TRAINS, SELF, flatbed_wagon_1940_switch_wood_steel, STORE_TEMP(PALETTE_USE_DEFAULT, 0x100)) {
+    return set_flatbed_wagon_1940_load_wood;
+}
+switch (FEAT_TRAINS, SELF, flatbed_wagon_1940_switch_graphics, getbits(extra_callback_info1, 8, 8)) {
+    0: return set_flatbed_wagon_1940;
+    return set_flatbed_wagon_1940;
+}
+switch(FEAT_TRAINS, SELF, sw_flatbed_container_1940, cargo_count) {
+	0 .. 18: return set_flatbed_wagon_1940;
+	19 .. 40: return set_flatbed_wagon_1940_load_container;
+}
+switch(FEAT_TRAINS, SELF, sw_flatbed_wood_1940, cargo_count) {
+	0 .. 12: return set_flatbed_wagon_1940;
+	13 .. 20: return set_flatbed_wagon_1940_load_wood;
+}
+switch(FEAT_TRAINS, SELF, sw_flatbed_steel_1940, cargo_count) {
+	0 .. 12: return set_flatbed_wagon_1940;
+	13 .. 20: return set_flatbed_wagon_1940_load_steel;
+}
+switch(FEAT_TRAINS,SELF, sw_flatbed_1940_cargo, cargo_type_in_veh){
+	LVST: sw_flatbed_container_1940;
+    GOOD: sw_flatbed_container_1940;
+    FOOD: sw_flatbed_container_1940;
+    WOOD: sw_flatbed_wood_1940;
+    STEL: sw_flatbed_steel_1940;
+}
+
+item(FEAT_TRAINS, flatbed_wagon_1940) {
+    property {
+        name: string(STR_FLATBED_1940_NAME);
+        climates_available:       bitmask (CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:        date(1940, 1, 1);
+        model_life:               80;
+        refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS);
+        sprite_id:                SPRITE_ID_NEW_TRAIN;
+        misc_flags:               bitmask(TRAIN_FLAG_SPRITE_STACK);
+        speed:                    110 km/h;
+        cargo_capacity:           40;
+        weight:                   26 ton;
+        loading_speed:            10; 
+        cost_factor:              170;
+        running_cost_base:        RUNNING_COST_NONE;
+    }
+    graphics {
+        default: sw_flatbed_1940_cargo;
+        purchase: flatbed_wagon_1940_switch_graphics;
+    }
+}
+/*Flatbed 2010 Wagon*/
+spriteset (set_flatbed_wagon_2010,                  "gfx/flatbed_wagon_2010.png") { tmpl_vehicle_4_views(0)    }
+spriteset (set_flatbed_wagon_2010_load_container,   "gfx/flatbed_wagon_2010.png") { tmpl_vehicle_4_views(1)    }
+spriteset (set_flatbed_wagon_2010_load_wood,        "gfx/flatbed_wagon_2010.png") { tmpl_vehicle_4_views(2)    }
+spriteset (set_flatbed_wagon_2010_load_steel,       "gfx/flatbed_wagon_2010.png") { tmpl_vehicle_4_views(3)    }
+
+
+switch (FEAT_TRAINS, SELF, flatbed_wagon_2010_switch_vehicle, STORE_TEMP(CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT, 0x100)) {
+    return set_flatbed_wagon_2010;
+}
+
+switch (FEAT_TRAINS, SELF, flatbed_wagon_2010_switch_container_load, STORE_TEMP(PALETTE_USE_DEFAULT, 0x100)) {
+    return set_flatbed_wagon_2010_load_container;
+}
+switch (FEAT_TRAINS, SELF, flatbed_wagon_2010_switch_wood_load, STORE_TEMP(PALETTE_USE_DEFAULT, 0x100)) {
+    return set_flatbed_wagon_2010_load_wood;
+}
+switch (FEAT_TRAINS, SELF, flatbed_wagon_2010_switch_wood_steel, STORE_TEMP(PALETTE_USE_DEFAULT, 0x100)) {
+    return set_flatbed_wagon_2010_load_wood;
+}
+switch (FEAT_TRAINS, SELF, flatbed_wagon_2010_switch_graphics, getbits(extra_callback_info1, 8, 8)) {
+    0: return set_flatbed_wagon_2010;
+    return set_flatbed_wagon_2010;
+}
+switch(FEAT_TRAINS, SELF, sw_flatbed_container_2010, cargo_count) {
+	0 .. 22: return set_flatbed_wagon_2010;
+	23 .. 50: return set_flatbed_wagon_2010_load_container;
+}
+switch(FEAT_TRAINS, SELF, sw_flatbed_wood_2010, cargo_count) {
+	0 .. 15: return set_flatbed_wagon_2010;
+	16 .. 25: return set_flatbed_wagon_2010_load_wood;
+}
+switch(FEAT_TRAINS, SELF, sw_flatbed_steel_2010, cargo_count) {
+	0 .. 15: return set_flatbed_wagon_2010;
+	16 .. 25: return set_flatbed_wagon_2010_load_steel;
+}
+switch(FEAT_TRAINS,SELF, sw_flatbed_2010_cargo, cargo_type_in_veh){
+	LVST: sw_flatbed_container_2010;
+    GOOD: sw_flatbed_container_2010;
+    FOOD: sw_flatbed_container_2010;
+    WOOD: sw_flatbed_wood_2010;
+    STEL: sw_flatbed_steel_2010;
+}
+
+item(FEAT_TRAINS, flatbed_wagon_2010) {
+    property {
+        name: string(STR_FLATBED_2010_NAME);
+        climates_available:       bitmask (CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:        date(2010, 1, 1);
+        model_life:               VEHICLE_NEVER_EXPIRES;
+        refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS);
+        sprite_id:                SPRITE_ID_NEW_TRAIN;
+        misc_flags:               bitmask(TRAIN_FLAG_SPRITE_STACK);
+        speed:                    150 km/h;
+        cargo_capacity:           50;
+        weight:                   34 ton;
+        loading_speed:            20; 
+        cost_factor:              250;
+        running_cost_base:        RUNNING_COST_NONE;
+    }
+    graphics {
+        default: sw_flatbed_2010_cargo;
+        purchase: flatbed_wagon_2010_switch_graphics;
+    }
+}
 /*2XX Trains: Electric Locomotives*/
 /*251: Japonesa y media"*/
 spriteset (set_japoymedia_front_lighted, "gfx/japoymedia.png") { tmpl_vehicle_8_views(0, 0) }

@@ -74,6 +74,8 @@ STR_CISTERNA_1860_NAME   : Vagón Cisterna de 1ra Generación
 STR_CISTERNA_1940_NAME   : Vagón Cisterna de 2da Generación
 STR_CISTERNA_2010_NAME   : Vagón Cisterna de 3ra Generación
 STR_FLATBED_1860_NAME    : Vagón Plataforma de 1ra Generación
+STR_FLATBED_1940_NAME    : Vagón Plataforma de 2da Generación
+STR_FLATBED_2010_NAME    : Vagón Plataforma de 3ra Generación
 
 STR_IRYO_CANNOT_START             :... tren muy largo (max. 16 carros).
 STR_IRYO_CANNOT_ATTACH_OTHER      :... El Iryo no se puede adjuntar a otros trenes.
