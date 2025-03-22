@@ -2,10 +2,25 @@ grf {
     grfid : "SPA3" ;
     name : string(STR_GRF_NAME);
     desc : string(STR_GRF_DESC ) ;
-    version : 93;
+    version : 96;
     min_compatible_version : 71;
+    param 1 {
+	param_wagon_speed {        
+            type:    int;
+ 			name:    string(STR_WAGON_SPEED_NAME);
+ 			desc:    string(STR_WAGON_SPEED_DESC);
+ 			min_value: 0;
+ 			max_value: 3;
+ 			def_value: 1;
+ 			names: {
+			0: string(STR_WAGON_SPEED_SLOW);
+			1: string(STR_WAGON_SPEED_DEFAULT);
+            2: string(STR_WAGON_SPEED_FAST);
+            3: string(STR_WAGON_SPEED_MAX);
+		    };
+        }
+    }
 }
-
 //Disabling of all train items
 disable_item (FEAT_TRAINS, 0, 115);
 
@@ -2459,6 +2474,12 @@ spriteset (set_tolva_wagon_1860_load_coal,   "gfx/tolva_wagon_1860.png") { tmpl_
 spriteset (set_tolva_wagon_1860_load_iron,   "gfx/tolva_wagon_1860.png") { tmpl_vehicle_4_views(2)    }
 spriteset (set_tolva_wagon_1860_load_grain,  "gfx/tolva_wagon_1860.png") { tmpl_vehicle_4_views(3)    }
 
+switch(FEAT_TRAINS, SELF, sw_tolva_1860_speed, param_wagon_speed) {
+    0: return 60; 
+    1: return 70; 
+    2: return 80;
+    3: return 110;
+}
 
 switch (FEAT_TRAINS, SELF, tolva_wagon_1860_switch_vehicle, STORE_TEMP(CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT, 0x100)) {
     return set_tolva_wagon_1860;
@@ -2517,7 +2538,9 @@ item(FEAT_TRAINS, tolva_wagon_1860) {
     graphics {
         default: sw_tolva_1860_cargo;
         purchase: tolva_wagon_1860_switch_graphics;
+        speed   : sw_tolva_1860_speed;
     }
+    
 }
 /*Tolva 1940 Wagon*/
 spriteset (set_tolva_wagon_1940,             "gfx/tolva_wagon_1940.png") { tmpl_vehicle_4_views(0)    }
@@ -2525,7 +2548,12 @@ spriteset (set_tolva_wagon_1940_load_coal,   "gfx/tolva_wagon_1940.png") { tmpl_
 spriteset (set_tolva_wagon_1940_load_iron,   "gfx/tolva_wagon_1940.png") { tmpl_vehicle_4_views(2)    }
 spriteset (set_tolva_wagon_1940_load_grain,  "gfx/tolva_wagon_1940.png") { tmpl_vehicle_4_views(3)    }
 
-
+switch(FEAT_TRAINS, SELF, sw_tolva_1940_speed, param_wagon_speed) {
+    0: return 100; 
+    1: return 110; 
+    2: return 120;
+    3: return 160;
+}
 switch (FEAT_TRAINS, SELF, tolva_wagon_1940_switch_vehicle, STORE_TEMP(CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT, 0x100)) {
     return set_tolva_wagon_1940;
 }
@@ -2583,6 +2611,7 @@ item(FEAT_TRAINS, tolva_wagon_1940) {
     graphics {
         default: sw_tolva_1940_cargo;
         purchase: tolva_wagon_1940_switch_graphics;
+        speed: sw_tolva_1940_speed;
     }
 }
 /*Tolva 2010 Wagon*/
@@ -2591,7 +2620,12 @@ spriteset (set_tolva_wagon_2010_load_coal,   "gfx/tolva_wagon_2010.png") { tmpl_
 spriteset (set_tolva_wagon_2010_load_iron,   "gfx/tolva_wagon_2010.png") { tmpl_vehicle_4_views(2)    }
 spriteset (set_tolva_wagon_2010_load_grain,  "gfx/tolva_wagon_2010.png") { tmpl_vehicle_4_views(3)    }
 
-
+switch(FEAT_TRAINS, SELF, sw_tolva_2010_speed, param_wagon_speed) {
+    0: return 140; 
+    1: return 150; 
+    2: return 160;
+    3: return 220;
+}
 switch (FEAT_TRAINS, SELF, tolva_wagon_2010_switch_vehicle, STORE_TEMP(CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT, 0x100)) {
     return set_tolva_wagon_2010;
 }
@@ -2649,11 +2683,18 @@ item(FEAT_TRAINS, tolva_wagon_2010) {
     graphics {
         default: sw_tolva_2010_cargo;
         purchase: tolva_wagon_2010_switch_graphics;
+        speed: sw_tolva_2010_speed;
     }
 }
 /*Tank 1860 wagon*/
 spriteset (set_cisterna_1860,             "gfx/cisterna_wagon.png") { tmpl_vehicle_4_views(0)    }
 
+switch(FEAT_TRAINS, SELF, sw_cisterna_1860_speed, param_wagon_speed) {
+    0: return 60; 
+    1: return 70; 
+    2: return 80;
+    3: return 110;
+}
 switch (FEAT_TRAINS, SELF, cisterna_1860_switch_graphics, STORE_TEMP(CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT, 0x100)) {
     return set_cisterna_1860;
 }
@@ -2677,10 +2718,18 @@ item(FEAT_TRAINS, cisterna_1860) {
     graphics {
         default: set_cisterna_1860;
         purchase: cisterna_1860_switch_graphics;
+        speed: sw_cisterna_1860_speed;
     }
 }
 /*Tank 1940 wagon*/
 spriteset (set_cisterna_1940,             "gfx/cisterna_wagon.png") { tmpl_vehicle_4_views(1)    }
+
+switch(FEAT_TRAINS, SELF, sw_cisterna_1940_speed, param_wagon_speed) {
+    0: return 100; 
+    1: return 110; 
+    2: return 120;
+    3: return 160;
+}
 
 switch (FEAT_TRAINS, SELF, cisterna_1940_switch_graphics, STORE_TEMP(CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT, 0x100)) {
     return set_cisterna_1940;
@@ -2705,10 +2754,18 @@ item(FEAT_TRAINS, cisterna_1940) {
     graphics {
         default: set_cisterna_1940;
         purchase: cisterna_1940_switch_graphics;
+        speed: sw_cisterna_1940_speed;
     }
 }
 /*Tank 2010 wagon*/
 spriteset (set_cisterna_2010,             "gfx/cisterna_wagon.png") { tmpl_vehicle_4_views(2)    }
+
+switch(FEAT_TRAINS, SELF, sw_cisterna_2010_speed, param_wagon_speed) {
+    0: return 140; 
+    1: return 150; 
+    2: return 160;
+    3: return 220;
+}
 
 switch (FEAT_TRAINS, SELF, cisterna_2010_switch_graphics, STORE_TEMP(CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT, 0x100)) {
     return set_cisterna_2010;
@@ -2733,6 +2790,7 @@ item(FEAT_TRAINS, cisterna_2010) {
     graphics {
         default: set_cisterna_2010;
         purchase: cisterna_2010_switch_graphics;
+        speed: sw_cisterna_2010_speed;
     }
 }
 /*Flatbed 1860 Wagon*/
@@ -2741,6 +2799,12 @@ spriteset (set_flatbed_wagon_1860_load_container,   "gfx/flatbed_wagon_1860.png"
 spriteset (set_flatbed_wagon_1860_load_wood,        "gfx/flatbed_wagon_1860.png") { tmpl_vehicle_4_views(2)    }
 spriteset (set_flatbed_wagon_1860_load_steel,       "gfx/flatbed_wagon_1860.png") { tmpl_vehicle_4_views(3)    }
 
+switch(FEAT_TRAINS, SELF, sw_flatbed_1860_speed, param_wagon_speed) {
+    0: return 60; 
+    1: return 70; 
+    2: return 80;
+    3: return 110;
+}
 
 switch (FEAT_TRAINS, SELF, flatbed_wagon_1860_switch_vehicle, STORE_TEMP(CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT, 0x100)) {
     return set_flatbed_wagon_1860;
@@ -2798,6 +2862,7 @@ item(FEAT_TRAINS, flatbed_wagon_1860) {
     graphics {
         default: sw_flatbed_1860_cargo;
         purchase: flatbed_wagon_1860_switch_graphics;
+        speed: sw_flatbed_1860_speed;
     }
 }
 /*Flatbed 1940 Wagon*/
@@ -2806,6 +2871,12 @@ spriteset (set_flatbed_wagon_1940_load_container,   "gfx/flatbed_wagon_1940.png"
 spriteset (set_flatbed_wagon_1940_load_wood,        "gfx/flatbed_wagon_1940.png") { tmpl_vehicle_4_views(2)    }
 spriteset (set_flatbed_wagon_1940_load_steel,       "gfx/flatbed_wagon_1940.png") { tmpl_vehicle_4_views(3)    }
 
+switch(FEAT_TRAINS, SELF, sw_flatbed_1940_speed, param_wagon_speed) {
+    0: return 100; 
+    1: return 110; 
+    2: return 120;
+    3: return 160;
+}
 
 switch (FEAT_TRAINS, SELF, flatbed_wagon_1940_switch_vehicle, STORE_TEMP(CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT, 0x100)) {
     return set_flatbed_wagon_1940;
@@ -2863,6 +2934,7 @@ item(FEAT_TRAINS, flatbed_wagon_1940) {
     graphics {
         default: sw_flatbed_1940_cargo;
         purchase: flatbed_wagon_1940_switch_graphics;
+        speed: sw_flatbed_1940_speed;
     }
 }
 /*Flatbed 2010 Wagon*/
@@ -2871,6 +2943,12 @@ spriteset (set_flatbed_wagon_2010_load_container,   "gfx/flatbed_wagon_2010.png"
 spriteset (set_flatbed_wagon_2010_load_wood,        "gfx/flatbed_wagon_2010.png") { tmpl_vehicle_4_views(2)    }
 spriteset (set_flatbed_wagon_2010_load_steel,       "gfx/flatbed_wagon_2010.png") { tmpl_vehicle_4_views(3)    }
 
+switch(FEAT_TRAINS, SELF, sw_flatbed_2010_speed, param_wagon_speed) {
+    0: return 140; 
+    1: return 150; 
+    2: return 160;
+    3: return 220;
+}
 
 switch (FEAT_TRAINS, SELF, flatbed_wagon_2010_switch_vehicle, STORE_TEMP(CB_FLAG_MORE_SPRITES | PALETTE_USE_DEFAULT, 0x100)) {
     return set_flatbed_wagon_2010;
@@ -2928,6 +3006,7 @@ item(FEAT_TRAINS, flatbed_wagon_2010) {
     graphics {
         default: sw_flatbed_2010_cargo;
         purchase: flatbed_wagon_2010_switch_graphics;
+        speed: sw_flatbed_2010_speed;
     }
 }
 /*2XX Trains: Electric Locomotives*/
@@ -4794,7 +4873,3 @@ item(FEAT_TRAINS, item_tdmd) {
         can_attach_wagon:             sw_tdmd_can_attach_wagon;
     }
 }
-
-
-
-

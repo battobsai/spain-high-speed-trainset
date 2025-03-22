@@ -126,11 +126,20 @@ STR_SEMIBUQUE_CANNOT_ATTACH_OTHER :...the Class 452 EMU may not be attached to o
 STR_480_CANNOT_START              :...train too long (max. 12 wagons)
 STR_480_CANNOT_ATTACH_OTHER       :...the Class 480 EMU may not be attached to other types of trains.
 
-
-
 STR_HS_RAIL                       : High Speed Line (1435 mm)
 STR_BUILD_CAPTION                 : New Highspeed (1435 mm) trains
 STR_NEW_TRAIN                     : highspeed
 STR_HSRAIL_NAME                   : Construction of Highspeed Line 
 STR_HSRAIL_TOOLBAR                : Highspeed Line Construction
 STR_HSRAIL_DEPOT                  : New Highspeed trains
+
+STR_WAGON_SPEED_NAME              : Freight wagons speed
+STR_WAGON_SPEED_DESC              : Selects the speed of freight wagons
+STR_WAGON_SPEED_SLOW              : Slow (60, 100, 140).
+STR_WAGON_SPEED_DEFAULT           : Default (70, 110, 150).
+STR_WAGON_SPEED_FAST              : Fast (80, 120, 160).
+STR_WAGON_SPEED_MAX               : Extreme speed (110, 160, 220).
+STR_HSTRACK_NAME                  : Exclusive track for High Speed Trains
+STR_HSTRACK_DESC                  : Allows disabling exclusive high speed tracks for highspeed trains
+STR_NO_HSRAILTYPE                 : Disable high speed tracks
+STR_DEFAULT_HSRAILTYPE            : Keep high speed tracks

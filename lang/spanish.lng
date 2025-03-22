@@ -133,3 +133,14 @@ STR_NEW_TRAIN                     : alta velocidad
 STR_HSRAIL_NAME                   : Construcción de Línea de Alta Velocidad
 STR_HSRAIL_TOOLBAR                : Construcción Línea de Alta Velocidad
 STR_HSRAIL_DEPOT                  : Nuevos trenes de Alta Velocidad
+
+STR_WAGON_SPEED_NAME              : Velocidad de los vagones de carga
+STR_WAGON_SPEED_DESC              : Elige la velocidad de los vagones de carga
+STR_WAGON_SPEED_SLOW              : Velocidad lenta (60, 100, 140)
+STR_WAGON_SPEED_DEFAULT           : Velocidad por defecto (70, 110, 150)
+STR_WAGON_SPEED_FAST              : Velocidad rápida (80, 120, 160)
+STR_WAGON_SPEED_MAX               : Velocidad extrema (110, 160, 220)
+STR_HSTRACK_NAME                  : Vías exclusivas para trenes de alta velocidad
+STR_HSTRACK_DESC                  : Permite deshabilitar las vías exclusivas de los trenes de alta velocidad
+STR_NO_HSRAILTYPE                 : Deshabilitar vías de alta velocidad
+STR_DEFAULT_HSRAILTYPE            : Mantener vías de alta velocidad
