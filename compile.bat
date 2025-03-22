@@ -1,1 +1,1 @@
-nmlc -c --grf iryo-sp-2.grf iryo.nml
+nmlc -c --grf spanish-trains.grf spanish-high-speed-trains.nml

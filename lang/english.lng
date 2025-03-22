@@ -1,12 +1,145 @@
 ##grflangid 0x01
 #English language file
 
-STR_GRF_NAME                 : {ORANGE}Iryo High speed train for Spain: Train
-STR_GRF_DESC                 :{ORANGE}Iryo High speed train for Spain: Train{}{BLACK}This NewGRF is intended to provide  Iryo (Italian Frecciarossa) High speed trains in Spain
-STR_IRYO_NAME                : S109 Iryo 
+STR_GRF_NAME                 :{ORANGE}Battobsai Spanish Trainset
+STR_GRF_DESC                 :{ORANGE}Battobsai Spanish Trainset{}{BLACK}This NewGRF is intended to provide Spanish trains. It has trains between the 1848 and the 2026.
+STR_IRYO_NAME                : Class 109 Iryo 
+STR_OUIGO_NAME               : Class 108 Ouigo
+STR_AVLOAVRIL_NAME           : Class 106 "Avril" (Avlo)
+STR_AVECIEN_NAME             : Class 100 AVE
+STR_AVEPATO_NAME             : Class 102 "Duck"
+STR_VELARO_NAME              : Class 103 "Velaro"
+STR_EUROMED_NAME             : Class 101 "Euromed"
+STR_AVANT_NAME               : Class 114 "Avant"
+STR_PATITO_NAME              : Class 130 "Little Duck"
+STR_AVEAVRIL_NAME            : Class 106 "AVRIL" (AVE)
+STR_PINGUINO_NAME            : Class 433 (ex. 300) "Penguin"
+STR_TAF_NAME                 : Class 595 "TAF"
+STR_MATARO_NAME              : 1-1-1 "Mataró"
+STR_MARTORELL_NAME           : 1-2-0 T "Martorell"
+STR_GUITARRA_NAME            : 0-3-0 "Guitar"
+STR_040_NAME                 : 0-4-0
+STR_120_NAME                 : 1-2-0
+STR_BOURBONNAIS_NAME         : 0-3-0 "Bycicle"
+STR_COMPOUND_NAME            : 2-3-0 "Compound"
+STR_CUATROCIENTAS_NAME       : 1-4-0 (North 400's)
+STR_MASTODONTE_NAME          : 2-4-0 "Mastodon"
+STR_MIKADO_NAME              : 1-4-1 "Mikado"
+STR_MONTANA_NAME             : 2-4-1 "Mountain"
+STR_ATOMICA_NAME             : 2-4-1 "Atomic"
+STR_SANTAFE_NAME             : 1-5-1 "Santa Fé"
+STR_TALGOII_NAME             : Class 350 "Talgo II"
+STR_RENAULT_NAME             : Class 590 (ex. 9300's) "Renault"
+STR_CONFE_NAME               : 2-4-2 "Confederacy"
+STR_2000T_NAME               : Class 352 "Talgo III" (ex. 2000T's)
+STR_3000T_NAME               : Class 353 "Talgo III" (ex. 3000T's)
+STR_SUIZAS_NAME              : Class 436 "Swiss"
+STR_HUEVO_NAME               : Class 340 "Eggs" 
+STR_JAPONESA_NAME            : Class 269 "Japanese"
+STR_OBISPO_NAME              : Class 432 "Bishops"
+STR_TER_NAME                 : Class 597 "TER"
+STR_440_NAME                 : Class 440 "Little Red Riding Hood"
+STR_JAPOYMEDIA_NAME          : Class 251 "Japanese & Half"
+STR_TALGOIV_NAME             : Class 354 "Talgo IV"
+STR_LAVADORA_NAME            : Class 448 "Washing machine"
+STR_CAMELLO_NAME             : Class 593 "Camel"
+STR_EUROSPRINTER_NAME        : Class 252 (Pre-Euro Sprinter)
+STR_BUQUE_NAME               : Class 450 "Vessel"
+STR_TRAXX_NAME               : Class 253 "TRAXX"
+STR_BESUGO_NAME              : Class 449 "Sea Bream"
+STR_TDMD_NAME                : Class 599 "TDMD"
+STR_EURO6000_NAME            : Class 256 "Euro 6000"
+STR_SEMIBUQUE_NAME           : Class 452 "Semi-Vessel"
+STR_480_NAME                 : Class 480
+STR_INGLESA_NAME             : Class 277 "English"
+STR_JAPONESA_289_NAME        : Class 289 "Japanese"
+STR_COCODRILO_272_NAME       : Class 272 "Crocodile"
+STR_COCODRILO_275_NAME       : Class 275 "Crocodile"
+STR_TANDEM_NAME              : Class 289.100 "Tandem"
+STR_WOODENWAGON_NAME         : 1st Gen Passenger Carriage
+STR_FPW_NAME                 : 2nd Gen Passenger Carriage
+STR_3PW_NAME                 : 3rd Gen Passenger Carriage
+STR_4PW_NAME                 : 4th Gen Passenger Carriage
+STR_TALGOPAS_NAME            : Talgo wagon
+STR_TPP_NAME                 : Pendular Talgo Wagon
+STR_WOODMAIL_NAME            : 1st Gen Mail Wagon
+STR_FMW_NAME                 : 2nd Gen Mail Wagon
+STR_3MW_NAME                 : 3rd Gen Mail Wagon
+STR_TALGOMAL_NAME            : Talgo Mail Wagon
+STR_TPM_NAME                 : Pendular Talgo Mail Wagon
+STR_TOLVA_1860_NAME          : 1st Gen Hopper Wagon
+STR_TOLVA_1940_NAME          : 2nd Gen Hopper Wagon
+STR_TOLVA_2010_NAME          : 3rd Gen Hopper Wagon
+STR_CISTERNA_1860_NAME       : 1st Gen Tank Wagon
+STR_CISTERNA_1940_NAME       : 2nd Gen Tank Wagon
+STR_CISTERNA_2010_NAME       : 3rd Gen Tank Wagon
+STR_FLATBED_1860_NAME        : 1st Gen Flatbed Wagon
+STR_FLATBED_1940_NAME        : 2nd Gen Flatbed Wagon
+STR_FLATBED_2010_NAME        : 3rd Gen Flatbed Wagon
 
-STR_IRYO_ADDITIONAL_TEXT       :Choose between 3- and 4-part EMU via refit{}Stated values are for the 3-part variant, the 4-part version has 33% more capacity and 50% more power and running cost.
-STR_IRYO_SUBTYPE_3_PART        : (3 parts)
-STR_IRYO_SUBTYPE_4_PART        : (4 parts)
-STR_IRYO_CANNOT_START          :... train too long (max. 4 coupled EMUs).
-STR_IRYO_CANNOT_ATTACH_OTHER   :... ICM may not be attached to other types of trains.
+STR_IRYO_CANNOT_START             :... train too long (max. 16 wagons).
+STR_IRYO_CANNOT_ATTACH_OTHER      :... Iryo may not be attached to other types of trains.
+STR_OUIGO_CANNOT_START            :...train too long (max. 20 wagons).
+STR_OUIGO_CANNOT_ATTACH_OTHER     :...Ouigo may not be attached to other types of trains.
+STR_AVLOAVRIL_CANNOT_START        :...train too long (max. 28 wagons)
+STR_AVLOAVRIL_CANNOT_ATTACH_OTHER :...the Avril may not be attached to other types of trains.
+STR_AVECIEN_CANNOT_START          :...train too long (max. 20 wagons)
+STR_AVECIEN_CANNOT_ATTACH_OTHER   :...the AVE Class 100 may not be attached to other types of trains.
+STR_AVEPATO_CANNOT_START          :...train too long (max. 28 wagons)
+STR_AVEPATO_CANNOT_ATTACH_OTHER   :...the AVE Class 102 may not be attached to other types of trains.
+STR_VELARO_CANNOT_START           :...train too long (max. 16 wagons)
+STR_VELARO_CANNOT_ATTACH_OTHER    :...the AVE Class 103 may not be attached to other types of trains.
+STR_EUROMED_CANNOT_START          :...train too long (max. 20 wagons)
+STR_EUROMED_CANNOT_ATTACH_OTHER   :...the EUROMED Class 101 may not be attached to other types of trains.
+STR_AVANT_CANNOT_START            :...train too long (max. 16 wagons)
+STR_AVANT_CANNOT_ATTACH_OTHER     :...the AVANT Class 114 may not be attached to other types of trains.
+STR_PATITO_CANNOT_START           :...train too long (max. 24 wagons)
+STR_PATITO_CANNOT_ATTACH_OTHER    :...the ALVIA Class 130 may not be attached to other types of trains.
+STR_AVEAVRIL_CANNOT_START         :...train too long (max. 28 wagons)
+STR_AVEAVRIL_CANNOT_ATTACH_OTHER  :...the AVRIL may not be attached to other types of trains.
+STR_PINGUINO_CANNOT_START         :...train too long (max. 6 wagons)
+STR_PINGUINO_CANNOT_ATTACH_OTHER  :...the Class 433 EMU may not be attached to other types of trains.
+STR_TAF_CANNOT_START              :...train too long (max. 6 wagons)
+STR_TAF_CANNOT_ATTACH_OTHER       :...the Class 595 DMU may not be attached to other types of trains.  
+STR_RENAULT_CANNOT_START          :...train too long (max. 4 wagons)
+STR_RENAULT_CANNOT_ATTACH_OTHER   :...the Class 590 DMU may not be attached to other types of trains.  
+STR_SUIZAS_CANNOT_START           :...train too long (max. 9 wagons)
+STR_SUIZAS_CANNOT_ATTACH_OTHER    :...the Class 436 EMU may not be attached to other types of trains. 
+STR_OBISPO_CANNOT_START           :...train too long (max. 9 wagons)
+STR_OBISPO_CANNOT_ATTACH_OTHER    :...the Class 432 EMU may not be attached to other types of trains.
+STR_TER_CANNOT_START              :...train too long (max. 12 wagons)
+STR_TER_CANNOT_ATTACH_OTHER       :...the Class 597 DMU may not be attached to other types of trains.
+STR_440_CANNOT_START              :...train too long (max. 9 wagons)
+STR_440_CANNOT_ATTACH_OTHER       :...the Class 440 EMU may not be attached to other types of trains.
+STR_LAVADORA_CANNOT_START         :...train too long (max. 9 wagons)
+STR_LAVADORA_CANNOT_ATTACH_OTHER  :...the Class 448 EMU may not be attached to other types of trains.
+STR_CAMELLO_CANNOT_START          :...train too long (max. 9 wagons)
+STR_CAMELLO_CANNOT_ATTACH_OTHER   :...the Class 593 DMU may not be attached to other types of trains.
+STR_BUQUE_CANNOT_START            :...train too long (max. 12 wagons)
+STR_BUQUE_CANNOT_ATTACH_OTHER     :...the Class 450 EMU may not be attached to other types of trains.
+STR_BESUGO_CANNOT_START           :...train too long (max. 15 wagons)
+STR_BESUGO_CANNOT_ATTACH_OTHER    :...the Class 449 EMU may not be attached to other types of trains.
+STR_TDMD_CANNOT_START             :...train too long (max. 9 wagons)
+STR_TDMD_CANNOT_ATTACH_OTHER      :...the Class 599 DMU may not be attached to other types of trains.
+STR_SEMIBUQUE_CANNOT_START        :...train too long (max. 12 wagons)
+STR_SEMIBUQUE_CANNOT_ATTACH_OTHER :...the Class 452 EMU may not be attached to other types of trains.
+STR_480_CANNOT_START              :...train too long (max. 12 wagons)
+STR_480_CANNOT_ATTACH_OTHER       :...the Class 480 EMU may not be attached to other types of trains.
+
+STR_HS_RAIL                       : High Speed Line (1435 mm)
+STR_BUILD_CAPTION                 : New Highspeed (1435 mm) trains
+STR_NEW_TRAIN                     : highspeed
+STR_HSRAIL_NAME                   : Construction of Highspeed Line 
+STR_HSRAIL_TOOLBAR                : Highspeed Line Construction
+STR_HSRAIL_DEPOT                  : New Highspeed trains
+
+STR_WAGON_SPEED_NAME              : Freight wagons speed
+STR_WAGON_SPEED_DESC              : Selects the speed of freight wagons
+STR_WAGON_SPEED_SLOW              : Slow (60, 100, 140).
+STR_WAGON_SPEED_DEFAULT           : Default (70, 110, 150).
+STR_WAGON_SPEED_FAST              : Fast (80, 120, 160).
+STR_WAGON_SPEED_MAX               : Extreme speed (110, 160, 220).
+STR_HSTRACK_NAME                  : Exclusive track for High Speed Trains
+STR_HSTRACK_DESC                  : Allows disabling exclusive high speed tracks for highspeed trains
+STR_NO_HSRAILTYPE                 : Disable high speed tracks
+STR_DEFAULT_HSRAILTYPE            : Keep high speed tracks

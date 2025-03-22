@@ -1,13 +1,146 @@
 ##grflangid 04
 #Archivo Lang del Español
 
-STR_GRF_NAME             : {ORANGE} Tren  Iryo de alta velocidad para España 
-STR_GRF_DESC             : {ORANGE} Tren  Iryo de alta velocidad para España {}{BLACK}Este NewGRF está diseñado para conseguir los trenes Iryo (Modelo Frecciarossa 1000/ETR 400 de Italia), trenes de alta velocidad que circulan desde el 2022.
+STR_GRF_NAME             : {ORANGE} Trenes Españoles de Battobsai
+STR_GRF_DESC             : {ORANGE} Trenes Españoles de Battobsai{}{BLACK}Este NewGRF está diseñado para conseguir trenes de España. Se introducen trenes entre 1848 y 2026. 
+STR_IRYO_NAME            : S109 Iryo 
+STR_OUIGO_NAME           : S108 Ouigo
+STR_AVLOAVRIL_NAME       : S106 "Avril" (Avlo)
+STR_AVECIEN_NAME         : S100 AVE
+STR_AVEPATO_NAME         : S102 "Pato"
+STR_VELARO_NAME          : S103 "Velaro"
+STR_EUROMED_NAME         : S101 "Euromed"
+STR_AVANT_NAME           : S114 "Avant"
+STR_PATITO_NAME          : S130 "Patito"
+STR_AVEAVRIL_NAME        : S106 "Avril" (AVE)
+STR_PINGUINO_NAME        : S433 (ex. 300) "Pingüino"
+STR_TAF_NAME             : S595 "Tren Automotor Fiat/TAF"
+STR_MATARO_NAME          : 1-1-1 "Mataró"
+STR_MARTORELL_NAME       : 1-2-0 T "Martorell"
+STR_GUITARRA_NAME        : 0-3-0 "Guitarra"
+STR_040_NAME             : 0-4-0
+STR_120_NAME             : 1-2-0
+STR_BOURBONNAIS_NAME     : 0-3-0 "Bicicleta"
+STR_COMPOUND_NAME        : 2-3-0 "Compound"
+STR_CUATROCIENTAS_NAME   : 1-4-0 (400 de Norte)
+STR_MASTODONTE_NAME      : 2-4-0 "Mastodonte"
+STR_MIKADO_NAME          : 1-4-1 "Mikado"
+STR_MONTANA_NAME         : 2-4-1 "Montaña"
+STR_ATOMICA_NAME         : 2-4-1 "Atómica"
+STR_SANTAFE_NAME         : 1-5-1 "Santa Fé"
+STR_TALGOII_NAME         : S350 "Talgo II"
+STR_RENAULT_NAME         : S590 (ex 9300)"Renault"
+STR_CONFE_NAME           : 2-4-2 "Confederación"
+STR_2000T_NAME           : S352 "Talgo III" (ex. 2000T)
+STR_3000T_NAME           : S353 "Talgo III" (ex. 3000T)
+STR_SUIZAS_NAME          : S436 "Suizas"
+STR_HUEVO_NAME           : S340 "Huevos"
+STR_JAPONESA_NAME        : S269 "Japonesas"
+STR_OBISPO_NAME          : S432 "Obispos"
+STR_TER_NAME             : S597 "Tren Español Rápido (TER)"
+STR_440_NAME             : S440 "Caperucitas"
+STR_JAPOYMEDIA_NAME      : S251 "Japonesa y Media"
+STR_TALGOIV_NAME         : S354 "Talgo IV"
+STR_LAVADORA_NAME        : S448 "Lavadora"
+STR_CAMELLO_NAME         : S593 "Camello"
+STR_EUROSPRINTER_NAME    : S252 (Pre-Euro Sprinter)
+STR_BUQUE_NAME           : S450 "Buque"
+STR_TRAXX_NAME           : S253 "TRAXX"
+STR_BESUGO_NAME          : S449 "Besugo"
+STR_TDMD_NAME            : S599 "TDMD"
+STR_EURO6000_NAME        : S256 "Euro 6000"
+STR_SEMIBUQUE_NAME       : S452 "Semi-Buque"
+STR_480_NAME             : S480
+STR_INGLESA_NAME         : S277 "Inglesas"
+STR_JAPONESA_289_NAME    : S289 "Japonesas"
+STR_COCODRILO_272_NAME   : S272 "Cocodrilos"
+STR_COCODRILO_275_NAME   : S275 "Cocodrilos"
+STR_TANDEM_NAME          : S289.100 "Tándem"
+STR_WOODENWAGON_NAME     : Vagon de Pasajeros de 1ra Generación
+STR_FPW_NAME             : Vagon de Pasajeros de 2da Generación
+STR_3PW_NAME             : Vagon de Pasajeros de 3ra Generación
+STR_4PW_NAME             : Vagón de Pasajeros de 4ta Generación
+STR_TALGOPAS_NAME        : Vagon Talgo
+STR_TPP_NAME             : Vagon Talgo Pendular
+STR_WOODMAIL_NAME        : Vagón de Correo de 1ra Generación
+STR_FMW_NAME             : Vagón de Correo de 2da Generación
+STR_3MW_NAME             : Vagón de Correo de 3ra Generación
+STR_TALGOMAL_NAME        : Vagon Talgo de Correo
+STR_TPM_NAME             : Vagón Talgo Pendular de Correo
+STR_TOLVA_1860_NAME      : Vagón Tolva de 1ra Generación
+STR_TOLVA_1940_NAME      : Vagón Tolva de 2da Generación
+STR_TOLVA_2010_NAME      : Vagón Tolva de 3ra Generación
+STR_CISTERNA_1860_NAME   : Vagón Cisterna de 1ra Generación
+STR_CISTERNA_1940_NAME   : Vagón Cisterna de 2da Generación
+STR_CISTERNA_2010_NAME   : Vagón Cisterna de 3ra Generación
+STR_FLATBED_1860_NAME    : Vagón Plataforma de 1ra Generación
+STR_FLATBED_1940_NAME    : Vagón Plataforma de 2da Generación
+STR_FLATBED_2010_NAME    : Vagón Plataforma de 3ra Generación
 
-STR_IRYO_NAME                : S109 Iryo 
+STR_IRYO_CANNOT_START             :... tren muy largo (max. 16 carros).
+STR_IRYO_CANNOT_ATTACH_OTHER      :... El Iryo no se puede adjuntar a otros trenes.
+STR_OUIGO_CANNOT_START            :...tren muy largo (max. 20 carros).
+STR_OUIGO_CANNOT_ATTACH_OTHER     : El Ouigo no se puede adjuntar a otros trenes.
+STR_AVLOAVRIL_CANNOT_START        :...tren muy largo (max. 28 carros).
+STR_AVLOAVRIL_CANNOT_ATTACH_OTHER :...El Avril no se puede adjuntar a otros trenes.
+STR_AVECIEN_CANNOT_START          :...tren muy largo (max. 20 carros)
+STR_AVECIEN_CANNOT_ATTACH_OTHER   :...el AVE Serie 100 no se puede adjuntar a otros trenes
+STR_AVEPATO_CANNOT_START          :...tren muy largo (max. 28 carros).
+STR_AVEPATO_CANNOT_ATTACH_OTHER   :...el AVE 102 "Pato" no se puede adjuntar a otros trenes.
+STR_VELARO_CANNOT_START           :...tren muy largo (max. 16 carros)
+STR_VELARO_CANNOT_ATTACH_OTHER    :...el AVE 103 "Velaro" no se puede adjuntar a otros trenes.
+STR_EUROMED_CANNOT_START          :...tren muy largo (max. 20 carros)
+STR_EUROMED_CANNOT_ATTACH_OTHER   :...el EUROMED Serie 101 no se puede adjuntar a otros trenes.
+STR_AVANT_CANNOT_START            :...tren muy largo (max. 16 carros)
+STR_AVANT_CANNOT_ATTACH_OTHER     :...el AVANT Serie 114 no se puede adjuntar a otros trenes.
+STR_PATITO_CANNOT_START           :...tren muy largo (max. 24 carros)
+STR_PATITO_CANNOT_ATTACH_OTHER    :...la Serie 130 "Patito" no se puede adjuntar a otros trenes.
+STR_AVEAVRIL_CANNOT_START         :...tren muy largo (max. 28 carros)
+STR_AVEAVRIL_CANNOT_ATTACH_OTHER  :...El AVRIL no se puede adjuntar a otros trenes.
+STR_PINGUINO_CANNOT_START         :...tren muy largo (max. 6 carros)
+STR_PINGUINO_CANNOT_ATTACH_OTHER  :...la Serie 433 ("pingüinos") no se puede adjuntar a otros trenes.
+STR_TAF_CANNOT_START              :...tren muy largo (max. 6 carros)
+STR_TAF_CANNOT_ATTACH_OTHER       :...la Serie 595 (TAF) no se puede adjuntar a otros trenes.
+STR_RENAULT_CANNOT_START          :...tren muy largo (max. 4 carros)
+STR_RENAULT_CANNOT_ATTACH_OTHER   :...la Serie 590 "Renault" no se puede adjuntar a otros trenes.
+STR_SUIZAS_CANNOT_START           :...tren muy largo (max. 9 carros)
+STR_SUIZAS_CANNOT_ATTACH_OTHER    :...la Serie 436 "Suizas" no se puede adjuntar a otros trenes.
+STR_OBISPO_CANNOT_START           :...tren muy largo (max. 9 carros)
+STR_OBISPO_CANNOT_ATTACH_OTHER    :...la Serie 432 "Obispos" no se puede adjuntar a otros trenes.
+STR_TER_CANNOT_START              :...tren muy largo (max. 12 carros)
+STR_TER_CANNOT_ATTACH_OTHER       :...la Serie 597 (TER) no se puede adjuntar a otros trenes.
+STR_440_CANNOT_START              :...tren muy largo (max. 9 carros)
+STR_440_CANNOT_ATTACH_OTHER       :...la Serie 440 no se puede adjuntar a otros trenes.
+STR_LAVADORA_CANNOT_START         :...tren muy largo (max. 9 carros)
+STR_LAVADORA_CANNOT_ATTACH_OTHER  :...la Serie 448 no se puede adjuntar a otros trenes.
+STR_CAMELLO_CANNOT_START          :...tren muy largo (max. 9 Carros)
+STR_CAMELLO_CANNOT_ATTACH_OTHER   :...la Serie 593 "Camellos" no se puede adjuntar a otros trenes.
+STR_BUQUE_CANNOT_START            :...tren muy largo (max. 12 carros)
+STR_BUQUE_CANNOT_ATTACH_OTHER     :...la Serie 450 "Buque" no se puede adjuntar a otros trenes.
+STR_BESUGO_CANNOT_START           :...tren muy largo (max. 15 carros)
+STR_BESUGO_CANNOT_ATTACH_OTHER    :...la Serie 449 "Besugos" no se puede adjuntar a otros trenes.
+STR_TDMD_CANNOT_START             :...tren muy largo (max. 9 carros)
+STR_TDMD_CANNOT_ATTACH_OTHER      :...la Serie 599 "TDMD" no se puede adjuntar a otros trenes.
+STR_SEMIBUQUE_CANNOT_START        :...tren muy largo (max. 12 carros)
+STR_SEMIBUQUE_CANNOT_ATTACH_OTHER :...la Serie 452 "Semibuques" no se puede adjuntar a otros trenes.
+STR_480_CANNOT_START              :...tren muy largo (max. 12 carros)
+STR_480_CANNOT_ATTACH_OTHER       :...la Serie 480 no se puede adjuntar a otros trenes.
 
-STR_IRYO_ADDITIONAL_TEXT      : Seleccione entre 3 y 4 carros{}Stated values are for the 3-part variant, the 4-part version has 33% more capacity and 50% more power and running cost.
-STR_IRYO_SUBTYPE_3_PART       : (3 partes)
-STR_IRYO_SUBTYPE_4_PART       : (4 partes)
-STR_IRYO_CANNOT_START         :... tren muy largo (max. 4 carros).
-STR_IRYO_CANNOT_ATTACH_OTHER  :... El Iryo no se puede adjuntar a otros trenes
+
+STR_HS_RAIL                       : Línea de Alta Velocidad (1435 mm)
+STR_BUILD_CAPTION                 : Nuevos trenes de Alta Velocidad (1435 mm)
+STR_NEW_TRAIN                     : alta velocidad
+STR_HSRAIL_NAME                   : Construcción de Línea de Alta Velocidad
+STR_HSRAIL_TOOLBAR                : Construcción Línea de Alta Velocidad
+STR_HSRAIL_DEPOT                  : Nuevos trenes de Alta Velocidad
+
+STR_WAGON_SPEED_NAME              : Velocidad de los vagones de carga
+STR_WAGON_SPEED_DESC              : Elige la velocidad de los vagones de carga
+STR_WAGON_SPEED_SLOW              : Velocidad lenta (60, 100, 140)
+STR_WAGON_SPEED_DEFAULT           : Velocidad por defecto (70, 110, 150)
+STR_WAGON_SPEED_FAST              : Velocidad rápida (80, 120, 160)
+STR_WAGON_SPEED_MAX               : Velocidad extrema (110, 160, 220)
+STR_HSTRACK_NAME                  : Vías exclusivas para trenes de alta velocidad
+STR_HSTRACK_DESC                  : Permite deshabilitar las vías exclusivas de los trenes de alta velocidad
+STR_NO_HSRAILTYPE                 : Deshabilitar vías de alta velocidad
+STR_DEFAULT_HSRAILTYPE            : Mantener vías de alta velocidad
