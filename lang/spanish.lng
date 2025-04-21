@@ -54,6 +54,7 @@ STR_480_NAME             : S480
 STR_INGLESA_NAME         : S277 "Inglesas"
 STR_JAPONESA_289_NAME    : S289 "Japonesas"
 STR_COCODRILO_272_NAME   : S272 "Cocodrilos"
+STR_COCODRILO_273_NAME   : S273 "Cocodrilos"
 STR_COCODRILO_275_NAME   : S275 "Cocodrilos"
 STR_TANDEM_NAME          : S289.100 "Tándem"
 STR_WOODENWAGON_NAME     : Vagon de Pasajeros de 1ra Generación
@@ -140,7 +141,15 @@ STR_WAGON_SPEED_SLOW              : Velocidad lenta (60, 100, 140)
 STR_WAGON_SPEED_DEFAULT           : Velocidad por defecto (70, 110, 150)
 STR_WAGON_SPEED_FAST              : Velocidad rápida (80, 120, 160)
 STR_WAGON_SPEED_MAX               : Velocidad extrema (110, 160, 220)
-STR_HSTRACK_NAME                  : Vías exclusivas para trenes de alta velocidad
-STR_HSTRACK_DESC                  : Permite deshabilitar las vías exclusivas de los trenes de alta velocidad
-STR_NO_HSRAILTYPE                 : Deshabilitar vías de alta velocidad
-STR_DEFAULT_HSRAILTYPE            : Mantener vías de alta velocidad
+STR_PROTOTYPES_AVAILABLE_NAME     : Disponibilidad de los prototipos.
+STR_PROTOTYPES_AVAILABLE_DESC     : Elige si los prototipos están disponibles.
+STR_NO_PROTOTYPES                 : Prototipos desactivados.
+STR_PROTOTYPES                    : Prototipos activados.
+STR_PROTOTYPES_LIFESPAN_NAME     : Vida útil de los prototipos.
+STR_PROTOTYPES_LIFESPAN_DESC     : Elige la vida útil de los prototipos.
+STR_LOW_LIFESPAN_PROTOTYPES       : Prototipos activados con una vida útil corta (de 8 a 15 años)
+STR_NORMAL_LIFESPAN_PROTOTYPES    : Prototipos activados con una vida útil similar a la de otros vehículos (20 a 40 años)
+STR_HSTRAINS_TRACK_NAME           : Tipo de vía de los trenes de alta velocidad.
+STR_HSTRAINS_TRACK_DESC           : Selecciona el tipo de vía de los trenes de alta velocidad (para ser compatible con otros NewGRF's). Note que al hacer que los trenes de alta velocidad vayan por vías electricas normales volverá algunos trenes electricos inútiles.
+STR_ELRL                          : Los trenes de alta velocidad van por las vías electrificadas normales como los demás trenes.
+STR_HSRL                          : Los trenes de alta velocidad van por vías especiales de alta velocidad.

@@ -2,7 +2,7 @@ grf {
     grfid : "SPA3" ;
     name : string(STR_GRF_NAME);
     desc : string(STR_GRF_DESC ) ;
-    version : 96;
+    version : 99;
     min_compatible_version : 71;
     param 1 {
 	param_wagon_speed {        
@@ -17,6 +17,48 @@ grf {
 			1: string(STR_WAGON_SPEED_DEFAULT);
             2: string(STR_WAGON_SPEED_FAST);
             3: string(STR_WAGON_SPEED_MAX);
+		    };
+        }
+    }
+    param 2 {
+	param_prototypes_available {        
+            type:    int;
+ 			name:    string(STR_PROTOTYPES_AVAILABLE_NAME);
+ 			desc:    string(STR_PROTOTYPES_AVAILABLE_DESC);
+ 			min_value: 0;
+ 			max_value: 1;
+ 			def_value: 1;
+ 			names: {
+			0: string(STR_NO_PROTOTYPES);
+			1: string(STR_PROTOTYPES);
+		    };
+        }
+    }
+    param 3 {
+	param_prototypes_lifespan {        
+            type:    int;
+ 			name:    string(STR_PROTOTYPES_LIFESPAN_NAME);
+ 			desc:    string(STR_PROTOTYPES_LIFESPAN_DESC);
+ 			min_value: 0;
+ 			max_value: 1;
+ 			def_value: 0;
+ 			names: {
+			0: string(STR_LOW_LIFESPAN_PROTOTYPES);
+			1: string(STR_NORMAL_LIFESPAN_PROTOTYPES);
+		    };
+        }
+    }
+    param 4 {
+	param_hstrains_track {        
+            type:    int;
+ 			name:    string(STR_HSTRAINS_TRACK_NAME);
+ 			desc:    string(STR_HSTRAINS_TRACK_DESC);
+ 			min_value: 0;
+ 			max_value: 1;
+ 			def_value: 1;
+ 			names: {
+			0: string (STR_ELRL);
+			1: string (STR_HSRL);
 		    };
         }
     }
@@ -368,7 +410,11 @@ railtypetable {
 }
 
 
-/*Standard Gauge Highspeed Trains*/
+/*Highspeed Trains*/
+switch(FEAT_TRAINS, SELF, sw_hstrains_tracktype, param_hstrains_track) {
+    0: return ELRL; 
+    1: return "HSRL"; 
+}
 /*S109: Iryo Train */
 spriteset (set_iryo_front_lighted, "gfx/iryo.png") { tmpl_vehicle_8_views(0, 0) }
 spriteset (set_iryo_rear_lighted,  "gfx/iryo.png") { tmpl_vehicle_8_views(1, 1) }
@@ -416,7 +462,7 @@ item(FEAT_TRAINS, item_iryo) {
         speed:                        360 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
         refit_cost:                   0;
-        track_type:                   railtype("HSRL");
+        track_type:                   (param_hstrains_track) ? 2 : 5;
         ai_special_flag:              AI_FLAG_PASSENGER;
         power:                        9800 kW;
         running_cost_base:            RUNNING_COST_ELECTRIC;
@@ -487,7 +533,7 @@ item(FEAT_TRAINS, item_ouigo) {
         speed:                        320 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
         refit_cost:                   0;
-        track_type:                   railtype("HSRL");
+        track_type:                   (param_hstrains_track) ? 2 : 5;
         ai_special_flag:              AI_FLAG_PASSENGER;
         power:                        9600 kW;
         running_cost_base:            RUNNING_COST_ELECTRIC;
@@ -559,7 +605,7 @@ item(FEAT_TRAINS, item_avloavril) {
         speed:                        330 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_TILT);
         refit_cost:                   0;
-        track_type:                   railtype("HSRL");
+        track_type:                   (param_hstrains_track) ? 2 : 5;
         ai_special_flag:              AI_FLAG_PASSENGER;
         power:                        8600 kW;
         running_cost_base:            RUNNING_COST_ELECTRIC;
@@ -631,7 +677,7 @@ item(FEAT_TRAINS, item_avecien) {
         speed:                        300 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
         refit_cost:                   0;
-        track_type:                   railtype("HSRL");
+        track_type:                   (param_hstrains_track) ? 2 : 5;
         ai_special_flag:              AI_FLAG_PASSENGER;
         power:                        8800 kW;
         running_cost_base:            RUNNING_COST_ELECTRIC;
@@ -703,7 +749,7 @@ item(FEAT_TRAINS, item_avepato) {
         speed:                        330 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_TILT);
         refit_cost:                   0;
-        track_type:                   railtype("HSRL");
+        track_type:                   (param_hstrains_track) ? 2 : 5;
         ai_special_flag:              AI_FLAG_PASSENGER;
         power:                        8000 kW;
         running_cost_base:            RUNNING_COST_ELECTRIC;
@@ -776,7 +822,7 @@ item(FEAT_TRAINS, item_velaro) {
         speed:                        350 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
         refit_cost:                   0;
-        track_type:                   railtype("HSRL");
+        track_type:                   (param_hstrains_track) ? 2 : 5;
         ai_special_flag:              AI_FLAG_PASSENGER;
         power:                        8800 kW;
         running_cost_base:            RUNNING_COST_ELECTRIC;
@@ -848,7 +894,7 @@ item(FEAT_TRAINS, item_avant) {
         speed:                        250 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
         refit_cost:                   0;
-        track_type:                   railtype("HSRL");
+        track_type:                   (param_hstrains_track) ? 2 : 5;
         ai_special_flag:              AI_FLAG_PASSENGER;
         power:                        4000 kW;
         running_cost_base:            RUNNING_COST_ELECTRIC;
@@ -3348,6 +3394,76 @@ item(FEAT_TRAINS, item_cocodrilo_272) {
         default:                      sw_cocodrilo_272_graphics;
         purchase:                     set_cocodrilo_272_purchase;
         articulated_part:             sw_cocodrilo_272_articulated_part;
+    }
+}
+/*S273 "Cocodrilo" Train */
+spriteset (set_cocodrilo_273_front_lighted, "gfx/cocodrilo_273.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_cocodrilo_273_rear_lighted,  "gfx/cocodrilo_273.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_cocodrilo_273_front,         "gfx/cocodrilo_273.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_cocodrilo_273_rear,          "gfx/cocodrilo_273.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_cocodrilo_273_middle,        "gfx/cocodrilo_273.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_cocodrilo_273_purchase,      "gfx/cocodrilo_273.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_cocodrilo_273_invisible,     "gfx/cocodrilo_273.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+
+switch(FEAT_TRAINS, SELF, sw_cocodrilo_273_graphics, position_in_consist % 2) {
+    0:      set_cocodrilo_273_front_lighted;
+    1:      set_cocodrilo_273_rear_lighted;
+    set_cocodrilo_273_middle;
+}
+
+switch(FEAT_TRAINS, SELF, sw_cocodrilo_273_articulated_part, extra_callback_info1) {
+    1 .. 1: return item_cocodrilo_273;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch(FEAT_TRAINS, SELF, sw_cocodrilo_273_availability, param_prototypes_available) {
+    0: return NO_CLIMATE; 
+    1: return bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+}
+
+switch(FEAT_TRAINS, SELF, sw_cocodrilo_273_lifespan, param_prototypes_lifespan) {
+    0: return 15; 
+    1: return 35; 
+}
+
+item(FEAT_TRAINS, item_cocodrilo_273) {
+    property {
+        name:                         string(STR_COCODRILO_273_NAME);
+        climates_available:           (param_prototypes_available) ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
+        introduction_date:            date(1931, 1, 1);
+        model_life:                   (param_prototypes_lifespan) ? 35 : 15;
+        vehicle_life:                 (param_prototypes_lifespan) ? 35 : 15;
+        reliability_decay:            20;
+        //refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        //non_refittable_cargo_classes: bitmask();
+        //loading_speed:                8; 
+        cost_factor:                  100;
+        running_cost_factor:          200;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        110 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   ELRL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        2280 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        //cargo_capacity:               85;
+        /*Cargo Capacity per wagon, up to a total of 168*/
+        weight:                       156 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  1.0 / 3;
+        air_drag_coefficient:         0.06;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      sw_cocodrilo_273_graphics;
+        purchase:                     set_cocodrilo_273_purchase;
+        articulated_part:             sw_cocodrilo_273_articulated_part;
     }
 }
 /*S275 "Cocodrilo" Train */

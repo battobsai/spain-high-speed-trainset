@@ -54,6 +54,7 @@ STR_480_NAME                 : Class 480
 STR_INGLESA_NAME             : Class 277 "English"
 STR_JAPONESA_289_NAME        : Class 289 "Japanese"
 STR_COCODRILO_272_NAME       : Class 272 "Crocodile"
+STR_COCODRILO_273_NAME       : Class 273 "Crocodile"
 STR_COCODRILO_275_NAME       : Class 275 "Crocodile"
 STR_TANDEM_NAME              : Class 289.100 "Tandem"
 STR_WOODENWAGON_NAME         : 1st Gen Passenger Carriage
@@ -139,7 +140,15 @@ STR_WAGON_SPEED_SLOW              : Slow (60, 100, 140).
 STR_WAGON_SPEED_DEFAULT           : Default (70, 110, 150).
 STR_WAGON_SPEED_FAST              : Fast (80, 120, 160).
 STR_WAGON_SPEED_MAX               : Extreme speed (110, 160, 220).
-STR_HSTRACK_NAME                  : Exclusive track for High Speed Trains
-STR_HSTRACK_DESC                  : Allows disabling exclusive high speed tracks for highspeed trains
-STR_NO_HSRAILTYPE                 : Disable high speed tracks
-STR_DEFAULT_HSRAILTYPE            : Keep high speed tracks
+STR_PROTOTYPES_AVAILABLE_NAME     : Availability of prototype trains.
+STR_PROTOTYPES_AVAILABLE_DESC     : Select the availability of prototype trains.
+STR_NO_PROTOTYPES                 : No prototypes.
+STR_PROTOTYPES                    : Prototypes available.
+STR_PROTOTYPES_LIFESPAN_NAME      : Lifespan of prototype trains.
+STR_PROTOTYPES_LIFESPAN_DESC      : Select the lifespan of prototype trains.
+STR_LOW_LIFESPAN_PROTOTYPES       : Prototypes have a low lifespan (between 8 and 15 years)
+STR_NORMAL_LIFESPAN_PROTOTYPES    : Prototypes have a similar lifespan than other trains (between 20 and 40 years)
+STR_HSTRAINS_TRACK_NAME           : Track type of high-speed trains.
+STR_HSTRAINS_TRACK_DESC           : Select the track type of high-speed trains (for compatibility with other NewGRF's). Note that making high speed trains running in default electric rail may turn useless some electric trains.
+STR_ELRL                          : High speed trains run on Default Electric Rail type like the other trains.
+STR_HSRL                          : High speed trains run on special high-speed tracks (default option)
