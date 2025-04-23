@@ -57,6 +57,7 @@ STR_COCODRILO_272_NAME       : Class 272 "Crocodile"
 STR_COCODRILO_273_NAME       : Class 273 "Crocodile"
 STR_COCODRILO_275_NAME       : Class 275 "Crocodile"
 STR_TANDEM_NAME              : Class 289.100 "Tandem"
+STR_TALGOI_NAME              : Class 349 "Talgo I"
 STR_WOODENWAGON_NAME         : 1st Gen Passenger Carriage
 STR_FPW_NAME                 : 2nd Gen Passenger Carriage
 STR_3PW_NAME                 : 3rd Gen Passenger Carriage
@@ -126,6 +127,7 @@ STR_SEMIBUQUE_CANNOT_START        :...train too long (max. 12 wagons)
 STR_SEMIBUQUE_CANNOT_ATTACH_OTHER :...the Class 452 EMU may not be attached to other types of trains.
 STR_480_CANNOT_START              :...train too long (max. 12 wagons)
 STR_480_CANNOT_ATTACH_OTHER       :...the Class 480 EMU may not be attached to other types of trains.
+STR_TALGOI_CANNOT_START           :...Talgo I can't be attached to any type of train.
 
 STR_HS_RAIL                       : High Speed Line (1435 mm)
 STR_BUILD_CAPTION                 : New Highspeed (1435 mm) trains
