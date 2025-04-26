@@ -2,7 +2,7 @@ grf {
     grfid : "SPA3" ;
     name : string(STR_GRF_NAME);
     desc : string(STR_GRF_DESC ) ;
-    version : 100;
+    version : 101;
     min_compatible_version : 71;
     param 1 {
 	param_wagon_speed {        
@@ -3809,7 +3809,7 @@ item(FEAT_TRAINS, item_talgoI) {
         running_cost_factor:          200;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        135 km/h;
-        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        misc_flags:                   bitmask(TRAIN_FLAG_TILT, TRAIN_FLAG_MU);
         refit_cost:                   0;
         track_type:                   RAIL;
         ai_special_flag:              AI_FLAG_PASSENGER;
@@ -4347,6 +4347,87 @@ item(FEAT_TRAINS, item_440) {
         start_stop:                   sw_440_start_stop;
         articulated_part:             sw_440_articulated_part;
         can_attach_wagon:             sw_440_can_attach_wagon;
+    }
+}
+/*443 "Platanito*/
+spriteset (set_platanito_front_lighted, "gfx/platanito.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_platanito_rear_lighted,  "gfx/platanito.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_platanito_view_wagon,    "gfx/platanito.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_platanito_rear,          "gfx/platanito.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_platanito_middle,        "gfx/platanito.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_platanito_purchase,      "gfx/platanito.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_platanito_invisible,     "gfx/platanito.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+
+switch(FEAT_TRAINS, SELF, sw_platanito_graphics, position_in_consist % 4) {
+    0:      set_platanito_front_lighted;
+    3:      set_platanito_rear_lighted;
+    set_platanito_middle;
+}
+
+switch(FEAT_TRAINS, SELF, sw_platanito_articulated_part, extra_callback_info1) {
+    1 .. 3: return item_platanito;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch(FEAT_TRAINS, SELF, sw_platanito_start_stop, num_vehs_in_consist) {
+    1 .. 4: return CB_RESULT_NO_TEXT;
+    return string(STR_PLATANITO_CANNOT_START);
+}
+
+switch(FEAT_TRAINS, SELF, sw_platanito_can_attach_wagon, vehicle_type_id) {
+    item_platanito: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_PLATANITO_CANNOT_START);
+}
+switch(FEAT_TRAINS, SELF, sw_platanito_availability, param_prototypes_available) {
+    0: return NO_CLIMATE; 
+    1: return bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+}
+
+switch(FEAT_TRAINS, SELF, sw_platanito_lifespan, param_prototypes_lifespan) {
+    0: return 12; 
+    1: return 30; 
+}
+
+item(FEAT_TRAINS, item_platanito) {
+    property {
+        name:                         string(STR_PLATANITO_NAME);
+        climates_available:           (param_prototypes_available) ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
+        introduction_date:            date(1976, 1, 1);
+        model_life:                   (param_prototypes_lifespan) ? 30 : 12;
+        vehicle_life:                 (param_prototypes_lifespan) ? 30 : 12;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        //non_refittable_cargo_classes: bitmask();
+        loading_speed:                8; 
+        cost_factor:                  100;
+        running_cost_factor:          200;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        180 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_TILT, TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   ELRL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        1760 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               42;
+        /*Cargo Capacity per wagon, up to a total of 168*/
+        weight:                       200 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  1.0 / 3;
+        air_drag_coefficient:         0.06;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      sw_platanito_graphics;
+        purchase:                     set_platanito_purchase;
+        articulated_part:             sw_platanito_articulated_part;
+        start_stop:                   sw_platanito_start_stop;
+        can_attach_wagon:             sw_platanito_can_attach_wagon;
     }
 }
 /*S448: Lavadora Train */

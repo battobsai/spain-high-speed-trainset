@@ -57,7 +57,8 @@ STR_COCODRILO_272_NAME   : S272 "Cocodrilos"
 STR_COCODRILO_273_NAME   : S273 "Cocodrilos"
 STR_COCODRILO_275_NAME   : S275 "Cocodrilos"
 STR_TANDEM_NAME          : S289.100 "Tándem"
-STR_TALGOI_NAME          : S349 "Talgo I"
+STR_TALGOI_NAME          : Talgo I
+STR_PLATANITO_NAME       : S443 "Platanito"
 STR_WOODENWAGON_NAME     : Vagon de Pasajeros de 1ra Generación
 STR_FPW_NAME             : Vagon de Pasajeros de 2da Generación
 STR_3PW_NAME             : Vagon de Pasajeros de 3ra Generación
@@ -128,6 +129,7 @@ STR_SEMIBUQUE_CANNOT_ATTACH_OTHER :...la Serie 452 "Semibuques" no se puede adju
 STR_480_CANNOT_START              :...tren muy largo (max. 12 carros)
 STR_480_CANNOT_ATTACH_OTHER       :...la Serie 480 no se puede adjuntar a otros trenes.
 STR_TALGOI_CANNOT_START           :...el Talgo I no se puede adjuntar a ningún tren.
+STR_PLATANITO_CANNOT_START        :...la Serie 443 "Platanitos" no se puede adjuntar a otros trenes.
 
 
 STR_HS_RAIL                       : Línea de Alta Velocidad (1435 mm)
