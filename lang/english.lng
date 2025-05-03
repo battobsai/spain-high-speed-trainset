@@ -21,10 +21,12 @@ STR_GUITARRA_NAME            : 0-3-0 "Guitar"
 STR_040_NAME                 : 0-4-0
 STR_120_NAME                 : 1-2-0
 STR_BOURBONNAIS_NAME         : 0-3-0 "Bycicle"
+STR_BOURBONNAIS_1898_NAME    : 0-3-0 "Bourbonnais"
 STR_COMPOUND_NAME            : 2-3-0 "Compound"
 STR_CUATROCIENTAS_NAME       : 1-4-0 (North 400's)
 STR_MASTODONTE_NAME          : 2-4-0 "Mastodon"
 STR_MIKADO_NAME              : 1-4-1 "Mikado"
+STR_PACIFIC_NAME             : 2-3-1 "Pacific"
 STR_MONTANA_NAME             : 2-4-1 "Mountain"
 STR_ATOMICA_NAME             : 2-4-1 "Atomic"
 STR_SANTAFE_NAME             : 1-5-1 "Santa Fé"
@@ -35,7 +37,7 @@ STR_2000T_NAME               : Class 352 "Talgo III" (ex. 2000T's)
 STR_3000T_NAME               : Class 353 "Talgo III" (ex. 3000T's)
 STR_SUIZAS_NAME              : Class 436 "Swiss"
 STR_HUEVO_NAME               : Class 340 "Eggs" 
-STR_JAPONESA_NAME            : Class 269 "Japanese"
+STR_JAPONESA_NAME            : Class 269-500 "Japanese"
 STR_OBISPO_NAME              : Class 432 "Bishops"
 STR_TER_NAME                 : Class 597 "TER"
 STR_440_NAME                 : Class 440 "Little Red Riding Hood"
@@ -52,6 +54,7 @@ STR_EURO6000_NAME            : Class 256 "Euro 6000"
 STR_SEMIBUQUE_NAME           : Class 452 "Semi-Vessel"
 STR_480_NAME                 : Class 480
 STR_INGLESA_NAME             : Class 277 "English"
+STR_JAPONESA_269_600_NAME    : Class 269-600 "Japanese"
 STR_JAPONESA_289_NAME        : Class 289 "Japanese"
 STR_COCODRILO_272_NAME       : Class 272 "Crocodile"
 STR_COCODRILO_273_NAME       : Class 273 "Crocodile"
