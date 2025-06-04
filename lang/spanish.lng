@@ -1,7 +1,7 @@
 ##grflangid 04
 #Archivo Lang del Español
 
-STR_GRF_NAME             : {ORANGE} Trenes Españoles de Battobsai
+STR_GRF_NAME             : {ORANGE} Trenes Españoles de Battobsai v0.5.0
 STR_GRF_DESC             : {ORANGE} Trenes Españoles de Battobsai{}{BLACK}Este NewGRF está diseñado para conseguir trenes de España. Se introducen trenes entre 1848 y 2026. 
 STR_IRYO_NAME            : S109 Iryo 
 STR_OUIGO_NAME           : S108 Ouigo
@@ -62,10 +62,15 @@ STR_COCODRILO_275_NAME   : S275 "Cocodrilos"
 STR_TANDEM_NAME          : S289-1 "Tándem"
 STR_TALGOI_NAME          : Talgo I
 STR_PLATANITO_NAME       : S443 "Platanito"
+STR_439_NAME             : S439
+STR_TRD_NAME             : S594 "TRD"
+STR_ALARIS_NAME          : S490 "Alaris"
+STR_120AV_NAME           : S120
 STR_WOODENWAGON_NAME     : Vagon de Pasajeros de 1ra Generación
 STR_FPW_NAME             : Vagon de Pasajeros de 2da Generación
-STR_3PW_NAME             : Vagon de Pasajeros de 3ra Generación
-STR_4PW_NAME             : Vagón de Pasajeros de 4ta Generación
+STR_3PW_NAME             : Vagon de Pasajeros Verderón
+STR_ESTRELLA_WAGON       : Vagón de Pasajeros Estrella
+STR_4PW_NAME             : Vagón de Pasajeros Arco
 STR_TALGOPAS_NAME        : Vagon Talgo
 STR_TPP_NAME             : Vagon Talgo Pendular
 STR_WOODMAIL_NAME        : Vagón de Correo de 1ra Generación
@@ -133,6 +138,14 @@ STR_480_CANNOT_START              :...tren muy largo (max. 12 carros)
 STR_480_CANNOT_ATTACH_OTHER       :...la Serie 480 no se puede adjuntar a otros trenes.
 STR_TALGOI_CANNOT_START           :...el Talgo I no se puede adjuntar a ningún tren.
 STR_PLATANITO_CANNOT_START        :...la Serie 443 "Platanitos" no se puede adjuntar a otros trenes.
+STR_439_CANNOT_START              :...tren muy largo (max. 6 carros)
+STR_439_CANNOT_ATTACH_OTHER       :...la Serie 439 no se puede adjuntar a otros trenes.
+STR_TRD_CANNOT_START              :...tren muy largo (max. 10 carros)
+STR_TRD_CANNOT_ATTACH_OTHER      :...la Serie 594 (TRD) no se puede adjuntar a otros trenes.
+STR_ALARIS_CANNOT_START           :...tren muy largo (max. 9 carros)
+STR_ALARIS_CANNOT_ATTACH_OTHER    :...la Serie 490 (Alaris) no se puede adjuntar a otros trenes.
+STR_120AV_CANNOT_START            :...tren muy largo (max. 8 carros)
+STR_120AV_CANNOT_ATTACH_OTHER     :...la Serie 120 no se puede adjuntar a otros trenes.
 
 
 STR_HS_RAIL                       : Línea de Alta Velocidad (1435 mm)
