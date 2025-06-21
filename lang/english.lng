@@ -1,7 +1,7 @@
 ##grflangid 0x01
 #English language file
 
-STR_GRF_NAME                 :{ORANGE}Battobsai Spanish Trainset v0.5.0
+STR_GRF_NAME                 :{ORANGE}Battobsai Spanish Trainset v0.5.0 - r7625-2
 STR_GRF_DESC                 :{ORANGE}Battobsai Spanish Trainset{}{BLACK}This NewGRF is intended to provide Spanish trains. It has trains between the 1848 and the 2026.
 STR_IRYO_NAME                : Class 109 Iryo 
 STR_OUIGO_NAME               : Class 108 Ouigo
