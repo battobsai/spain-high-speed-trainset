@@ -1,7 +1,7 @@
 ##grflangid 0x01
 #English language file
 
-STR_GRF_NAME                 :{ORANGE}Battobsai Spanish Trainset v0.5.0 - r7625-2
+STR_GRF_NAME                 :{ORANGE}Battobsai Spanish Trainset v0.6.0 - alpha001
 STR_GRF_DESC                 :{ORANGE}Battobsai Spanish Trainset{}{BLACK}This NewGRF is intended to provide Spanish trains. It has trains between the 1848 and the 2026.
 STR_IRYO_NAME                : Class 109 Iryo 
 STR_OUIGO_NAME               : Class 108 Ouigo
@@ -173,3 +173,12 @@ STR_HSTRAINS_TRACK_NAME           : Track type of high-speed trains.
 STR_HSTRAINS_TRACK_DESC           : Select the track type of high-speed trains (for compatibility with other NewGRF's). Note that making high speed trains running in default electric rail may turn useless some electric trains.
 STR_ELRL                          : High speed trains run on Default Electric Rail type like the other trains.
 STR_HSRL                          : High speed trains run on special high-speed tracks (default option)
+STR_TRAIN_COST_NAME               : Purchase cost of trains.
+STR_TRAIN_COST_DESC               : Select the purchase cost of trains. For example, with the default value, a high speed train costs about 1M €. With low value, it only costs 500K€. With high value it will cost almost 2M €.
+STR_WAGON_COST_NAME               : Purchase cost of wagons.
+STR_WAGON_COST_DESC               : Select the purchase cost of wagons. Wagons cost near 2500€ with low prices and near 10000€ with high prices.
+STR_RUNNING_COST_NAME             : Running cost of trains.
+STR_RUNNING_COST_DESC             : Select the running cost of trains.
+STR_COST_LOW                      : The cost is low. Best for recreating networks without having to worry about money.
+STR_COST_MEDIUM                   : The cost is medium. Default option.
+STR_COST_HIGH                     : The cost is high. Best if you're looking for a challenge.

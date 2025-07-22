@@ -1,7 +1,7 @@
 ##grflangid 04
 #Archivo Lang del Español
 
-STR_GRF_NAME             : {ORANGE} Trenes Españoles de Battobsai v0.5.0- r7625-2
+STR_GRF_NAME             : {ORANGE} Trenes Españoles de Battobsai v0.6.0 alfa001
 STR_GRF_DESC             : {ORANGE} Trenes Españoles de Battobsai{}{BLACK}Este NewGRF está diseñado para conseguir trenes de España. Se introducen trenes entre 1848 y 2026. 
 STR_IRYO_NAME            : S109 Iryo 
 STR_OUIGO_NAME           : S108 Ouigo
@@ -173,3 +173,12 @@ STR_HSTRAINS_TRACK_NAME           : Tipo de vía de los trenes de alta velocidad
 STR_HSTRAINS_TRACK_DESC           : Selecciona el tipo de vía de los trenes de alta velocidad (para ser compatible con otros NewGRF's). Note que al hacer que los trenes de alta velocidad vayan por vías electricas normales volverá algunos trenes electricos inútiles.
 STR_ELRL                          : Los trenes de alta velocidad van por las vías electrificadas normales como los demás trenes.
 STR_HSRL                          : Los trenes de alta velocidad van por vías especiales de alta velocidad.
+STR_TRAIN_COST_NAME               : Precio de comprar trenes.
+STR_TRAIN_COST_DESC               : Decide el precio de compra de los trenes. Con el valor Medio, un tren de alta velocidad costará 1 millón de €. Con el valor bajo, costará 500.000€. Con el valor alto, costará unos 2 millones de €. Estos valores son aproximados.
+STR_WAGON_COST_NAME               : Precio de comprar vagones.
+STR_WAGON_COST_DESC               : Decide el precio de comprar vagones. Los precios oscilan entre 2000 (vagones baratos con precio bajo) y 12000 (vagones más caros con precio alto).
+STR_RUNNING_COST_NAME             : Costos operacionales.
+STR_RUNNING_COST_DESC             : Decide los costos operacionales.
+STR_COST_LOW                      : Precio bajo. Ideal para recrear redes sin preocuparse del presupuesto.
+STR_COST_MEDIUM                   : Precio medio. Opción por defecto, ni barato ni muy caro.
+STR_COST_HIGH                     : Precio alto. Ideal para los que busquen un desafío.

@@ -62,9 +62,75 @@ grf {
 		    };
         }
     }
+    param 5 {
+	param_train_cost {        
+            type:    int;
+ 			name:    string(STR_TRAIN_COST_NAME);
+ 			desc:    string(STR_TRAIN_COST_DESC);
+ 			min_value: 0;
+ 			max_value: 2;
+ 			def_value: 1;
+ 			names: {
+			0: string (STR_COST_LOW);
+            1: string (STR_COST_MEDIUM);
+			2: string (STR_COST_HIGH);
+		    };
+        }
+    }
+    param 6 {
+	param_wagon_cost {        
+            type:    int;
+ 			name:    string(STR_WAGON_COST_NAME);
+ 			desc:    string(STR_WAGON_COST_DESC);
+ 			min_value: 0;
+ 			max_value: 2;
+ 			def_value: 1;
+ 			names: {
+			0: string (STR_COST_LOW);
+            1: string (STR_COST_MEDIUM);
+			2: string (STR_COST_HIGH);
+		    };
+        }
+    }
+    param 7 {
+	param_running_cost {        
+            type:    int;
+ 			name:    string(STR_RUNNING_COST_NAME);
+ 			desc:    string(STR_RUNNING_COST_DESC);
+ 			min_value: 1;
+ 			max_value: 3;
+ 			def_value: 2;
+ 			names: {
+			1: string (STR_COST_LOW);
+            2: string (STR_COST_MEDIUM);
+			3: string (STR_COST_HIGH);
+		    };
+        }
+    }
 }
 //Disabling of all train items
 disable_item (FEAT_TRAINS, 0, 115);
+//basecosts
+switch(FEAT_TRAINS, SELF, sw_trains_cost, param_train_cost) {
+    0: return 1; 
+    1: return 2; 
+    2: return 4;
+}
+switch(FEAT_TRAINS, SELF, sw_wagons_cost, param_wagon_cost) {
+    0: return 2; 
+    1: return 4; 
+    2: return 8;
+}
+switch(FEAT_TRAINS, SELF, sw_running_cost, param_running_cost) {
+    0: return 2; 
+    1: return 4; 
+    2: return 8;
+}
+basecost {
+    PR_BUILD_VEHICLE_TRAIN: (param_train_cost);
+    PR_BUILD_VEHICLE_WAGON: (param_wagon_cost);
+    PR_RUNNING:             (param_running_cost);
+}
 
 template tmpl_vehicle_basic(x, y) {
     [x,      y,  8, 24,  -3, -12]
@@ -132,11 +198,11 @@ template tmpl_underlay_railtypes() {
     ground_tile( 75, 80)
     ground_tile(300, 80)
 }
+
 /* Spriteset containing all underlays */
 spriteset(track_underlays, "gfx/rails_overlays.png") {
     tmpl_underlay_railtypes()
 }
-
 /**********************************************
  * Track overlays (tracks without ballast):
  **********************************************/
@@ -160,7 +226,6 @@ template tmpl_overlay_railtypes() {
 spriteset(track_overlays, "gfx/rails_overlays.png") {
  tmpl_overlay_railtypes()
 }
-
 
 /**********************************************
  * Level crossings:
@@ -383,9 +448,9 @@ item(FEAT_RAILTYPES, hsrail) {
         menu_text: string (STR_HSRAIL_NAME);
         build_window_caption: string (STR_HSRAIL_DEPOT);
         toolbar_caption: string (STR_HSRAIL_TOOLBAR);
-        compatible_railtype_list: ["EHIG", "HSTR", "DBHE"] ;
+        compatible_railtype_list: ["EHIG", "HSTR", "DBHE", "ELRL"] ;
         powered_railtype_list: ["E040", "E080", "ELOW", "EMED", "EHIG", "HSTR", "DBNE", "DBHE"];
-        railtype_flags: bitmask(RAILTYPE_FLAG_NO_LEVEL_CROSSING);
+        railtype_flags: bitmask(RAILTYPE_FLAG_NO_LEVEL_CROSSING, RAILTYPE_FLAG_CATENARY);
         station_graphics: RAILTYPE_STATION_MAGLEV;
         construction_cost: 25;
     }
@@ -400,7 +465,6 @@ item(FEAT_RAILTYPES, hsrail) {
         bridge_surfaces: bridge_underlay;
         fences: fencesCC;
         gui: gui_electric;
-        /* Caternary is not not implemented here yet, but I'll try to the default */
     }
 }
 
@@ -415,6 +479,7 @@ switch(FEAT_TRAINS, SELF, sw_hstrains_tracktype, param_hstrains_track) {
     0: return ELRL; 
     1: return "HSRL"; 
 }
+
 /*S109: Iryo Train */
 spriteset (set_iryo_front_lighted, "gfx/iryo.png") { tmpl_vehicle_8_views(0, 0) }
 spriteset (set_iryo_rear_lighted,  "gfx/iryo.png") { tmpl_vehicle_8_views(1, 1) }
@@ -469,7 +534,7 @@ item(FEAT_TRAINS, item_iryo) {
         dual_headed:                  0;
         cargo_capacity:               57;
         /*Cargo Capacity per wagon, up to a total of 416*/
-        weight:                       400 ton;
+        weight:                       500 ton;
         ai_engine_rank:               0;
         engine_class:                 ENGINE_CLASS_ELECTRIC;
         extra_power_per_wagon:        0 kW;
@@ -540,7 +605,7 @@ item(FEAT_TRAINS, item_ouigo) {
         dual_headed:                  0;
         cargo_capacity:               51;
         /*Cargo Capacity per wagon, up to a total of 510*/
-        weight:                       280 ton;
+        weight:                       380 ton;
         ai_engine_rank:               0;
         engine_class:                 ENGINE_CLASS_ELECTRIC;
         extra_power_per_wagon:        0 kW;
@@ -612,7 +677,7 @@ item(FEAT_TRAINS, item_avloavril) {
         dual_headed:                  0;
         cargo_capacity:               42;
         /*Cargo Capacity per wagon, up to a total of 588*/
-        weight:                       230 ton;
+        weight:                       330 ton;
         ai_engine_rank:               0;
         engine_class:                 ENGINE_CLASS_ELECTRIC;
         extra_power_per_wagon:        0 kW;
@@ -684,7 +749,7 @@ item(FEAT_TRAINS, item_avecien) {
         dual_headed:                  0;
         cargo_capacity:               35;
         /*Cargo Capacity per wagon, up to a total of 350*/
-        weight:                       290 ton;
+        weight:                       390 ton;
         ai_engine_rank:               0;
         engine_class:                 ENGINE_CLASS_ELECTRIC;
         extra_power_per_wagon:        0 kW;
@@ -756,7 +821,7 @@ item(FEAT_TRAINS, item_avepato) {
         dual_headed:                  0;
         cargo_capacity:               23;
         /*Cargo Capacity per wagon, up to a total of 322*/
-        weight:                       220 ton;
+        weight:                       320 ton;
         ai_engine_rank:               0;
         engine_class:                 ENGINE_CLASS_ELECTRIC;
         extra_power_per_wagon:        0 kW;
@@ -829,7 +894,7 @@ item(FEAT_TRAINS, item_velaro) {
         dual_headed:                  0;
         cargo_capacity:               51;
         /*Cargo Capacity per wagon, up to a total of 408*/
-        weight:                       345 ton;
+        weight:                       445 ton;
         ai_engine_rank:               0;
         engine_class:                 ENGINE_CLASS_ELECTRIC;
         extra_power_per_wagon:        0 kW;
