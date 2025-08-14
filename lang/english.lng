@@ -9,63 +9,63 @@ STR_AVLOAVRIL_NAME           : Class 106 "Avril" (Avlo)
 STR_AVECIEN_NAME             : Class 100 AVE
 STR_AVEPATO_NAME             : Class 102 "Duck"
 STR_VELARO_NAME              : Class 103 "Velaro"
-STR_EUROMED_NAME             : Class 101 "Euromed"
+STR_EUROMED_NAME             : Class 101 "Euromed" (EMU)
 STR_AVANT_NAME               : Class 114 "Avant"
-STR_PATITO_NAME              : Class 130 "Little Duck"
-STR_AVEAVRIL_NAME            : Class 106 "AVRIL" (AVE)
-STR_PINGUINO_NAME            : Class 433 (ex. 300) "Penguin"
-STR_TAF_NAME                 : Class 595 "TAF"
-STR_MATARO_NAME              : 1-1-1 "Mataró"
-STR_MARTORELL_NAME           : 1-2-0 T "Martorell"
-STR_GUITARRA_NAME            : 0-3-0 "Guitar"
-STR_040_NAME                 : 0-4-0
-STR_120_NAME                 : 1-2-0
-STR_BOURBONNAIS_NAME         : 0-3-0 "Bycicle"
-STR_BOURBONNAIS_1898_NAME    : 0-3-0 "Bourbonnais"
-STR_COMPOUND_NAME            : 2-3-0 "Compound"
-STR_CUATROCIENTAS_NAME       : 1-4-0 (North 400's)
-STR_MASTODONTE_NAME          : 2-4-0 "Mastodon"
-STR_MIKADO_NAME              : 1-4-1 "Mikado"
-STR_PACIFIC_NAME             : 2-3-1 "Pacific"
-STR_MONTANA_NAME             : 2-4-1 "Mountain"
-STR_ATOMICA_NAME             : 2-4-1 "Atomic"
-STR_SANTAFE_NAME             : 1-5-1 "Santa Fé"
-STR_TALGOII_NAME             : Class 350 "Talgo II"
-STR_RENAULT_NAME             : Class 590 (ex. 9300's) "Renault"
-STR_CONFE_NAME               : 2-4-2 "Confederacy"
-STR_2000T_NAME               : Class 352 "Talgo III" (ex. 2000T's)
-STR_3000T_NAME               : Class 353 "Talgo III" (ex. 3000T's)
-STR_SUIZAS_NAME              : Class 436 "Swiss"
-STR_HUEVO_NAME               : Class 340 "Eggs" 
-STR_JAPONESA_NAME            : Class 269-500 "Japanese"
-STR_OBISPO_NAME              : Class 432 "Bishops"
-STR_TER_NAME                 : Class 597 "TER"
-STR_440_NAME                 : Class 440 "Little Red Riding Hood"
-STR_JAPOYMEDIA_NAME          : Class 251 "Japanese & Half"
-STR_TALGOIV_NAME             : Class 354 "Talgo IV"
-STR_LAVADORA_NAME            : Class 448 "Washing machine"
-STR_CAMELLO_NAME             : Class 593 "Camel"
-STR_EUROSPRINTER_NAME        : Class 252 (Pre-Euro Sprinter)
-STR_BUQUE_NAME               : Class 450 "Vessel"
-STR_TRAXX_NAME               : Class 253 "TRAXX"
-STR_BESUGO_NAME              : Class 449 "Sea Bream"
-STR_TDMD_NAME                : Class 599 "TDMD"
-STR_EURO6000_NAME            : Class 256 "Euro 6000"
-STR_SEMIBUQUE_NAME           : Class 452 "Semi-Vessel"
-STR_480_NAME                 : Class 480
-STR_INGLESA_NAME             : Class 277 "English"
-STR_JAPONESA_269_600_NAME    : Class 269-600 "Japanese"
-STR_JAPONESA_289_NAME        : Class 289 "Japanese"
-STR_COCODRILO_272_NAME       : Class 272 "Crocodile"
-STR_COCODRILO_273_NAME       : Class 273 "Crocodile"
-STR_COCODRILO_275_NAME       : Class 275 "Crocodile"
-STR_TANDEM_NAME              : Class 289.100 "Tandem"
-STR_TALGOI_NAME              : Talgo I
-STR_PLATANITO_NAME           : Class 443 "Little Banana"
-STR_439_NAME                 : Class 439
-STR_TRD_NAME                 : Class 594 "TRD"
-STR_ALARIS_NAME              : Class 490 "Alaris"
-STR_120AV_NAME               : Class 120
+STR_PATITO_NAME              : Class 130 "Little Duck" (EMU)
+STR_AVEAVRIL_NAME            : Class 106 "AVRIL" (AVE) (EMU)
+STR_PINGUINO_NAME            : Class 433 (ex. 300) "Penguin" (EMU)
+STR_TAF_NAME                 : Class 595 "TAF" (DMU)
+STR_MATARO_NAME              : 1-1-1 "Mataró" (Steam)
+STR_MARTORELL_NAME           : 1-2-0 T "Martorell" (Steam)
+STR_GUITARRA_NAME            : 0-3-0 "Guitar" (Steam)
+STR_040_NAME                 : 0-4-0 (Steam)
+STR_120_NAME                 : 1-2-0 (Steam)
+STR_BOURBONNAIS_NAME         : 0-3-0 "Bycicle" (Steam)
+STR_BOURBONNAIS_1898_NAME    : 0-3-0 "Bourbonnais" (Steam)
+STR_COMPOUND_NAME            : 2-3-0 "Compound" (Steam)
+STR_CUATROCIENTAS_NAME       : 1-4-0 (North 400's) (Steam)
+STR_MASTODONTE_NAME          : 2-4-0 "Mastodon" (Steam)
+STR_MIKADO_NAME              : 1-4-1 "Mikado" (Steam)
+STR_PACIFIC_NAME             : 2-3-1 "Pacific" (Steam)
+STR_MONTANA_NAME             : 2-4-1 "Mountain" (Steam)
+STR_ATOMICA_NAME             : 2-4-1 "Atomic" (Steam)
+STR_SANTAFE_NAME             : 1-5-1 "Santa Fé" (Steam)
+STR_TALGOII_NAME             : Class 350 "Talgo II" (Diesel)
+STR_RENAULT_NAME             : Class 590 (ex. 9300's) "Renault" (DMU)
+STR_CONFE_NAME               : 2-4-2 "Confederacy" (Steam)
+STR_2000T_NAME               : Class 352 "Talgo III" (ex. 2000T's) (Diesel)
+STR_3000T_NAME               : Class 353 "Talgo III" (ex. 3000T's) (Diesel)
+STR_SUIZAS_NAME              : Class 436 "Swiss" (EMU)
+STR_HUEVO_NAME               : Class 340 "Eggs" (Diesel) 
+STR_JAPONESA_NAME            : Class 269-500 "Japanese" (Electric)
+STR_OBISPO_NAME              : Class 432 "Bishops" (EMU)
+STR_TER_NAME                 : Class 597 "TER" (DMU)
+STR_440_NAME                 : Class 440 "Little Red Riding Hood" (EMU)
+STR_JAPOYMEDIA_NAME          : Class 251 "Japanese & Half" (Electric)
+STR_TALGOIV_NAME             : Class 354 "Talgo IV" (Diesel)
+STR_LAVADORA_NAME            : Class 448 "Washing machine" (EMU)
+STR_CAMELLO_NAME             : Class 593 "Camel" (DMU)
+STR_EUROSPRINTER_NAME        : Class 252 (Pre-Euro Sprinter) (Electric)
+STR_BUQUE_NAME               : Class 450 "Vessel" (EMU)
+STR_TRAXX_NAME               : Class 253 "TRAXX" (Electric)
+STR_BESUGO_NAME              : Class 449 "Sea Bream" (EMU)
+STR_TDMD_NAME                : Class 599 "TDMD" (DMU)
+STR_EURO6000_NAME            : Class 256 "Euro 6000" (Electric)
+STR_SEMIBUQUE_NAME           : Class 452 "Semi-Vessel" (EMU)
+STR_480_NAME                 : Class 480 (EMU)
+STR_INGLESA_NAME             : Class 277 "English" (Electric)
+STR_JAPONESA_269_600_NAME    : Class 269-600 "Japanese" (Electric)
+STR_JAPONESA_289_NAME        : Class 289 "Japanese" (Electric)
+STR_COCODRILO_272_NAME       : Class 272 "Crocodile" (Electric)
+STR_COCODRILO_273_NAME       : Class 273 "Crocodile" (Electric)
+STR_COCODRILO_275_NAME       : Class 275 "Crocodile" (Electric)
+STR_TANDEM_NAME              : Class 289.100 "Tandem" (Electric)
+STR_TALGOI_NAME              : Talgo I (DMU)
+STR_PLATANITO_NAME           : Class 443 "Little Banana" (EMU)
+STR_439_NAME                 : Class 439 (EMU)
+STR_TRD_NAME                 : Class 594 "TRD" (DMU)
+STR_ALARIS_NAME              : Class 490 "Alaris" (EMU)
+STR_120AV_NAME               : Class 120 (EMU)
 STR_WOODENWAGON_NAME         : 1st Gen Passenger Carriage
 STR_FPW_NAME                 : 2nd Gen Passenger Carriage
 STR_3PW_NAME                 : 3rd Gen Passenger Carriage

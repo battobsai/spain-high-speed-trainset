@@ -9,63 +9,63 @@ STR_AVLOAVRIL_NAME       : S106 "Avril" (Avlo)
 STR_AVECIEN_NAME         : S100 AVE
 STR_AVEPATO_NAME         : S102 "Pato"
 STR_VELARO_NAME          : S103 "Velaro"
-STR_EUROMED_NAME         : S101 "Euromed"
+STR_EUROMED_NAME         : S101 "Euromed" (Eléctrico)
 STR_AVANT_NAME           : S114 "Avant"
-STR_PATITO_NAME          : S130 "Patito"
-STR_AVEAVRIL_NAME        : S106 "Avril" (AVE)
-STR_PINGUINO_NAME        : S433 (ex. 300) "Pingüino"
-STR_TAF_NAME             : S595 "Tren Automotor Fiat/TAF"
-STR_MATARO_NAME          : 1-1-1 "Mataró"
-STR_MARTORELL_NAME       : 1-2-0 T "Martorell"
-STR_GUITARRA_NAME        : 0-3-0 "Guitarra"
-STR_040_NAME             : 0-4-0
-STR_120_NAME             : 1-2-0
-STR_BOURBONNAIS_NAME     : 0-3-0 "Bicicleta"
-STR_BOURBONNAIS_1898_NAME: 0-3-0 "Bourbonnais"
-STR_COMPOUND_NAME        : 2-3-0 "Compound"
-STR_CUATROCIENTAS_NAME   : 1-4-0 (400 de Norte)
-STR_MASTODONTE_NAME      : 2-4-0 "Mastodonte"
-STR_MIKADO_NAME          : 1-4-1 "Mikado"
-STR_PACIFIC_NAME         : 2-3-1 "Pacific"
-STR_MONTANA_NAME         : 2-4-1 "Montaña"
-STR_ATOMICA_NAME         : 2-4-1 "Atómica"
-STR_SANTAFE_NAME         : 1-5-1 "Santa Fé"
-STR_TALGOII_NAME         : S350 "Talgo II"
-STR_RENAULT_NAME         : S590 (ex 9300)"Renault"
+STR_PATITO_NAME          : S130 "Patito" (Eléctrico)
+STR_AVEAVRIL_NAME        : S106 "Avril" (AVE) (Eléctrico)
+STR_PINGUINO_NAME        : S433 (ex. 300) "Pingüino" (Eléctrico)
+STR_TAF_NAME             : S595 "Tren Automotor Fiat/TAF" (Diésel)
+STR_MATARO_NAME          : 1-1-1 "Mataró" (Vapor)
+STR_MARTORELL_NAME       : 1-2-0 T "Martorell" (Vapor)
+STR_GUITARRA_NAME        : 0-3-0 "Guitarra" (Vapor)
+STR_040_NAME             : 0-4-0 (Vapor)
+STR_120_NAME             : 1-2-0 (Vapor)
+STR_BOURBONNAIS_NAME     : 0-3-0 "Bicicleta" (Vapor)
+STR_BOURBONNAIS_1898_NAME: 0-3-0 "Bourbonnais" (Vapor)
+STR_COMPOUND_NAME        : 2-3-0 "Compound" (Vapor)
+STR_CUATROCIENTAS_NAME   : 1-4-0 (400 de Norte) (Vapor)
+STR_MASTODONTE_NAME      : 2-4-0 "Mastodonte" (Vapor)
+STR_MIKADO_NAME          : 1-4-1 "Mikado" (Vapor)
+STR_PACIFIC_NAME         : 2-3-1 "Pacific" (Vapor)
+STR_MONTANA_NAME         : 2-4-1 "Montaña" (Vapor)
+STR_ATOMICA_NAME         : 2-4-1 "Atómica" (Vapor)
+STR_SANTAFE_NAME         : 1-5-1 "Santa Fé" (Vapor)
+STR_TALGOII_NAME         : S350 "Talgo II" (Diésel)
+STR_RENAULT_NAME         : S590 (ex 9300)"Renault" (Diésel)
 STR_CONFE_NAME           : 2-4-2 "Confederación"
-STR_2000T_NAME           : S352 "Talgo III" (ex. 2000T)
-STR_3000T_NAME           : S353 "Talgo III" (ex. 3000T)
-STR_SUIZAS_NAME          : S436 "Suizas"
-STR_HUEVO_NAME           : S340 "Huevos"
-STR_JAPONESA_NAME        : S269-5 "Japonesas"
-STR_JAPONESA_269_600_NAME: S269-6 "Japonesas"
-STR_OBISPO_NAME          : S432 "Obispos"
-STR_TER_NAME             : S597 "Tren Español Rápido (TER)"
-STR_440_NAME             : S440 "Caperucitas"
-STR_JAPOYMEDIA_NAME      : S251 "Japonesa y Media"
-STR_TALGOIV_NAME         : S354 "Talgo IV"
-STR_LAVADORA_NAME        : S448 "Lavadora"
-STR_CAMELLO_NAME         : S593 "Camello"
-STR_EUROSPRINTER_NAME    : S252 (Pre-Euro Sprinter)
-STR_BUQUE_NAME           : S450 "Buque"
-STR_TRAXX_NAME           : S253 "TRAXX"
-STR_BESUGO_NAME          : S449 "Besugo"
-STR_TDMD_NAME            : S599 "TDMD"
-STR_EURO6000_NAME        : S256 "Euro 6000"
-STR_SEMIBUQUE_NAME       : S452 "Semi-Buque"
-STR_480_NAME             : S480
-STR_INGLESA_NAME         : S277 "Inglesas"
-STR_JAPONESA_289_NAME    : S289-0 "Japonesas"
-STR_COCODRILO_272_NAME   : S272 "Cocodrilos"
-STR_COCODRILO_273_NAME   : S273 "Cocodrilos"
-STR_COCODRILO_275_NAME   : S275 "Cocodrilos"
-STR_TANDEM_NAME          : S289-1 "Tándem"
-STR_TALGOI_NAME          : Talgo I
-STR_PLATANITO_NAME       : S443 "Platanito"
-STR_439_NAME             : S439
-STR_TRD_NAME             : S594 "TRD"
-STR_ALARIS_NAME          : S490 "Alaris"
-STR_120AV_NAME           : S120
+STR_2000T_NAME           : S352 "Talgo III" (ex. 2000T) (Diésel)
+STR_3000T_NAME           : S353 "Talgo III" (ex. 3000T) (Diésel)
+STR_SUIZAS_NAME          : S436 "Suizas" (Eléctrico)
+STR_HUEVO_NAME           : S340 "Huevos" (Diésel)
+STR_JAPONESA_NAME        : S269-5 "Japonesas" (Eléctrico)
+STR_JAPONESA_269_600_NAME: S269-6 "Japonesas" (Eléctrico)
+STR_OBISPO_NAME          : S432 "Obispos" (Eléctrico)
+STR_TER_NAME             : S597 "Tren Español Rápido (TER)" (Diésel)
+STR_440_NAME             : S440 "Caperucitas" (Eléctrico)
+STR_JAPOYMEDIA_NAME      : S251 "Japonesa y Media" (Eléctrico)
+STR_TALGOIV_NAME         : S354 "Talgo IV" (Diésel)
+STR_LAVADORA_NAME        : S448 "Lavadora" (Eléctrico)
+STR_CAMELLO_NAME         : S593 "Camello" (Diésel)
+STR_EUROSPRINTER_NAME    : S252 (Pre-Euro Sprinter) (Eléctrico)
+STR_BUQUE_NAME           : S450 "Buque" (Eléctrico)
+STR_TRAXX_NAME           : S253 "TRAXX" (Eléctrico)
+STR_BESUGO_NAME          : S449 "Besugo" (Eléctrico)
+STR_TDMD_NAME            : S599 "TDMD" (Diésel)
+STR_EURO6000_NAME        : S256 "Euro 6000" (Eléctrico)
+STR_SEMIBUQUE_NAME       : S452 "Semi-Buque" (Eléctrico)
+STR_480_NAME             : S480 (Eléctrico)
+STR_INGLESA_NAME         : S277 "Inglesas" (Eléctrico)
+STR_JAPONESA_289_NAME    : S289-0 "Japonesas" (Eléctrico)
+STR_COCODRILO_272_NAME   : S272 "Cocodrilos" (Eléctrico)
+STR_COCODRILO_273_NAME   : S273 "Cocodrilos" (Eléctrico)
+STR_COCODRILO_275_NAME   : S275 "Cocodrilos" (Eléctrico)
+STR_TANDEM_NAME          : S289-1 "Tándem" (Eléctrico)
+STR_TALGOI_NAME          : Talgo I  (Diésel)
+STR_PLATANITO_NAME       : S443 "Platanito" (Eléctrico)
+STR_439_NAME             : S439 (Eléctrico)
+STR_TRD_NAME             : S594 "TRD" (Diésel)
+STR_ALARIS_NAME          : S490 "Alaris" (Eléctrico)
+STR_120AV_NAME           : S120 (Eléctrico)
 STR_WOODENWAGON_NAME     : Vagon de Pasajeros de 1ra Generación
 STR_FPW_NAME             : Vagon de Pasajeros de 2da Generación
 STR_3PW_NAME             : Vagon de Pasajeros Verderón
