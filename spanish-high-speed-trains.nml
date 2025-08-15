@@ -1,8 +1,8 @@
 grf {
     grfid : "SPA3" ;
     name : string(STR_GRF_NAME);
-    desc : string(STR_GRF_DESC ) ;
-    version : 110;
+    desc : string(STR_GRF_DESC) ;
+    version : 112;
     min_compatible_version : 101;
     param 1 {
 	param_wagon_speed {        
@@ -4173,7 +4173,7 @@ item(FEAT_TRAINS, item_talgoI) {
     property {
         name:                         string(STR_TALGOI_NAME);
         climates_available:           (param_prototypes_available) ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
-        introduction_date:            date(1941, 1, 1);
+        introduction_date:            date(50000, 1, 1);
         model_life:                   (param_prototypes_lifespan) ? 30 : 8;
         vehicle_life:                 (param_prototypes_lifespan) ? 30 : 8;
         reliability_decay:            20;

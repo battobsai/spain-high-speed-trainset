@@ -1,8 +1,8 @@
 ##grflangid 04
 #Archivo Lang del Español
 
-STR_GRF_NAME             : {ORANGE} Trenes Españoles de Battobsai v0.6.0 alfa001
-STR_GRF_DESC             : {ORANGE} Trenes Españoles de Battobsai{}{BLACK}Este NewGRF está diseñado para conseguir trenes de España. Se introducen trenes entre 1848 y 2026. 
+STR_GRF_NAME             : {ORANGE} Trenes Españoles de Battobsai v1.0.0
+STR_GRF_DESC             : {ORANGE} Trenes Españoles de Battobsai{}{BLACK}Este NewGRF está diseñado para conseguir trenes de España. Se introducen trenes entre 1848 y 2026. No compatible con IA o Sets Industriales.
 STR_IRYO_NAME            : S109 Iryo 
 STR_OUIGO_NAME           : S108 Ouigo
 STR_AVLOAVRIL_NAME       : S106 "Avril" (Avlo)
