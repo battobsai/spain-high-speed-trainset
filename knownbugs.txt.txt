@@ -1,0 +1,2 @@
+First Generation Mail Wagon isn't located correctly, move down and right.
+Some trains have bad sprites that should be changed.
