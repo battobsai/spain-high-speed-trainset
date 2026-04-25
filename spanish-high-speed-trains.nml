@@ -2,7 +2,7 @@ grf {
     grfid : "SPA3" ;
     name : string(STR_GRF_NAME);
     desc : string(STR_GRF_DESC) ;
-    version : 112;
+    version : 120;
     min_compatible_version : 101;
     param 1 {
 	param_wagon_speed {        
@@ -438,18 +438,33 @@ spriteset(gui_electric, "gfx/gui_erail.png") {
  **********************************************
 
 /* Define the highspeed rails */
+item(FEAT_RAILTYPES, ) {
+    /* Set only the most essential properties,
+     * Lots of compatible railtypes are defined to allow compatibility with
+     * various other sets out there */
+    property {
+        label: ELRL; 
+        compatible_railtype_list: ["GACH"] ;
+        powered_railtype_list: ["GACH"];
+        railtype_flags: bitmask(RAILTYPE_FLAG_CATENARY);
+    }
+
+}
+
+
 item(FEAT_RAILTYPES, hsrail) {
     /* Set only the most essential properties,
      * Lots of compatible railtypes are defined to allow compatibility with
      * various other sets out there */
+     
     property {
         label: "HSRL"; // 
         name : string (STR_HSRAIL_NAME);
         menu_text: string (STR_HSRAIL_NAME);
         build_window_caption: string (STR_HSRAIL_DEPOT);
         toolbar_caption: string (STR_HSRAIL_TOOLBAR);
-        compatible_railtype_list: ["EHIG", "HSTR", "DBHE", "ELRL"] ;
-        powered_railtype_list: ["E040", "E080", "ELOW", "EMED", "EHIG", "HSTR", "DBNE", "DBHE"];
+        compatible_railtype_list: ["EHIG", "HSTR", "DBHE", "ELRL", "GACH"] ;
+        powered_railtype_list: ["EHIG", "HSTR", "DBHE", "GACH"];
         railtype_flags: bitmask(RAILTYPE_FLAG_NO_LEVEL_CROSSING, RAILTYPE_FLAG_CATENARY);
         station_graphics: RAILTYPE_STATION_MAGLEV;
         construction_cost: 25;
@@ -470,7 +485,7 @@ item(FEAT_RAILTYPES, hsrail) {
 
 
 railtypetable {
-    RAIL, ELRL, "HSRL"
+    RAIL, ELRL, "HSRL", MGLV
 }
 
 
@@ -479,6 +494,7 @@ switch(FEAT_TRAINS, SELF, sw_hstrains_tracktype, param_hstrains_track) {
     0: return ELRL; 
     1: return "HSRL"; 
 }
+
 
 /*S109: Iryo Train */
 spriteset (set_iryo_front_lighted, "gfx/iryo.png") { tmpl_vehicle_8_views(0, 0) }
@@ -633,6 +649,7 @@ spriteset (set_avloavril_middle,        "gfx/avloavril.png") { tmpl_vehicle_4_vi
 spriteset (set_avloavril_purchase,      "gfx/avloavril.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
 spriteset (set_avloavril_invisible,     "gfx/avloavril.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
 
+
 switch(FEAT_TRAINS, SELF, sw_avloavril_graphics, position_in_consist % 14) {
     0:      set_avloavril_front_lighted;
     13:     set_avloavril_rear_lighted;
@@ -653,6 +670,13 @@ switch(FEAT_TRAINS, SELF, sw_avloavril_can_attach_wagon, vehicle_type_id) {
     item_avloavril: return CB_RESULT_ATTACH_ALLOW;
     return string(STR_AVLOAVRIL_CANNOT_ATTACH_OTHER);
 }
+
+switch(FEAT_TRAINS, SELF, sw_gauchechange, vehicle_is_powered) {
+        ELRL: return 1;
+        hsrail: return 1;
+        return 0;
+     }
+
 item(FEAT_TRAINS, item_avloavril) {
     property {
         name:                         string(STR_AVLOAVRIL_NAME);
@@ -685,7 +709,7 @@ item(FEAT_TRAINS, item_avloavril) {
         air_drag_coefficient:         0.06;
         visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
         extra_weight_per_wagon:       0 ton;
-        bitmask_vehicle_info:         0;
+        bitmask_vehicle_info:         0; 
     }
     graphics {
         default:                      sw_avloavril_graphics;
@@ -1102,7 +1126,7 @@ item(FEAT_TRAINS, item_aveavril) {
         cost_factor:                  230;
         running_cost_factor:          250;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
-        speed:                        330 km/h;
+        speed:                        300 km/h;
         misc_flags:                   bitmask (TRAIN_FLAG_TILT);
         refit_cost:                   0;
         track_type:                   ELRL;
@@ -4126,90 +4150,60 @@ item(FEAT_TRAINS, item_huevo) {
     }
 }
 /*349 "Talgo I*/
-spriteset (set_talgoI_front_lighted, "gfx/talgoI.png") { tmpl_vehicle_8_views(0, 0) }
-spriteset (set_talgoI_rear_lighted,  "gfx/talgoI.png") { tmpl_vehicle_8_views(1, 1) }
-spriteset (set_talgoI_view_wagon,    "gfx/talgoI.png") { tmpl_vehicle_8_views(2, 0) }
-spriteset (set_talgoI_rear,          "gfx/talgoI.png") { tmpl_vehicle_8_views(3, 1) }
-spriteset (set_talgoI_middle,        "gfx/talgoI.png") { tmpl_vehicle_4_views(4)    }
-spriteset (set_talgoI_purchase,      "gfx/talgoI.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
-spriteset (set_talgoI_invisible,     "gfx/talgoI.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+spriteset (set_rambos_front_lighted, "gfx/rambos.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_rambos_rear_lighted,  "gfx/rambos.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_rambos_front,         "gfx/rambos.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_rambos_rear,          "gfx/rambos.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_rambos_middle,        "gfx/rambos.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_rambos_purchase,      "gfx/rambos.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_rambos_invisible,     "gfx/rambos.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
 
-switch(FEAT_TRAINS, SELF, sw_talgoI_graphics, position_in_consist % 8) {
-    0:      set_talgoI_front_lighted;
-    7:      set_talgoI_view_wagon;
-    set_talgoI_middle;
+switch(FEAT_TRAINS, SELF, sw_rambos_graphics, position_in_consist % 1) {
+    0:      set_rambos_front_lighted;
 }
 
-switch(FEAT_TRAINS, SELF, sw_talgoI_articulated_part, extra_callback_info1) {
-    1 .. 7: return item_talgoI;
+switch(FEAT_TRAINS, SELF, sw_rambos_articulated_part, extra_callback_info1) {
+    1 .. 3: return item_rambos;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
-switch(FEAT_TRAINS, SELF, sw_talgoI_length, position_in_consist % 8) {
-      0:      return 8; 
-      1 .. 6: return 6;   
-      7:      return 8;
-}
-switch(FEAT_TRAINS, SELF, sw_talgoI_start_stop, num_vehs_in_consist) {
-    1 .. 8: return CB_RESULT_NO_TEXT;
-    return string(STR_TALGOI_CANNOT_START);
-}
-
-switch(FEAT_TRAINS, SELF, sw_talgoI_can_attach_wagon, vehicle_type_id) {
-    item_talgoI: return CB_RESULT_ATTACH_ALLOW;
-    return string(STR_TALGOI_CANNOT_START);
-}
-switch(FEAT_TRAINS, SELF, sw_talgoI_availability, param_prototypes_available) {
-    0: return NO_CLIMATE; 
-    1: return bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
-}
-
-switch(FEAT_TRAINS, SELF, sw_talgoI_lifespan, param_prototypes_lifespan) {
-    0: return 8; 
-    1: return 30; 
-}
-
-item(FEAT_TRAINS, item_talgoI) {
+item(FEAT_TRAINS, item_rambos) {
     property {
-        name:                         string(STR_TALGOI_NAME);
-        climates_available:           (param_prototypes_available) ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
-        introduction_date:            date(50000, 1, 1);
-        model_life:                   (param_prototypes_lifespan) ? 30 : 8;
-        vehicle_life:                 (param_prototypes_lifespan) ? 30 : 8;
+        name:                         string(STR_RAMBOS_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:            date(1974, 1, 1);
+        model_life:                   60;
+        vehicle_life:                 40;
         reliability_decay:            20;
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         //non_refittable_cargo_classes: bitmask();
         //loading_speed:                8; 
-        cost_factor:                  100;
-        running_cost_factor:          200;
+        cost_factor:                  50;
+        running_cost_factor:          150;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
-        speed:                        135 km/h;
-        misc_flags:                   bitmask(TRAIN_FLAG_TILT, TRAIN_FLAG_MU);
+        speed:                        150 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_MU);
         refit_cost:                   0;
         track_type:                   RAIL;
         ai_special_flag:              AI_FLAG_PASSENGER;
-        power:                        380 kW;
+        power:                        2460 kW;
         running_cost_base:            RUNNING_COST_ELECTRIC;
         dual_headed:                  0;
-        cargo_capacity:               21;
-        /*Cargo Capacity per wagon, up to a total of 168*/
-        weight:                       50 ton;
+        cargo_capacity:               0;
+        /*Cargo Capacity per wagon, up to a total of 0*/
+        weight:                       120 ton;
         ai_engine_rank:               0;
         engine_class:                 ENGINE_CLASS_ELECTRIC;
         extra_power_per_wagon:        0 kW;
         tractive_effort_coefficient:  1.0 / 3;
         air_drag_coefficient:         0.06;
-        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 2, DISABLE_WAGON_POWER);
         extra_weight_per_wagon:       0 ton;
         bitmask_vehicle_info:         0;
     }
     graphics {
-        default:                      sw_talgoI_graphics;
-        purchase:                     set_talgoI_purchase;
-        length:                       sw_talgoI_length;
-        articulated_part:             sw_talgoI_articulated_part;
-        start_stop:                   sw_talgoI_start_stop;
-        can_attach_wagon:             sw_talgoI_can_attach_wagon;
+        default:                      sw_rambos_graphics;
+        purchase:                     set_rambos_purchase;
     }
 }
 /*350 "Talgo II"*/
@@ -5743,3 +5737,817 @@ item(FEAT_TRAINS, item_tdmd) {
     }
 }
 
+/*S140 Velaro Novo Train */
+spriteset (set_velaronovo_front_lighted, "gfx/velaronovo.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_velaronovo_rear_lighted,  "gfx/velaronovo.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_velaronovo_front,         "gfx/velaronovo.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_velaronovo_rear,          "gfx/velaronovo.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_velaronovo_middle,        "gfx/velaronovo.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_velaronovo_purchase,      "gfx/velaronovo.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_velaronovo_invisible,     "gfx/velaronovo.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+
+switch(FEAT_TRAINS, SELF, sw_velaronovo_graphics, position_in_consist % 7) {
+    0:      set_velaronovo_front_lighted;
+    6:      set_velaronovo_rear_lighted;
+    set_velaronovo_middle;
+}
+
+switch(FEAT_TRAINS, SELF, sw_velaronovo_articulated_part, extra_callback_info1) {
+    1 .. 6: return item_velaronovo;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch(FEAT_TRAINS, SELF, sw_velaronovo_start_stop, num_vehs_in_consist) {
+    1 .. 14: return CB_RESULT_NO_TEXT;
+    return string(STR_VELARONOVO_CANNOT_START);
+}
+
+switch(FEAT_TRAINS, SELF, sw_velaronovo_can_attach_wagon, vehicle_type_id) {
+    item_velaronovo: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_VELARONOVO_CANNOT_ATTACH_OTHER);
+}
+
+item(FEAT_TRAINS, item_velaronovo) {
+    property {
+        name:                         string(STR_VELARONOVO_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(2030, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 40;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                10; 
+        cost_factor:                  255;
+        running_cost_factor:          255;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        360 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   (param_hstrains_track) ? 2 : 5;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        8800 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               69;
+        /*Cargo Capacity per wagon, up to a total of 483*/
+        weight:                       345 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.3 / 3;
+        air_drag_coefficient:         0.06;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      sw_velaronovo_graphics;
+        purchase:                     set_velaronovo_purchase;
+        start_stop:                   sw_velaronovo_start_stop;
+        articulated_part:             sw_velaronovo_articulated_part;
+        can_attach_wagon:             sw_velaronovo_can_attach_wagon;
+    }
+}
+/*S118 OUIGO-M Train */
+spriteset (set_ouigom_front_lighted, "gfx/ouigom.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_ouigom_rear_lighted,  "gfx/ouigom.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_ouigom_front,         "gfx/ouigom.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_ouigom_rear,          "gfx/ouigom.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_ouigom_middle,        "gfx/ouigom.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_ouigom_purchase,      "gfx/ouigom.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_ouigom_invisible,     "gfx/ouigom.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+
+switch(FEAT_TRAINS, SELF, sw_ouigom_graphics, position_in_consist % 9) {
+    0:      set_ouigom_front_lighted;
+    8:      set_ouigom_rear_lighted;
+    set_ouigom_middle;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ouigom_articulated_part, extra_callback_info1) {
+    1 .. 8: return item_ouigom;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ouigom_start_stop, num_vehs_in_consist) {
+    1 .. 18: return CB_RESULT_NO_TEXT;
+    return string(STR_OUIGOM_CANNOT_START);
+}
+
+switch(FEAT_TRAINS, SELF, sw_ouigom_can_attach_wagon, vehicle_type_id) {
+    item_ouigom: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_OUIGOM_CANNOT_ATTACH_OTHER);
+}
+
+item(FEAT_TRAINS, item_ouigom) {
+    property {
+        name:                         string(STR_OUIGOM_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(2036, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 40;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                12; 
+        cost_factor:                  250;
+        running_cost_factor:          250;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        350 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   (param_hstrains_track) ? 2 : 5;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        9000 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               70;
+        /*Cargo Capacity per wagon, up to a total of 630*/
+        weight:                       405 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.3 / 3;
+        air_drag_coefficient:         0.06;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      sw_ouigom_graphics;
+        purchase:                     set_ouigom_purchase;
+        start_stop:                   sw_ouigom_start_stop;
+        articulated_part:             sw_ouigom_articulated_part;
+        can_attach_wagon:             sw_ouigom_can_attach_wagon;
+    }
+}
+/*S119 Iryo II Train */
+spriteset (set_iryo2_front_lighted, "gfx/iryo2.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_iryo2_rear_lighted,  "gfx/iryo2.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_iryo2_front,         "gfx/iryo2.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_iryo2_rear,          "gfx/iryo2.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_iryo2_middle,        "gfx/iryo2.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_iryo2_purchase,      "gfx/iryo2.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_iryo2_invisible,     "gfx/iryo2.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+
+switch(FEAT_TRAINS, SELF, sw_iryo2_graphics, position_in_consist % 8) {
+    0:      set_iryo2_front_lighted;
+    7:      set_iryo2_rear_lighted;
+    set_iryo2_middle;
+}
+
+switch(FEAT_TRAINS, SELF, sw_iryo2_articulated_part, extra_callback_info1) {
+    1 .. 7: return item_iryo2;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch(FEAT_TRAINS, SELF, sw_iryo2_start_stop, num_vehs_in_consist) {
+    1 .. 16: return CB_RESULT_NO_TEXT;
+    return string(STR_IRYO2_CANNOT_START);
+}
+
+switch(FEAT_TRAINS, SELF, sw_iryo2_can_attach_wagon, vehicle_type_id) {
+    item_iryo2: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_IRYO2_CANNOT_ATTACH_OTHER);
+}
+
+item(FEAT_TRAINS, item_iryo2) {
+    property {
+        name:                         string(STR_IRYO2_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(2038, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 40;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                10; 
+        cost_factor:                  255;
+        running_cost_factor:          255;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        400 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   (param_hstrains_track) ? 2 : 5;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        9800 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               53;
+        /*Cargo Capacity per wagon, up to a total of 424*/
+        weight:                       405 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.5 / 3;
+        air_drag_coefficient:         0.06;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      sw_iryo2_graphics;
+        purchase:                     set_iryo2_purchase;
+        start_stop:                   sw_iryo2_start_stop;
+        articulated_part:             sw_iryo2_articulated_part;
+        can_attach_wagon:             sw_iryo2_can_attach_wagon;
+    }
+}
+/*S141 AVRIL-X Train */
+spriteset (set_avloavrilx_front_lighted, "gfx/avloavrilx.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_avloavrilx_rear_lighted,  "gfx/avloavrilx.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_avloavrilx_front,         "gfx/avloavrilx.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_avloavrilx_rear,          "gfx/avloavrilx.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_avloavrilx_middle,        "gfx/avloavrilx.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_avloavrilx_purchase,      "gfx/avloavrilx.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_avloavrilx_invisible,     "gfx/avloavrilx.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+
+switch(FEAT_TRAINS, SELF, sw_avloavrilx_graphics, position_in_consist % 14) {
+    0:      set_avloavrilx_front_lighted;
+    13:      set_avloavrilx_rear_lighted;
+    set_avloavrilx_middle;
+}
+
+switch(FEAT_TRAINS, SELF, sw_avloavrilx_articulated_part, extra_callback_info1) {
+    1 .. 13: return item_avloavrilx;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch(FEAT_TRAINS, SELF, sw_avloavrilx_start_stop, num_vehs_in_consist) {
+    1 .. 28: return CB_RESULT_NO_TEXT;
+    return string(STR_AVLOAVRILX_CANNOT_START);
+}
+
+switch(FEAT_TRAINS, SELF, sw_avloavrilx_can_attach_wagon, vehicle_type_id) {
+    item_avloavrilx: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_AVLOAVRILX_CANNOT_ATTACH_OTHER);
+}
+
+item(FEAT_TRAINS, item_avloavrilx) {
+    property {
+        name:                         string(STR_AVLOAVRILX_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(2040, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 40;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                10; 
+        cost_factor:                  250;
+        running_cost_factor:          255;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        380 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   (param_hstrains_track) ? 2 : 5;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        12000 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               50;
+        /*Cargo Capacity per wagon, up to a total of 700*/
+        weight:                       305 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.4 / 3;
+        air_drag_coefficient:         0.06;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      sw_avloavrilx_graphics;
+        purchase:                     set_avloavrilx_purchase;
+        start_stop:                   sw_avloavrilx_start_stop;
+        articulated_part:             sw_avloavrilx_articulated_part;
+        can_attach_wagon:             sw_avloavrilx_can_attach_wagon;
+    }
+}
+/*S141 AVRIL-X Train */
+spriteset (set_aveavrilx_front_lighted, "gfx/aveavrilx.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_aveavrilx_rear_lighted,  "gfx/aveavrilx.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_aveavrilx_front,         "gfx/aveavrilx.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_aveavrilx_rear,          "gfx/aveavrilx.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_aveavrilx_middle,        "gfx/aveavrilx.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_aveavrilx_purchase,      "gfx/aveavrilx.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_aveavrilx_invisible,     "gfx/aveavrilx.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+
+switch(FEAT_TRAINS, SELF, sw_aveavrilx_graphics, position_in_consist % 14) {
+    0:      set_aveavrilx_front_lighted;
+    13:      set_aveavrilx_rear_lighted;
+    set_aveavrilx_middle;
+}
+
+switch(FEAT_TRAINS, SELF, sw_aveavrilx_articulated_part, extra_callback_info1) {
+    1 .. 13: return item_aveavrilx;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch(FEAT_TRAINS, SELF, sw_aveavrilx_start_stop, num_vehs_in_consist) {
+    1 .. 28: return CB_RESULT_NO_TEXT;
+    return string(STR_AVLOAVRILX_CANNOT_START);
+}
+
+switch(FEAT_TRAINS, SELF, sw_aveavrilx_can_attach_wagon, vehicle_type_id) {
+    item_aveavrilx: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_AVLOAVRILX_CANNOT_ATTACH_OTHER);
+}
+
+item(FEAT_TRAINS, item_aveavrilx) {
+    property {
+        name:                         string(STR_AVEAVRILX_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(2040, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 40;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                10; 
+        cost_factor:                  250;
+        running_cost_factor:          255;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        330 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   ELRL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        12000 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               42;
+        /*Cargo Capacity per wagon, up to a total of 588*/
+        weight:                       305 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.4 / 3;
+        air_drag_coefficient:         0.06;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      sw_aveavrilx_graphics;
+        purchase:                     set_aveavrilx_purchase;
+        start_stop:                   sw_aveavrilx_start_stop;
+        articulated_part:             sw_aveavrilx_articulated_part;
+        can_attach_wagon:             sw_aveavrilx_can_attach_wagon;
+    }
+}
+/*S142 X-450 Train */
+spriteset (set_x450_front_lighted, "gfx/x450.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_x450_rear_lighted,  "gfx/x450.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_x450_front,         "gfx/x450.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_x450_rear,          "gfx/x450.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_x450_middle,        "gfx/x450.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_x450_purchase,      "gfx/x450.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_x450_invisible,     "gfx/x450.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+switch(FEAT_TRAINS, SELF, sw_x450_graphics, position_in_consist % 8) {
+    0:      set_x450_front_lighted;
+    7:      set_x450_rear_lighted;
+    set_x450_middle;
+}
+
+switch(FEAT_TRAINS, SELF, sw_x450_articulated_part, extra_callback_info1) {
+    1 .. 7: return item_x450;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch(FEAT_TRAINS, SELF, sw_x450_start_stop, num_vehs_in_consist) {
+    1 .. 16: return CB_RESULT_NO_TEXT;
+    return string(STR_X450_CANNOT_START);
+}
+
+switch(FEAT_TRAINS, SELF, sw_x450_can_attach_wagon, vehicle_type_id) {
+    item_x450: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_X450_CANNOT_ATTACH_OTHER);
+}
+
+item(FEAT_TRAINS, item_x450) {
+    property {
+        name:                         string(STR_X450_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(2048, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 40;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                10; 
+        cost_factor:                  255;
+        running_cost_factor:          255;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        450 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   (param_hstrains_track) ? 2 : 5;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        15000 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               69;
+        /*Cargo Capacity per wagon, up to a total of 552*/
+        weight:                       305 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  1.0 / 3;
+        air_drag_coefficient:         0.06;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      sw_x450_graphics;
+        purchase:                     set_x450_purchase;
+        start_stop:                   sw_x450_start_stop;
+        articulated_part:             sw_x450_articulated_part;
+        can_attach_wagon:             sw_x450_can_attach_wagon;
+    }
+}
+
+/*Class 257- Vectron"*/
+spriteset (set_vectron_front_lighted, "gfx/vectron.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_vectron_rear_lighted,  "gfx/vectron.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_vectron_front,         "gfx/vectron.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_vectron_rear,          "gfx/vectron.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_vectron_middle,        "gfx/vectron.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_vectron_purchase,      "gfx/vectron.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_vectron_invisible,     "gfx/vectron.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+
+switch(FEAT_TRAINS, SELF, sw_vectron_graphics, position_in_consist % 1) {
+    0:      set_vectron_front_lighted;
+}
+
+switch(FEAT_TRAINS, SELF, sw_vectron_articulated_part, extra_callback_info1) {
+    1 .. 3: return item_vectron;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item(FEAT_TRAINS, item_vectron) {
+    property {
+        name:                         string(STR_VECTRON_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(2032, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 30;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask();
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                0; 
+        cost_factor:                  120;
+        running_cost_factor:          240;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        230 km/h;
+        misc_flags:                  bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   ELRL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        6410 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               0;
+        weight:                       82 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  1.5 / 3;
+        air_drag_coefficient:         0.06;
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      set_vectron_front_lighted;
+        purchase:                     set_vectron_purchase;
+        
+    }
+}
+/*Class 258 Bicentennial"*/
+spriteset (set_bicentennial_front_lighted, "gfx/bicentennial.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_bicentennial_rear_lighted,  "gfx/bicentennial.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_bicentennial_front,         "gfx/bicentennial.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_bicentennial_rear,          "gfx/bicentennial.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_bicentennial_middle,        "gfx/bicentennial.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_bicentennial_purchase,      "gfx/bicentennial.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_bicentennial_invisible,     "gfx/bicentennial.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+
+switch(FEAT_TRAINS, SELF, sw_bicentennial_graphics, position_in_consist % 1) {
+    0:      set_bicentennial_front_lighted;
+}
+
+switch(FEAT_TRAINS, SELF, sw_bicentennial_articulated_part, extra_callback_info1) {
+    1 .. 3: return item_bicentennial;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item(FEAT_TRAINS, item_bicentennial) {
+    property {
+        name:                         string(STR_BICENTENNIAL_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(2048, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 30;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask();
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                0; 
+        cost_factor:                  150;
+        running_cost_factor:          200;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        220 km/h;
+        misc_flags:                  bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   RAIL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        10000 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               0;
+        weight:                       80 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  2.0 / 3;
+        air_drag_coefficient:         0.06;
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      set_bicentennial_front_lighted;
+        purchase:                     set_bicentennial_purchase;
+        
+    }
+}
+/*S481 Alvia NOVO Train */
+spriteset (set_alvianovo_front_lighted, "gfx/alvianovo.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_alvianovo_rear_lighted,  "gfx/alvianovo.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_alvianovo_front,         "gfx/alvianovo.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_alvianovo_rear,          "gfx/alvianovo.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_alvianovo_middle,        "gfx/alvianovo.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_alvianovo_purchase,      "gfx/alvianovo.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_alvianovo_invisible,     "gfx/alvianovo.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+switch(FEAT_TRAINS, SELF, sw_alvianovo_graphics, position_in_consist % 5) {
+    0:      set_alvianovo_front_lighted;
+    4:      set_alvianovo_rear_lighted;
+    set_alvianovo_middle;
+}
+
+switch(FEAT_TRAINS, SELF, sw_alvianovo_articulated_part, extra_callback_info1) {
+    1 .. 4: return item_alvianovo;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch(FEAT_TRAINS, SELF, sw_alvianovo_start_stop, num_vehs_in_consist) {
+    1 .. 15: return CB_RESULT_NO_TEXT;
+    return string(STR_ALVIANOVO_CANNOT_START);
+}
+
+switch(FEAT_TRAINS, SELF, sw_alvianovo_can_attach_wagon, vehicle_type_id) {
+    item_alvianovo: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_ALVIANOVO_CANNOT_ATTACH_OTHER);
+}
+
+item(FEAT_TRAINS, item_alvianovo) {
+    property {
+        name:                         string(STR_ALVIANOVO_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(2038, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 40;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                10; 
+        cost_factor:                  100;
+        running_cost_factor:          190;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        250 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   ELRL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        5000 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               55;
+        /*Cargo Capacity per wagon, up to a total of 275*/
+        weight:                       155 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  1.0 / 3;
+        air_drag_coefficient:         0.06;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      sw_alvianovo_graphics;
+        purchase:                     set_alvianovo_purchase;
+        start_stop:                   sw_alvianovo_start_stop;
+        articulated_part:             sw_alvianovo_articulated_part;
+        can_attach_wagon:             sw_alvianovo_can_attach_wagon;
+    }
+}
+/*S452 : C-plus Train */
+spriteset (set_cplus_front_lighted, "gfx/cplus.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_cplus_rear_lighted,  "gfx/cplus.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_cplus_front,         "gfx/cplus.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_cplus_rear,          "gfx/cplus.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_cplus_middle,        "gfx/cplus.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_cplus_purchase,      "gfx/cplus.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_cplus_invisible,     "gfx/cplus.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+
+switch(FEAT_TRAINS, SELF, sw_cplus_graphics, position_in_consist % 8) {
+    0:      set_cplus_front_lighted;
+    7:      set_cplus_rear_lighted;
+    set_cplus_middle;
+}
+
+switch(FEAT_TRAINS, SELF, sw_cplus_articulated_part, extra_callback_info1) {
+    1 .. 7: return item_cplus;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch(FEAT_TRAINS, SELF, sw_cplus_start_stop, num_vehs_in_consist) {
+    1 .. 16: return CB_RESULT_NO_TEXT;
+    return string(STR_CPLUS_CANNOT_START);
+}
+
+switch(FEAT_TRAINS, SELF, sw_cplus_can_attach_wagon, vehicle_type_id) {
+    item_cplus: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_CPLUS_CANNOT_ATTACH_OTHER);
+}
+
+item(FEAT_TRAINS, item_cplus) {
+    property {
+        name:                         string(STR_CPLUS_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(2044, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 30;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                25; 
+        cost_factor:                  90;
+        running_cost_factor:          180;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        180 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   ELRL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        8000 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               78;
+        /*Cargo Capacity per wagon, up to a total of 624*/
+        weight:                       181 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  1.5 / 3;
+        air_drag_coefficient:         0.06;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      sw_cplus_graphics;
+        purchase:                     set_cplus_purchase;
+        start_stop:                   sw_cplus_start_stop;
+        articulated_part:             sw_cplus_articulated_part;
+        can_attach_wagon:             sw_cplus_can_attach_wagon;
+    }
+}
+/*1--1-1 "Mataró"*/
+spriteset (set_mataro200_front_lighted, "gfx/mataro.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_mataro200_rear_lighted,  "gfx/mataro.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_mataro200_front,         "gfx/mataro.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_mataro200_rear,          "gfx/mataro.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_mataro200_middle,        "gfx/mataro.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_mataro200_purchase,      "gfx/mataro.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_mataro200_invisible,     "gfx/mataro.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+
+switch(FEAT_TRAINS, SELF, sw_mataro200_graphics, position_in_consist % 1) {
+    0:      set_mataro200_front_lighted;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mataro200_articulated_part, extra_callback_info1) {
+    1 .. 3: return item_mataro200;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item(FEAT_TRAINS, item_mataro200) {
+    property {
+        name:                         string(STR_MATARO_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(2048, 1, 1);
+        model_life:                   40;
+        vehicle_life:                 30;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask();
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                0; 
+        cost_factor:                  5;
+        running_cost_factor:          20;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        60 km/h;
+        misc_flags:                  bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   RAIL;
+        ai_special_flag:             AI_FLAG_PASSENGER;
+        power:                        200 kW;
+        running_cost_base:            RUNNING_COST_STEAM;
+        dual_headed:                  0;
+        cargo_capacity:               0;
+        weight:                       62 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_STEAM;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.1 / 3;
+        air_drag_coefficient:         0.06;
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      set_mataro200_front_lighted;
+        purchase:                     set_mataro200_purchase;
+        
+    }
+}
+/*S142 X-450 Train */
+spriteset (set_congratslev_front_lighted, "gfx/congratslev.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_congratslev_rear_lighted,  "gfx/congratslev.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_congratslev_front,         "gfx/congratslev.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_congratslev_rear,          "gfx/congratslev.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_congratslev_middle,        "gfx/congratslev.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_congratslev_purchase,      "gfx/congratslev.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_congratslev_invisible,     "gfx/congratslev.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+switch(FEAT_TRAINS, SELF, sw_congratslev_graphics, position_in_consist % 10) {
+    0:      set_congratslev_front_lighted;
+    9:      set_congratslev_rear_lighted;
+    set_congratslev_middle;
+}
+
+switch(FEAT_TRAINS, SELF, sw_congratslev_articulated_part, extra_callback_info1) {
+    1 .. 9: return item_congratslev;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch(FEAT_TRAINS, SELF, sw_congratslev_start_stop, num_vehs_in_consist) {
+    1 .. 10: return CB_RESULT_NO_TEXT;
+    return string(STR_CONGRATSLEV_CANNOT_START);
+}
+
+switch(FEAT_TRAINS, SELF, sw_congratslev_can_attach_wagon, vehicle_type_id) {
+    item_congratslev: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_CONGRATSLEV_CANNOT_ATTACH_OTHER);
+}
+
+item(FEAT_TRAINS, item_congratslev) {
+    property {
+        name:                         string(STR_CONGRATSLEV_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(2051, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 255;
+        reliability_decay:            2;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                100; 
+        cost_factor:                  255;
+        running_cost_factor:          255;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        600 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   MGLV;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        10000 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               32;
+        /*Cargo Capacity per wagon, up to a total of 320*/
+        weight:                       205 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  1.0 / 3;
+        air_drag_coefficient:         0.06;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      sw_congratslev_graphics;
+        purchase:                     set_congratslev_purchase;
+        start_stop:                   sw_congratslev_start_stop;
+        articulated_part:             sw_congratslev_articulated_part;
+        can_attach_wagon:             sw_congratslev_can_attach_wagon;
+    }
+}

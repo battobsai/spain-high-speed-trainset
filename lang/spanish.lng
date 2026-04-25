@@ -1,7 +1,7 @@
 ##grflangid 04
 #Archivo Lang del Español
 
-STR_GRF_NAME             : {ORANGE} Trenes Españoles de Battobsai v1.0
+STR_GRF_NAME             : {ORANGE} Trenes Españoles de Battobsai v1.1
 STR_GRF_DESC             : {ORANGE} Trenes Españoles de Battobsai{}{BLACK}Este NewGRF está diseñado para conseguir trenes de España. Se introducen trenes entre 1848 y 2026. No compatible con IA o Sets Industriales.
 STR_GRF_README_TITLE    : Conjunto de Trenes Españoles de Alta Velocidad
 STR_GRF_README_BODY     : Trenes incluidos: S109 Iryo; S108 Ouigo; S106 "Avril" (Avlo); S100 AVE; S102 "Pato"; S103 "Velaro"; S114 "Avant"; S101 "Euromed"; S106 "Avril" (AVE); S120 (Eléctrico); S130 "Patito"; Talgo I (fecha TBD); S350 "Talgo II"; S352 "Talgo III" (2000T); S353 "Talgo III" (3000T); S354 "Talgo IV"; S432 "Obispos"; S433 "Pingüino"; S436 "Suizas"; S448 "Lavadora"; S449 "Besugo"; S450 "Buque"; S452 "Semi-Buque"; S480; S490 "Alaris"; S590 "Renault"; S593 "Camello"; S340 "Huevos"; S594 "TRD"; S595 "TAF"; S597 "TER"; S599 "TDMD"; S256 "Euro 6000"; S253 "TRAXX"; S269; S289; S272 "Cocodrilo"; S273 "Cocodrilo"; S275 "Cocodrilo"; S277 "Inglesas"; S251 "Japonesa y Media"; S252 (Eurosprinter); además locomotoras de vapor históricas: 1-1-1 "Mataró"; 1-2-0 T "Martorell"; 0-3-0 "Guitarra"; 0-4-0; 1-2-0; 0-3-0 "Bicicleta"; 0-3-0 "Bourbonnais"; 2-3-0 "Compound"; 1-4-0 (400 de Norte); 2-4-0 "Mastodonte"; 1-4-1 "Mikado"; 2-3-1 "Pacific"; 2-4-1 "Montaña"; 2-4-1 "Atómica"; 1-5-1 "Santa Fé"; 2-4-2 "Confederación". Consulte README.md del repositorio para fechas y detalles.
@@ -62,7 +62,7 @@ STR_COCODRILO_272_NAME   : S272 "Cocodrilos" (Eléctrico)
 STR_COCODRILO_273_NAME   : S273 "Cocodrilos" (Eléctrico)
 STR_COCODRILO_275_NAME   : S275 "Cocodrilos" (Eléctrico)
 STR_TANDEM_NAME          : S289-1 "Tándem" (Eléctrico)
-STR_TALGOI_NAME          : Talgo I  (Diésel)
+STR_RAMBOS_NAME          : S333 "Rambos"
 STR_PLATANITO_NAME       : S443 "Platanito" (Eléctrico)
 STR_439_NAME             : S439 (Eléctrico)
 STR_TRD_NAME             : S594 "TRD" (Diésel)
@@ -89,6 +89,18 @@ STR_CISTERNA_2010_NAME   : Vagón Cisterna de 3ra Generación
 STR_FLATBED_1860_NAME    : Vagón Plataforma de 1ra Generación
 STR_FLATBED_1940_NAME    : Vagón Plataforma de 2da Generación
 STR_FLATBED_2010_NAME    : Vagón Plataforma de 3ra Generación
+
+STR_VELARONOVO_NAME      : S140 Velaro Novo
+STR_OUIGOM_NAME          : S118 OUIGO-M
+STR_IRYO2_NAME          : S119 Iryo II
+STR_AVLOAVRILX_NAME      : S141 AVRIL-X (Avlo)
+STR_X450_NAME            : S142 "X-450"
+STR_AVEAVRILX_NAME       : S141 AVRIL-X (AVE)
+STR_CONGRATSLEV_NAME     : Felicidades! Aquí tienes al "PremioLev"
+STR_VECTRON_NAME         : S257 "Vectron"
+STR_BICENTENNIAL_NAME    : S258 "Bi-Centenaria" (Hidrógeno)
+STR_ALVIANOVO_NAME       : S481 (Eléctrico)
+STR_CPLUS_NAME           : S454 "Super-C"
 
 STR_IRYO_CANNOT_START             :... tren muy largo (max. 16 carros).
 STR_IRYO_CANNOT_ATTACH_OTHER      :... El Iryo no se puede adjuntar a otros trenes.
@@ -148,6 +160,23 @@ STR_ALARIS_CANNOT_START           :...tren muy largo (max. 9 carros)
 STR_ALARIS_CANNOT_ATTACH_OTHER    :...la Serie 490 (Alaris) no se puede adjuntar a otros trenes.
 STR_120AV_CANNOT_START            :...tren muy largo (max. 8 carros)
 STR_120AV_CANNOT_ATTACH_OTHER     :...la Serie 120 no se puede adjuntar a otros trenes.
+STR_VELARONOVO_CANNOT_START             :... tren muy largo (max. 14 carros).
+STR_VELARONOVO_CANNOT_ATTACH_OTHER      :... El Velaro Novo no se puede adjuntar a otros trenes.
+STR_OUIGOM_CANNOT_START             :... tren muy largo (max. 18 carros).
+STR_OUIGOM_CANNOT_ATTACH_OTHER      :... El OUIGO-M no se puede adjuntar a otros trenes.
+STR_IRYO2_CANNOT_START             :... tren muy largo (max. 16 carros).
+STR_IRYO2_CANNOT_ATTACH_OTHER      :... El Iryo II no se puede adjuntar a otros trenes.
+STR_AVLOAVRILX_CANNOT_START             :... tren muy largo (max. 28 carros).
+STR_AVLOAVRILX_CANNOT_ATTACH_OTHER      :... El AVRIL-X no se puede adjuntar a otros trenes.
+STR_X450_CANNOT_START             :... tren muy largo (max. 16 carros).
+STR_X450_CANNOT_ATTACH_OTHER      :... El X-450 no se puede adjuntar a otros trenes.
+STR_CONGRATSLEV_CANNOT_START      :... solo 10 carros, que esto no es la lotería....
+STR_CONGRATSLEV_CANNOT_ATTACH_OTHER:... oye, solo uno, que esto no es la lotería....
+STR_ALVIANOVO_CANNOT_START           :...tren muy largo (max. 15 carros)
+STR_ALVIANOVO_CANNOT_ATTACH_OTHER    :...la Serie 481 no se puede adjuntar a otros trenes.
+STR_CPLUS_CANNOT_START             :... tren muy largo (max. 16 carros).
+STR_CPLUS_CANNOT_ATTACH_OTHER      :... El Super-C no se puede adjuntar a otros trenes.
+
 
 
 STR_HS_RAIL                       : Línea de Alta Velocidad (1435 mm)
