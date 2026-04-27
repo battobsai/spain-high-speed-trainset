@@ -101,6 +101,8 @@ STR_VECTRON_NAME             : Class 257 "Vectron"
 STR_BICENTENNIAL_NAME        : Class 258 "Bicentennial" (Hidrogen)
 STR_ALVIANOVO_NAME           : Class 481 (EMU)
 STR_CPLUS_NAME               : Class 454 "Super-C" (EMU)
+STR_MARILYN_NAME             : Class 316 "Marilyn"
+STR_RETALES_NAME             : Class 319 "Retales"
 
 STR_IRYO_CANNOT_START             :... train too long (max. 16 wagons).
 STR_IRYO_CANNOT_ATTACH_OTHER      :... Iryo may not be attached to other types of trains.

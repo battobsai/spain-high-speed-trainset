@@ -2,7 +2,7 @@ grf {
     grfid : "SPA3" ;
     name : string(STR_GRF_NAME);
     desc : string(STR_GRF_DESC) ;
-    version : 120;
+    version : 121;
     min_compatible_version : 101;
     param 1 {
 	param_wagon_speed {        
@@ -495,7 +495,57 @@ switch(FEAT_TRAINS, SELF, sw_hstrains_tracktype, param_hstrains_track) {
     1: return "HSRL"; 
 }
 
-
+sort (FEAT_TRAINS, [item_avecien,
+    item_avepato,
+    item_velaro,
+    item_avloavril,
+    item_ouigo,
+    item_iryo,
+    item_avant,
+    item_ouigom,
+    item_iryo2,
+    item_velaronovo,
+    item_avloavrilx,
+    item_x450,
+    item_euromed,
+    item_aveavril,
+    item_120av,
+    item_patito,
+    item_aveavrilx,
+    item_mataro,
+    item_martorell,
+    item_guitarra,
+    item_040,
+    item_120,
+    item_bourbonnais,
+    item_bourbonnais_1898,
+    item_compound,
+    item_400norte,
+    item_mastodonte,
+    item_mikado,
+    item_pacific,
+    item_montana,
+    item_atomica,
+    item_santafe,
+    item_confe,
+    item_japoymedia,
+    item_eurosprinter,
+    item_traxx,
+    item_euro6000,
+    item_vectron,
+    item_bicentennial,
+    item_japonesa,
+    item_japonesa_269_600,
+    item_cocodrilo_272,
+    item_cocodrilo_273,
+    item_cocodrilo_275,
+    item_inglesa,
+    item_japonesa_289,
+    item_tandem,
+    item_marilyn,
+    item_retales
+    ]  
+);
 /*S109: Iryo Train */
 spriteset (set_iryo_front_lighted, "gfx/iryo.png") { tmpl_vehicle_8_views(0, 0) }
 spriteset (set_iryo_rear_lighted,  "gfx/iryo.png") { tmpl_vehicle_8_views(1, 1) }
@@ -537,8 +587,8 @@ item(FEAT_TRAINS, item_iryo) {
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
         loading_speed:                10; 
-        cost_factor:                  255;
-        running_cost_factor:          250;
+        cost_factor:                  200;
+        running_cost_factor:          220;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        360 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -608,8 +658,8 @@ item(FEAT_TRAINS, item_ouigo) {
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
         loading_speed:                8; 
-        cost_factor:                  220;
-        running_cost_factor:          250;
+        cost_factor:                  190;
+        running_cost_factor:          210;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        320 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -688,8 +738,8 @@ item(FEAT_TRAINS, item_avloavril) {
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
         loading_speed:                12; 
-        cost_factor:                  230;
-        running_cost_factor:          250;
+        cost_factor:                  175;
+        running_cost_factor:          255;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        330 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_TILT);
@@ -760,8 +810,8 @@ item(FEAT_TRAINS, item_avecien) {
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
         loading_speed:                6; 
-        cost_factor:                  200;
-        running_cost_factor:          250;
+        cost_factor:                  150;
+        running_cost_factor:          200;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        300 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -832,8 +882,8 @@ item(FEAT_TRAINS, item_avepato) {
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
         loading_speed:                12; 
-        cost_factor:                  230;
-        running_cost_factor:          250;
+        cost_factor:                  160;
+        running_cost_factor:          205;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        330 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_TILT);
@@ -905,8 +955,8 @@ item(FEAT_TRAINS, item_velaro) {
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
         loading_speed:                10; 
-        cost_factor:                  250;
-        running_cost_factor:          250;
+        cost_factor:                  180;
+        running_cost_factor:          210;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        350 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -1052,8 +1102,8 @@ item(FEAT_TRAINS, item_euromed) {
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
         loading_speed:                8; 
-        cost_factor:                  200;
-        running_cost_factor:          250;
+        cost_factor:                  150;
+        running_cost_factor:          150;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        220 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -1123,8 +1173,8 @@ item(FEAT_TRAINS, item_aveavril) {
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
         loading_speed:                12; 
-        cost_factor:                  230;
-        running_cost_factor:          250;
+        cost_factor:                  175;
+        running_cost_factor:          255;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        300 km/h;
         misc_flags:                   bitmask (TRAIN_FLAG_TILT);
@@ -1195,8 +1245,8 @@ item(FEAT_TRAINS, item_120av) {
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
         loading_speed:                10; 
-        cost_factor:                  200;
-        running_cost_factor:          250;
+        cost_factor:                  150;
+        running_cost_factor:          150;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        250 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -1267,8 +1317,8 @@ item(FEAT_TRAINS, item_patito) {
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
         loading_speed:                10; 
-        cost_factor:                  200;
-        running_cost_factor:          250;
+        cost_factor:                  150;
+        running_cost_factor:          150;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        250 km/h;
         misc_flags:                   bitmask (TRAIN_FLAG_TILT);
@@ -1552,8 +1602,8 @@ item(FEAT_TRAINS, item_120) {
         refittable_cargo_classes:     bitmask();
         non_refittable_cargo_classes: bitmask();
         loading_speed:                0; 
-        cost_factor:                  12;
-        running_cost_factor:          50;
+        cost_factor:                  15;
+        running_cost_factor:          60;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        90 km/h;
         misc_flags:                  bitmask(TRAIN_FLAG_MU);
@@ -1608,8 +1658,8 @@ item(FEAT_TRAINS, item_bourbonnais) {
         refittable_cargo_classes:     bitmask();
         non_refittable_cargo_classes: bitmask();
         loading_speed:                0; 
-        cost_factor:                  12;
-        running_cost_factor:          50;
+        cost_factor:                  20;
+        running_cost_factor:          60;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        65 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -1664,8 +1714,8 @@ item(FEAT_TRAINS, item_bourbonnais_1898) {
         refittable_cargo_classes:     bitmask();
         non_refittable_cargo_classes: bitmask();
         loading_speed:                0; 
-        cost_factor:                  15;
-        running_cost_factor:          50;
+        cost_factor:                  25;
+        running_cost_factor:          60;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        70 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -1720,8 +1770,8 @@ item(FEAT_TRAINS, item_compound) {
         refittable_cargo_classes:     bitmask();
         non_refittable_cargo_classes: bitmask();
         loading_speed:                0; 
-        cost_factor:                  15;
-        running_cost_factor:          75;
+        cost_factor:                  30;
+        running_cost_factor:          80;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        90 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -1776,8 +1826,8 @@ item(FEAT_TRAINS, item_400norte) {
         refittable_cargo_classes:     bitmask();
         non_refittable_cargo_classes: bitmask();
         loading_speed:                0; 
-        cost_factor:                  10;
-        running_cost_factor:          80;
+        cost_factor:                  25;
+        running_cost_factor:          90;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        80 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -1832,7 +1882,7 @@ item(FEAT_TRAINS, item_mastodonte) {
         refittable_cargo_classes:     bitmask();
         non_refittable_cargo_classes: bitmask();
         loading_speed:                0; 
-        cost_factor:                  20;
+        cost_factor:                  40;
         running_cost_factor:          100;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        100 km/h;
@@ -1888,7 +1938,7 @@ item(FEAT_TRAINS, item_mikado) {
         refittable_cargo_classes:     bitmask();
         non_refittable_cargo_classes: bitmask();
         loading_speed:                0; 
-        cost_factor:                  18;
+        cost_factor:                  15;
         running_cost_factor:          80;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        90 km/h;
@@ -1944,8 +1994,8 @@ item(FEAT_TRAINS, item_pacific) {
         refittable_cargo_classes:     bitmask();
         non_refittable_cargo_classes: bitmask();
         loading_speed:                0; 
-        cost_factor:                  25;
-        running_cost_factor:          110;
+        cost_factor:                  50;
+        running_cost_factor:          120;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        110 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -2000,8 +2050,8 @@ item(FEAT_TRAINS, item_montana) {
         refittable_cargo_classes:     bitmask();
         non_refittable_cargo_classes: bitmask();
         loading_speed:                0; 
-        cost_factor:                  30;
-        running_cost_factor:          115;
+        cost_factor:                  60;
+        running_cost_factor:          140;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        120 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -2056,8 +2106,8 @@ item(FEAT_TRAINS, item_atomica) {
         refittable_cargo_classes:     bitmask();
         non_refittable_cargo_classes: bitmask();
         loading_speed:                0; 
-        cost_factor:                  40;
-        running_cost_factor:          135;
+        cost_factor:                  70;
+        running_cost_factor:          160;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        130 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -2112,8 +2162,8 @@ item(FEAT_TRAINS, item_santafe) {
         refittable_cargo_classes:     bitmask();
         non_refittable_cargo_classes: bitmask();
         loading_speed:                0; 
-        cost_factor:                  50;
-        running_cost_factor:          150;
+        cost_factor:                  75;
+        running_cost_factor:          160;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        120 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -2168,8 +2218,8 @@ item(FEAT_TRAINS, item_confe) {
         refittable_cargo_classes:     bitmask();
         non_refittable_cargo_classes: bitmask();
         loading_speed:                0; 
-        cost_factor:                  60;
-        running_cost_factor:          160;
+        cost_factor:                  90;
+        running_cost_factor:          240;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        130 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -3414,8 +3464,8 @@ item(FEAT_TRAINS, item_japoymedia) {
         refittable_cargo_classes:     bitmask();
         non_refittable_cargo_classes: bitmask();
         loading_speed:                0; 
-        cost_factor:                  80;
-        running_cost_factor:          160;
+        cost_factor:                  90;
+        running_cost_factor:          180;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        160 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -3470,8 +3520,8 @@ item(FEAT_TRAINS, item_eurosprinter) {
         refittable_cargo_classes:     bitmask();
         non_refittable_cargo_classes: bitmask();
         loading_speed:                0; 
-        cost_factor:                  90;
-        running_cost_factor:          180;
+        cost_factor:                  100;
+        running_cost_factor:          200;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        220 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -3526,8 +3576,8 @@ item(FEAT_TRAINS, item_traxx) {
         refittable_cargo_classes:     bitmask();
         non_refittable_cargo_classes: bitmask();
         loading_speed:                0; 
-        cost_factor:                  88;
-        running_cost_factor:          175;
+        cost_factor:                  90;
+        running_cost_factor:          180;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        140 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -3582,8 +3632,8 @@ item(FEAT_TRAINS, item_euro6000) {
         refittable_cargo_classes:     bitmask();
         non_refittable_cargo_classes: bitmask();
         loading_speed:                0; 
-        cost_factor:                  100;
-        running_cost_factor:          200;
+        cost_factor:                  90;
+        running_cost_factor:          180;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        160 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -3703,8 +3753,8 @@ item(FEAT_TRAINS, item_japonesa_269_600) {
         refittable_cargo_classes:     bitmask();
         non_refittable_cargo_classes: bitmask();
         loading_speed:                0; 
-        cost_factor:                  100;
-        running_cost_factor:          200;
+        cost_factor:                  120;
+        running_cost_factor:          240;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        200 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -3892,7 +3942,7 @@ item(FEAT_TRAINS, item_cocodrilo_275) {
         //non_refittable_cargo_classes: bitmask();
         //loading_speed:                8; 
         cost_factor:                  90;
-        running_cost_factor:          200;
+        running_cost_factor:          180;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        110 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -4149,7 +4199,7 @@ item(FEAT_TRAINS, item_huevo) {
         
     }
 }
-/*349 "Talgo I*/
+/*333 "Rambos*/
 spriteset (set_rambos_front_lighted, "gfx/rambos.png") { tmpl_vehicle_8_views(0, 0) }
 spriteset (set_rambos_rear_lighted,  "gfx/rambos.png") { tmpl_vehicle_8_views(1, 1) }
 spriteset (set_rambos_front,         "gfx/rambos.png") { tmpl_vehicle_8_views(2, 0) }
@@ -4472,8 +4522,8 @@ item(FEAT_TRAINS, item_obispo) {
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
         loading_speed:                10; 
-        cost_factor:                  60;
-        running_cost_factor:          120;
+        cost_factor:                  70;
+        running_cost_factor:          140;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        140 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -4616,8 +4666,8 @@ item(FEAT_TRAINS, item_suizas) {
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
         loading_speed:                10; 
-        cost_factor:                  50;
-        running_cost_factor:          100;
+        cost_factor:                  60;
+        running_cost_factor:          120;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        110 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -4688,7 +4738,7 @@ item(FEAT_TRAINS, item_439) {
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
         loading_speed:                10; 
-        cost_factor:                  50;
+        cost_factor:                  60;
         running_cost_factor:          150;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        130 km/h;
@@ -4760,8 +4810,8 @@ item(FEAT_TRAINS, item_440) {
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
         loading_speed:                10; 
-        cost_factor:                  60;
-        running_cost_factor:          120;
+        cost_factor:                  70;
+        running_cost_factor:          140;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        140 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -4985,8 +5035,8 @@ item(FEAT_TRAINS, item_besugo) {
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
         loading_speed:                10; 
-        cost_factor:                  80;
-        running_cost_factor:          160;
+        cost_factor:                  90;
+        running_cost_factor:          180;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        160 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -5129,7 +5179,7 @@ item(FEAT_TRAINS, item_semibuque) {
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
         loading_speed:                20; 
-        cost_factor:                  90;
+        cost_factor:                  80;
         running_cost_factor:          180;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        140 km/h;
@@ -5201,8 +5251,8 @@ item(FEAT_TRAINS, item_480) {
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
         loading_speed:                10; 
-        cost_factor:                  90;
-        running_cost_factor:          180;
+        cost_factor:                  95;
+        running_cost_factor:          190;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        200 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -5347,7 +5397,7 @@ item(FEAT_TRAINS, item_renault) {
         non_refittable_cargo_classes: bitmask();
         loading_speed:                10; 
         cost_factor:                  30;
-        running_cost_factor:          130;
+        running_cost_factor:          90;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        120 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -5418,8 +5468,8 @@ item(FEAT_TRAINS, item_camello) {
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
         loading_speed:                10; 
-        cost_factor:                  70;
-        running_cost_factor:          140;
+        cost_factor:                  60;
+        running_cost_factor:          120;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        120 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -5561,8 +5611,8 @@ item(FEAT_TRAINS, item_taf) {
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
         loading_speed:                10; 
-        cost_factor:                  60;
-        running_cost_factor:          160;
+        cost_factor:                  50;
+        running_cost_factor:          150;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        120 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -5634,7 +5684,7 @@ item(FEAT_TRAINS, item_ter) {
         non_refittable_cargo_classes: bitmask();
         loading_speed:                10; 
         cost_factor:                  50;
-        running_cost_factor:          110;
+        running_cost_factor:          120;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        120 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -5778,8 +5828,8 @@ item(FEAT_TRAINS, item_velaronovo) {
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
         loading_speed:                10; 
-        cost_factor:                  255;
-        running_cost_factor:          255;
+        cost_factor:                  200;
+        running_cost_factor:          230;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        360 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -5850,8 +5900,8 @@ item(FEAT_TRAINS, item_ouigom) {
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
         loading_speed:                12; 
-        cost_factor:                  250;
-        running_cost_factor:          250;
+        cost_factor:                  200;
+        running_cost_factor:          220;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        350 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -5922,8 +5972,8 @@ item(FEAT_TRAINS, item_iryo2) {
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
         loading_speed:                10; 
-        cost_factor:                  255;
-        running_cost_factor:          255;
+        cost_factor:                  225;
+        running_cost_factor:          240;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        400 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -6066,7 +6116,7 @@ item(FEAT_TRAINS, item_aveavrilx) {
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
         loading_speed:                10; 
-        cost_factor:                  250;
+        cost_factor:                  220;
         running_cost_factor:          255;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        330 km/h;
@@ -6322,7 +6372,7 @@ item(FEAT_TRAINS, item_alvianovo) {
         non_refittable_cargo_classes: bitmask();
         loading_speed:                10; 
         cost_factor:                  100;
-        running_cost_factor:          190;
+        running_cost_factor:          200;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        250 km/h;
         misc_flags:                   bitmask(TRAIN_FLAG_MU);
@@ -6393,7 +6443,7 @@ item(FEAT_TRAINS, item_cplus) {
         refittable_cargo_classes:     bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes: bitmask();
         loading_speed:                25; 
-        cost_factor:                  90;
+        cost_factor:                  80;
         running_cost_factor:          180;
         sprite_id:                    SPRITE_ID_NEW_TRAIN;
         speed:                        180 km/h;
@@ -6424,7 +6474,7 @@ item(FEAT_TRAINS, item_cplus) {
         can_attach_wagon:             sw_cplus_can_attach_wagon;
     }
 }
-/*1--1-1 "Mataró"*/
+/*1-1-1 "Mataró"*/
 spriteset (set_mataro200_front_lighted, "gfx/mataro.png") { tmpl_vehicle_8_views(0, 0) }
 spriteset (set_mataro200_rear_lighted,  "gfx/mataro.png") { tmpl_vehicle_8_views(1, 1) }
 spriteset (set_mataro200_front,         "gfx/mataro.png") { tmpl_vehicle_8_views(2, 0) }
@@ -6549,5 +6599,118 @@ item(FEAT_TRAINS, item_congratslev) {
         start_stop:                   sw_congratslev_start_stop;
         articulated_part:             sw_congratslev_articulated_part;
         can_attach_wagon:             sw_congratslev_can_attach_wagon;
+    }
+}
+// New diesel locomotives (1.2 version) are here to not break compatibilty//
+/*316 "Marilyn"*/
+spriteset (set_marilyn_front_lighted, "gfx/marilyn.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_marilyn_rear_lighted,  "gfx/marilyn.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_marilyn_front,         "gfx/marilyn.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_marilyn_rear,          "gfx/marilyn.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_marilyn_middle,        "gfx/marilyn.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_marilyn_purchase,      "gfx/marilyn.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_marilyn_invisible,     "gfx/marilyn.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+
+switch(FEAT_TRAINS, SELF, sw_marilyn_graphics, position_in_consist % 1) {
+    0:      set_marilyn_front_lighted;
+}
+
+switch(FEAT_TRAINS, SELF, sw_marilyn_articulated_part, extra_callback_info1) {
+    1 .. 3: return item_marilyn;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item(FEAT_TRAINS, item_marilyn) {
+    property {
+        name:                         string(STR_MARILYN_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1955, 1, 1);
+        model_life:                   40;
+        vehicle_life:                 30;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask();
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                0; 
+        cost_factor:                  20;
+        running_cost_factor:          90;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        120 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_TILT);
+        refit_cost:                   0;
+        track_type:                   RAIL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        1200 kW;
+        running_cost_base:            RUNNING_COST_DIESEL;
+        dual_headed:                  0;
+        cargo_capacity:               0;
+        weight:                       109 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.8 / 3;
+        air_drag_coefficient:         0.06;
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      set_marilyn_front_lighted;
+        purchase:                     set_marilyn_purchase;
+        
+    }
+}
+/*319 "Retales"*/
+spriteset (set_retales_front_lighted, "gfx/retales.png") { tmpl_vehicle_8_views(0, 0) }
+spriteset (set_retales_rear_lighted,  "gfx/retales.png") { tmpl_vehicle_8_views(1, 1) }
+spriteset (set_retales_front,         "gfx/retales.png") { tmpl_vehicle_8_views(2, 0) }
+spriteset (set_retales_rear,          "gfx/retales.png") { tmpl_vehicle_8_views(3, 1) }
+spriteset (set_retales_middle,        "gfx/retales.png") { tmpl_vehicle_4_views(4)    }
+spriteset (set_retales_purchase,      "gfx/retales.png") { tmpl_vehicle_single(5, 72, 17, -25, -10) }
+spriteset (set_retales_invisible,     "gfx/retales.png") { tmpl_vehicle_single(6,  1,  1,   0,   0) }
+
+switch(FEAT_TRAINS, SELF, sw_retales_graphics, position_in_consist % 1) {
+    0:      set_retales_front_lighted;
+}
+
+switch(FEAT_TRAINS, SELF, sw_retales_articulated_part, extra_callback_info1) {
+    1 .. 3: return item_retales;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item(FEAT_TRAINS, item_retales) {
+    property {
+        name:                         string(STR_RETALES_NAME);
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1965, 1, 1);
+        model_life:                   40;
+        vehicle_life:                 30;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask();
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                0; 
+        cost_factor:                  30;
+        running_cost_factor:          100;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        120 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_TILT);
+        refit_cost:                   0;
+        track_type:                   RAIL;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        1475 kW;
+        running_cost_base:            RUNNING_COST_DIESEL;
+        dual_headed:                  0;
+        cargo_capacity:               0;
+        weight:                       117 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  1.1 / 3;
+        air_drag_coefficient:         0.06;
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+    graphics {
+        default:                      set_retales_front_lighted;
+        purchase:                     set_retales_purchase;
+        
     }
 }

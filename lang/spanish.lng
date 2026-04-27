@@ -101,6 +101,8 @@ STR_VECTRON_NAME         : S257 "Vectron"
 STR_BICENTENNIAL_NAME    : S258 "Bi-Centenaria" (Hidrógeno)
 STR_ALVIANOVO_NAME       : S481 (Eléctrico)
 STR_CPLUS_NAME           : S454 "Super-C"
+STR_MARILYN_NAME         : S316 "Marilyn"
+STR_RETALES_NAME         : S319 "Retales"
 
 STR_IRYO_CANNOT_START             :... tren muy largo (max. 16 carros).
 STR_IRYO_CANNOT_ATTACH_OTHER      :... El Iryo no se puede adjuntar a otros trenes.
