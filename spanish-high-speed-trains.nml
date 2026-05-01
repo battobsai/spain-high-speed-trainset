@@ -2,7 +2,7 @@ grf {
     grfid : "SPA3" ;
     name : string(STR_GRF_NAME);
     desc : string(STR_GRF_DESC) ;
-    version : 121;
+    version : 122;
     min_compatible_version : 101;
     param 1 {
 	param_wagon_speed {        

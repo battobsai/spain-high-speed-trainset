@@ -1,8 +1,8 @@
 ##grflangid 04
 #Archivo Lang del Español
 
-STR_GRF_NAME             : {ORANGE} Trenes Españoles de Battobsai v1.1
-STR_GRF_DESC             : {ORANGE} Trenes Españoles de Battobsai{}{BLACK}Este NewGRF está diseñado para conseguir trenes de España. Se introducen trenes entre 1848 y 2026. No compatible con IA o Sets Industriales.
+STR_GRF_NAME             : {ORANGE} Trenes Españoles de Battobsai v1.2
+STR_GRF_DESC             : {ORANGE} Trenes Españoles de Battobsai{}{BLACK}Este NewGRF está diseñado para conseguir trenes de España. Se introducen trenes entre 1848 y 2050. No compatible con IA o Sets Industriales.
 STR_GRF_README_TITLE    : Conjunto de Trenes Españoles de Alta Velocidad
 STR_GRF_README_BODY     : Trenes incluidos: S109 Iryo; S108 Ouigo; S106 "Avril" (Avlo); S100 AVE; S102 "Pato"; S103 "Velaro"; S114 "Avant"; S101 "Euromed"; S106 "Avril" (AVE); S120 (Eléctrico); S130 "Patito"; Talgo I (fecha TBD); S350 "Talgo II"; S352 "Talgo III" (2000T); S353 "Talgo III" (3000T); S354 "Talgo IV"; S432 "Obispos"; S433 "Pingüino"; S436 "Suizas"; S448 "Lavadora"; S449 "Besugo"; S450 "Buque"; S452 "Semi-Buque"; S480; S490 "Alaris"; S590 "Renault"; S593 "Camello"; S340 "Huevos"; S594 "TRD"; S595 "TAF"; S597 "TER"; S599 "TDMD"; S256 "Euro 6000"; S253 "TRAXX"; S269; S289; S272 "Cocodrilo"; S273 "Cocodrilo"; S275 "Cocodrilo"; S277 "Inglesas"; S251 "Japonesa y Media"; S252 (Eurosprinter); además locomotoras de vapor históricas: 1-1-1 "Mataró"; 1-2-0 T "Martorell"; 0-3-0 "Guitarra"; 0-4-0; 1-2-0; 0-3-0 "Bicicleta"; 0-3-0 "Bourbonnais"; 2-3-0 "Compound"; 1-4-0 (400 de Norte); 2-4-0 "Mastodonte"; 1-4-1 "Mikado"; 2-3-1 "Pacific"; 2-4-1 "Montaña"; 2-4-1 "Atómica"; 1-5-1 "Santa Fé"; 2-4-2 "Confederación". Consulte README.md del repositorio para fechas y detalles.
 STR_IRYO_NAME            : S109 Iryo 

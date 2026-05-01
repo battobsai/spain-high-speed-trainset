@@ -1,8 +1,8 @@
 ##grflangid 0x01
 #English language file
 
-STR_GRF_NAME                 :{ORANGE}Battobsai Spanish Trainset v1.1
-STR_GRF_DESC                 :{ORANGE}Battobsai Spanish Trainset{}{BLACK}This NewGRF is intended to provide Spanish trains. It has trains between the 1848 and the 2026. The set is not compatible with AI or Industry Sets.
+STR_GRF_NAME                 :{ORANGE}Battobsai Spanish Trainset v1.2
+STR_GRF_DESC                 :{ORANGE}Battobsai Spanish Trainset{}{BLACK}This NewGRF is intended to provide Spanish trains. It has trains between 1848 and 2050. The set is not compatible with AI or Industry Sets.
 STR_GRF_README_TITLE        : Spain High-Speed Trainset
 STR_GRF_README_BODY         : Included trains: Class 109 Iryo; Class 108 Ouigo; Class 106 "Avril" (Avlo); Class 100 AVE; Class 102 "Pato"; Class 103 "Velaro"; Class 114 "Avant"; Class 101 "Euromed"; Class 106 "Avril" (AVE); Class 120 (EMU); Class 130 "Patito"; Talgo I (date TBD); Talgo II (Class 350); Talgo III / 2000T (Class 352); Talgo III / 3000T (Class 353); Talgo IV (Class 354); Class 432 "Obispos"; Class 433 "Pingüino"; Class 436 "Suizas"; Class 448 "Lavadora"; Class 449 "Besugo"; Class 450 "Buque"; Class 452 "Semi-Buque"; Class 480; Class 490 "Alaris"; Class 590 "Renault"; Class 593 "Camello"; Class 340 "Eggs"; Class 594 "TRD"; Class 595 "TAF"; Class 597 "TER"; Class 599 "TDMD"; Euro 6000 (Class 256); TRAXX (Class 253); Class 269; Class 289; Cocodrilo Class 272; Cocodrilo Class 273; Cocodrilo Class 275; Class 277 "Inglesa"; Class 251 "Japanese & Half"; Eurosprinter (Class 252); plus historical steam locomotives: 1-1-1 "Mataró"; 1-2-0 T "Martorell"; 0-3-0 "Guitar"; 0-4-0; 1-2-0; 0-3-0 "Bicycle"; 0-3-0 "Bourbonnais"; 2-3-0 "Compound"; 1-4-0 (North 400's); 2-4-0 "Mastodon"; 1-4-1 "Mikado"; 2-3-1 "Pacific"; 2-4-1 "Mountain"; 2-4-1 "Atomic"; 1-5-1 "Santa Fé"; 2-4-2 "Confederacy". See repository README.md for dates and full details.
 STR_IRYO_NAME                : Class 109 Iryo 

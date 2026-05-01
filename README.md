@@ -3,8 +3,23 @@ Spanish trainset for OpenTTD.
 
 This repository contains a NewGRF trainset for OpenTTD with several Spanish trains between 1848 and 2028. NOTE: THIS SET ONLY SUPPORTS TEMPERATE CLIMATE INDUSTRIES!!! YOU CAN USE IT IN SUBARTIC/SUBTROPICAL, BUT IT WON'T SUPPORT ALL INDUSTRIES. THIS SET WON'T START AT ALL ON TOYLAND.
 For more information about trains included, read the rest of the Readme.
-This is version 1.0
+This is version 1.2
+--Version 1.0 (First Release) (29-03-2026)
+-Lots of trains between 1848 and 2028! 
+--Version 1.1 Changelog (25-04-2026)--
+-Added fictional, futuristic trains all the way between 2028 and 2050 (see the end of the Readme for more information)
+-Added RENFE Class 333 
+-Minor tweaks (like a lower AVRIL speed on Iberian Gauge)
+--Version 1.2 Changelog (01-05-2026)--
+-Modified the prices of all trains
+-Added RENFE Class 316 and Class 319 trains
 
+HERE THERE'S MORE INFO ABOUT ALL THE PARAMETERS:
+-1. Cargo Wagons Speed: Changes CARGO wagons speed limit. There are 4 options. By default, speed limits of Cargo Wagons are 70/110/150kmh. NOTE: Passenger/Mail wagons aren't affected by this parameter.
+-2. Prototypes Availability: Can disable the following trains: Class 273 (High-power electric locomotive), Class 269-600 (Faster variant of 269 Class) and 443 Class (Pendolino fast EMU). By default, these trains are available.
+-3. Prototypes Lifespan: Modifies the lifespan of the above mentioned trains. By default, the prototypes have a short lifespan of 12-15 years, but can be changed to a longer lifespan.
+-4. Track of Highspeed Trains: By default, highspeed trains use separate tracks, however, for compatibilty with other GRFs or for gameplay reasons they can run on normal Electric Rail if you want.
+-5-7. Changes the price of buying trains, wagons and the running costs. There are 3 options.
 
 	**Trains & Introduction Dates**
 
@@ -52,7 +67,9 @@ This is version 1.0
 	| Cocodrilo Class 275 | S275 | 1944-01-01 | A very powerful electric locomotive that outpowers almost all steam engines |
 	| Class 277 "Inglesa" | S277 "Inglesas" | 1953-01-01 | Mid-century electric locomotives for passenger services |
 
-    | Class 340 "Eggs" | S340 "Huevos" | 1967-01-01 | Diesel locomotive for transition between steam and electric trains |
+    | Class 316 "Marilyn" | S316 "Marilyn" | 1955-01-01 | First diesel locomotive, for branch lines and start replacing steam |
+	| Class 319 "Retales" | S340 "Retales" | 1965-01-01 | Diesel locomotive to replace steam trains (mid-power)  |
+    | Class 340 "Eggs" | S340 "Huevos" | 1967-01-01 | Diesel locomotive to replace steam trains (high power and high price) |
 	| Talgo II (Class 350) | S350 "Talgo II" | 1950-01-01 | Talgo diesel locomotive designed for Intercity services with small trains |
 	| Talgo III / 2000T | S352 "Talgo III" | 1964-01-01 | Evolution of Class 350, with more power |
 	| Talgo III / 3000T | S353 "Talgo III" | 1968-01-01 | A very fast diesel locomotive for your fastest IC Trains |
@@ -75,4 +92,17 @@ This is version 1.0
 	| Class 597 "TER" (DMU) | S597 "TER" | 1964-01-01 | A flexible DMU, for commuter or regional services (2 wagons)|
 	| Class 599 "TDMD" (DMU) | S599 "TDMD" | 2010-01-01 | Modern DMU introduced in 2010 (3 wagons)|
 
-	
+The following trains are available past 2028 :
+Highspeed:
+	-Class 110 (Velaro Novo): 2030
+	-Class 118 (OUIGO-M): 2036
+	-Class 119 (Iryo 2): 2038
+	-Class 141 (AVRIL-X): 2041
+	-Class 142 (X-450): 2048
+Freight:
+	-Class 257 (Vectron): 2032
+	-Class 258 (Bicentennial): 2048
+Passengers:
+	-Class 454 (C-Plus): 2044
+	-Class 481 : 2038
+And maybe, something more.... 
